@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/game_over_menu/game_over_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gameplay/player_train/player_train.tscn" type="PackedScene" id=5]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,4 +22,9 @@ visible = false
 [node name="game_over_menu" parent="gui_canvas" instance=ExtResource( 3 )]
 visible = false
 
+[node name="railtrack" parent="." instance=ExtResource( 4 )]
+position = Vector2( 323.269, 1.12244 )
+
+[node name="player_train" parent="railtrack" instance=ExtResource( 5 )]
+position = Vector2( -323.269, -1.12244 )
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
