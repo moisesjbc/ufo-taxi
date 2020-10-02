@@ -22,3 +22,25 @@ Stuck in a loop
     - Añadir vértice "meta" por la que el usuario tiene que pasar N veces, pero cada iteración le resta una carga. Entonces tiene que ir consiguiendo las cargas en cada iteración.
     - El vértice meta no te lo puedes cargar.
 
+# Refinamiento de la idea
+
+## Objetivo
+
+El personaje del jugador itera siguiendo un polígono donde uno de las aristas es la meta. El objetivo en cada nivel es pasar N veces por la meta, pero cada vez que el personaje pasa por ella, pierde una carga. Hay N cargas sueltas por el mapa, pero están fuera del polígono original, así que el jugador tiene que alterar dicho polígono para recolectar las cargas antes de quedarse sin energía.
+
+## Mecánicas
+
+- Añadir un nuevo vértice:
+    1. El jugador selecciona un punto a lo largo de cualquier arista AB.
+    2. Se dibuja una perpendicular a la arista en dicho punto. El jugador situa el punto nuevo C en la arista y esto rompe la arista original, convirtíendola en ACB.
+
+- Quitar un vértice:
+    1. El jugador clica en un vértice N.
+    2. Se elimina el vértice N, conectándose entre sí los vértices N-1 y N+1
+
+## Restricciones / condiciones de muerte
+
+- Restricción: el polígono nunca se rompe.
+- Game over: el jugador se queda sin cargas tras pasar por la meta.
+- Game over: el jugador se sale del polígono (pe. porque al añadir o quitar un vértice se rompe la arista en la que se encuentra actualmente.
+
