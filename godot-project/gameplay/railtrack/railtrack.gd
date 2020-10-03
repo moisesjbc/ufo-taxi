@@ -122,15 +122,21 @@ func confirm_current_selection():
 
 func remove_current_node():
 	if current_node != null:
-		nodes.remove(current_node)
-		emit_signal("node_removed", current_node)
-		current_node = null
-		update()
-		
+		if current_node != player.current_node_index and current_node != get_next_index(player.current_node_index):
+			nodes.remove(current_node)
+			emit_signal("node_removed", current_node)
+			current_node = null
+			update()
+		else:
+			warning('Node in use!')
+
 func add_node(new_position):
-	nodes.insert(current_edge + 1, to_local(new_position))
-	emit_signal("node_added", current_edge + 1)
-	update()
+	if current_edge != player.current_node_index:
+		nodes.insert(current_edge + 1, to_local(new_position))
+		emit_signal("node_added", current_edge + 1)
+		update()
+	else:
+		warning('Edge in use!')
 
 func warning(text):
 	emit_signal("warning_added", text)

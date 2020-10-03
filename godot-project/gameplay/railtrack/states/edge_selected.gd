@@ -9,7 +9,6 @@ var event_mouse_position = null
 func start():
 	src_position = railtrack.to_global(railtrack.nodes[railtrack.current_edge])
 	dst_position = railtrack.to_global(railtrack.nodes[railtrack.get_next_index(railtrack.current_edge)])
-	print("Edge selected!")
 
 
 func input(event):
