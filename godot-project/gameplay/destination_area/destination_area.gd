@@ -4,9 +4,11 @@ var passengers_goal = 1
 var passengers_left = 0
 var railtrack = null
 
+signal all_passengers_left
+
 func reset(railtrack, n_pickup_areas):
 	self.railtrack = railtrack
-	global_position = to_global(railtrack.nodes[0])
+	global_position = railtrack.nodes[0]
 	passengers_left = 0
 	passengers_goal = n_pickup_areas
 
@@ -20,3 +22,5 @@ func _on_destination_area_body_entered(body):
 		passengers_left += body.n_passengers
 		body.leave_passengers()
 		update_passengers_label()
+		if passengers_left == passengers_goal:
+			emit_signal('all_passengers_left')
