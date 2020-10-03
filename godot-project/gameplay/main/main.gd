@@ -30,10 +30,16 @@ func set_current_level(level_index):
 	if current_level.has_method('start'):
 		current_level.start()
 
+
 func next_level():
 	if current_level != null:
-		set_current_level(int(current_level.name) + 1)
+		#set_current_level(int(current_level.name) + 1)
+		set_current_level(int(current_level.name))
 
 
 func _on_destination_area_all_passengers_left():
-	pass # Replace with function body.
+	$menus/level_win_menu.display()
+
+
+func _on_level_win_menu_continue_pressed():
+	next_level()

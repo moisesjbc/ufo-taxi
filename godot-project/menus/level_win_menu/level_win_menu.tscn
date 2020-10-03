@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/level_win_menu/level_win_menu.gd" type="Script" id=1]
+
+[node name="level_win_menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="container"]
+margin_left = 412.0
+margin_top = 200.0
+margin_right = 612.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="MarginContainer" type="MarginContainer" parent="container/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="container/panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 180.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body_label" type="Label" parent="container/panel/MarginContainer/vbox_container"]
+margin_right = 160.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LEVEL PASSED!"
+align = 1
+valign = 1
+
+[node name="continue_button" type="Button" parent="container/panel/MarginContainer/vbox_container"]
+margin_top = 140.0
+margin_right = 160.0
+margin_bottom = 160.0
+text = "Continue"
+[connection signal="pressed" from="container/panel/MarginContainer/vbox_container/continue_button" to="." method="_on_continue_button_pressed"]

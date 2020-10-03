@@ -12,7 +12,7 @@ signal warning_added
 var nodes = []
 	
 func reset(nodes):
-	self.nodes = nodes
+	self.nodes = nodes.duplicate()
 	player = $player_train
 	player.reset(self)
 	var destination_area = get_node('/root/main/railtrack/destination_area')

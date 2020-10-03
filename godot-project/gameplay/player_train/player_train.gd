@@ -10,6 +10,9 @@ func _ready():
 	set_physics_process(false)
 
 func reset(railtrack):
+	current_node_index = 0
+	next_node_index = 1
+	n_passengers = 0
 	set_physics_process(true)
 	self.railtrack = railtrack
 	position = railtrack.nodes[0]

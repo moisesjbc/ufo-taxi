@@ -11,6 +11,7 @@ func reset(railtrack, n_pickup_areas):
 	global_position = railtrack.nodes[0]
 	passengers_left = 0
 	passengers_goal = n_pickup_areas
+	update_passengers_label()
 
 
 func update_passengers_label():
