@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gameplay/warning_label/warning_label.gd" type="Script" id=1]
+
+[node name="warning_label" type="Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="display_timer" type="Timer" parent="."]
+[connection signal="timeout" from="display_timer" to="." method="_on_display_timer_timeout"]

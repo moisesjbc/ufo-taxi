@@ -13,3 +13,8 @@ func _process(_delta):
 
 func _on_main_game_over():
 	$gui_canvas/game_over_menu.run()
+
+
+
+func _on_railtrack_warning_added(text):
+	$warning_label.set_warning(text)

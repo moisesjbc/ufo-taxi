@@ -1,4 +1,3 @@
-tool
 extends Node2D
 
 
@@ -13,15 +12,17 @@ var nodes = initial_nodes
 var current_state = null
 var current_node = null
 var current_edge = null
+var player = null
 
 signal node_removed
 signal node_added
+signal warning_added
 
 func _ready():
-	var a = [0, 1, 2]
 	nodes = initial_nodes
 	change_state("selection")
-
+	player = get_node('/root/main/railtrack/player_train')
+	
 func change_state(new_state_name):
 	current_state = $states.get_node(new_state_name)
 	current_state.railtrack = self
@@ -112,7 +113,10 @@ func select_current_node():
 		
 func confirm_current_selection():
 	if current_node != null:
-		change_state("node_selected")
+		if current_node:
+			change_state("node_selected")
+		else:
+			warning("You can't move destination")
 	elif current_edge != null:
 		change_state("edge_selected")
 
@@ -127,3 +131,6 @@ func add_node(new_position):
 	nodes.insert(current_edge + 1, to_local(new_position))
 	emit_signal("node_added", current_edge + 1)
 	update()
+
+func warning(text):
+	emit_signal("warning_added", text)
