@@ -35,7 +35,10 @@ func next_level():
 	if current_level != null:
 		#set_current_level(int(current_level.name) + 1)
 		set_current_level(int(current_level.name))
-
+		
+func restart_level():
+	if current_level != null:
+		set_current_level(int(current_level.name))
 
 func _on_destination_area_all_passengers_left():
 	$menus/level_win_menu.display()
@@ -43,3 +46,7 @@ func _on_destination_area_all_passengers_left():
 
 func _on_level_win_menu_continue_pressed():
 	next_level()
+
+
+func _on_restart_level_button_button_down():
+	restart_level()

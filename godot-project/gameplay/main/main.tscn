@@ -87,13 +87,26 @@ __meta__ = {
 
 [node name="pickup_areas" type="Node2D" parent="."]
 
-[node name="menus" type="Node" parent="."]
+[node name="gui" type="Node" parent="."]
 
-[node name="level_win_menu" parent="menus" instance=ExtResource( 7 )]
+[node name="level_win_menu" parent="gui" instance=ExtResource( 7 )]
 visible = false
+
+[node name="restart_level_button" type="Button" parent="gui"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -92.0
+margin_top = -20.0
+text = "Restart level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="node_added" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_added"]
 [connection signal="node_removed" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_removed"]
 [connection signal="warning_added" from="railtrack" to="." method="_on_railtrack_warning_added"]
 [connection signal="all_passengers_left" from="destination_area" to="." method="_on_destination_area_all_passengers_left"]
-[connection signal="continue_pressed" from="menus/level_win_menu" to="." method="_on_level_win_menu_continue_pressed"]
+[connection signal="continue_pressed" from="gui/level_win_menu" to="." method="_on_level_win_menu_continue_pressed"]
+[connection signal="button_down" from="gui/restart_level_button" to="." method="_on_restart_level_button_button_down"]
