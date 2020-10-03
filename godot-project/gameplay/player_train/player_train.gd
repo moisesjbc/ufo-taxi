@@ -4,10 +4,12 @@ var railtrack: Node2D = null
 var current_node_index: int = 0
 var next_node_index: int = 1
 export var speed: int = 200
+var n_passengers: int = 0
 
 func _ready():
 	railtrack = get_parent()
 	position = railtrack.nodes[0]
+	update_passengers_label()
 	
 func change_next_node():
 	# Update current node index
@@ -39,7 +41,8 @@ func _on_railtrack_node_removed(node_index):
 		current_node_index -= 1
 		if current_node_index < 0:
 			current_node_index = len(railtrack.nodes) - 1
-			
+		
+	if 	node_index <= next_node_index:
 		next_node_index -= 1
 		if current_node_index < 0:
 			current_node_index = len(railtrack.nodes) - 1
@@ -48,4 +51,16 @@ func _on_railtrack_node_removed(node_index):
 func _on_railtrack_node_added(node_index):
 	if node_index <= current_node_index:
 		current_node_index = railtrack.get_next_index(current_node_index)
+	if node_index <= next_node_index:
 		next_node_index = railtrack.get_next_index(next_node_index)
+
+func pick_passenger():
+	n_passengers += 1
+	update_passengers_label()
+	
+func leave_passengers():
+	n_passengers = 0
+	update_passengers_label()
+	
+func update_passengers_label():
+	$passengers_label.text = str(n_passengers) + " passenger(s)"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/game_over_menu/game_over_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gameplay/player_train/player_train.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gameplay/pickup_area/pickup_area.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,6 +28,9 @@ position = Vector2( 323.269, 1.12244 )
 
 [node name="player_train" parent="railtrack" instance=ExtResource( 5 )]
 position = Vector2( -323.269, -1.12244 )
+
+[node name="pickup_area" parent="." instance=ExtResource( 6 )]
+position = Vector2( 734.09, 223.37 )
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="node_added" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_added"]
 [connection signal="node_removed" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_removed"]
