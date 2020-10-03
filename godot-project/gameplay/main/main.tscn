@@ -1,30 +1,30 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://main/main.gd" type="Script" id=1]
-[ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=4]
-[ext_resource path="res://gameplay/player_train/player_train.tscn" type="PackedScene" id=5]
-[ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=7]
-[ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=8]
-[ext_resource path="res://main/levels/0.gd" type="Script" id=9]
+[ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
+[ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/main/levels/0.gd" type="Script" id=3]
+[ext_resource path="res://gameplay/player_train/player_train.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="railtrack" parent="." instance=ExtResource( 4 )]
+[node name="railtrack" parent="." instance=ExtResource( 5 )]
 
-[node name="player_train" parent="railtrack" instance=ExtResource( 5 )]
+[node name="player_train" parent="railtrack" instance=ExtResource( 4 )]
 position = Vector2( -323.269, -1.12244 )
 
-[node name="destination_area" parent="." instance=ExtResource( 7 )]
+[node name="destination_area" parent="." instance=ExtResource( 6 )]
 position = Vector2( 383.882, -112.246 )
 
-[node name="warning_label" parent="." instance=ExtResource( 8 )]
+[node name="warning_label" parent="." instance=ExtResource( 2 )]
 visible = false
 
 [node name="levels" type="Node" parent="."]
 
 [node name="0" type="Node2D" parent="levels"]
-script = ExtResource( 9 )
+script = ExtResource( 3 )
 
 [node name="1" type="RichTextLabel" parent="levels/0"]
 visible = false

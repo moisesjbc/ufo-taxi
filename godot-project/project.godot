@@ -16,12 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="godot-project"
-run/main_scene="res://main/main.tscn"
+run/main_scene="res://gameplay/main/main.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-audio_system="*res://globals/audio_system/audio_system.tscn"
 
 [input]
 
