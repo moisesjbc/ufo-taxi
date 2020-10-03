@@ -15,8 +15,10 @@ var current_node = null
 var current_edge = null
 
 signal node_removed
+signal node_added
 
 func _ready():
+	var a = [0, 1, 2]
 	nodes = initial_nodes
 	change_state("selection")
 
@@ -120,3 +122,8 @@ func remove_current_node():
 		emit_signal("node_removed", current_node)
 		current_node = null
 		update()
+		
+func add_node(new_position):
+	nodes.insert(current_edge + 1, to_local(new_position))
+	emit_signal("node_added", current_edge + 1)
+	update()

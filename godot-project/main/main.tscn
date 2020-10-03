@@ -28,4 +28,5 @@ position = Vector2( 323.269, 1.12244 )
 [node name="player_train" parent="railtrack" instance=ExtResource( 5 )]
 position = Vector2( -323.269, -1.12244 )
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
+[connection signal="node_added" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_added"]
 [connection signal="node_removed" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_removed"]

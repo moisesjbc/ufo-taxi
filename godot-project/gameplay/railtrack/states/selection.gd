@@ -17,5 +17,5 @@ func input(event):
 				var closest_edge = railtrack.get_closest_edge(mouse_position, node_index)
 				railtrack.highlight_edge(closest_edge)
 				
-	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		railtrack.confirm_current_selection()

@@ -38,7 +38,7 @@ margin_right = 64.0
 margin_bottom = 44.0
 text = "Cancel"
 
-[node name="edge_selected" type="Node" parent="states"]
+[node name="edge_selected" type="Node2D" parent="states"]
 script = ExtResource( 4 )
 [connection signal="pressed" from="states/node_selected/buttons_container/remove_button" to="states/node_selected" method="_on_remove_button_pressed"]
 [connection signal="pressed" from="states/node_selected/buttons_container/cancel_button" to="states/node_selected" method="_on_cancel_button_pressed"]

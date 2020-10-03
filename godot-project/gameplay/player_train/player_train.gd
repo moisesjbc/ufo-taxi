@@ -43,3 +43,9 @@ func _on_railtrack_node_removed(node_index):
 		next_node_index -= 1
 		if current_node_index < 0:
 			current_node_index = len(railtrack.nodes) - 1
+
+
+func _on_railtrack_node_added(node_index):
+	if node_index <= current_node_index:
+		current_node_index = railtrack.get_next_index(current_node_index)
+		next_node_index = railtrack.get_next_index(next_node_index)
