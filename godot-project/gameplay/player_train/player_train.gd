@@ -7,7 +7,11 @@ export var speed: int = 200
 var n_passengers: int = 0
 
 func _ready():
-	railtrack = get_parent()
+	set_physics_process(false)
+
+func reset(railtrack):
+	set_physics_process(true)
+	self.railtrack = railtrack
 	position = railtrack.nodes[0]
 	update_passengers_label()
 	

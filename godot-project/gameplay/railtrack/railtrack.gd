@@ -1,14 +1,5 @@
 extends Node2D
 
-
-var initial_nodes = [
-	Vector2(150, 150),
-	Vector2(300, 150),
-	Vector2(300, 300),
-	Vector2(150, 300)
-]
-var nodes = initial_nodes
-
 var current_state = null
 var current_node = null
 var current_edge = null
@@ -18,35 +9,41 @@ signal node_removed
 signal node_added
 signal warning_added
 
-func _ready():
-	nodes = initial_nodes
+var nodes = []
+	
+func reset(nodes):
+	self.nodes = nodes
+	player = $player_train
+	player.reset(self)
+	var destination_area = get_node('/root/main/railtrack/destination_area')
 	change_state("selection")
-	player = get_node('/root/main/railtrack/player_train')
+	update()
 	
 func change_state(new_state_name):
 	current_state = $states.get_node(new_state_name)
 	current_state.railtrack = self
-	if current_state.has_method('start'):
+	if current_state and current_state.has_method('start'):
 		current_state.start()
 
 func _physics_process(delta):
-	if current_state.has_method('process'):
+	if current_state and current_state.has_method('process'):
 		current_state.process(delta)
 
 func _input(event):
-	if current_state.has_method('input'):
+	if current_state and current_state.has_method('input'):
 		current_state.input(event)
 		
 func _draw():
-	if current_state.has_method('draw'):
-		current_state.draw()
-	else:
-		for i in range(len(nodes) - 1):
-			draw_line(nodes[i], nodes[i+1], get_edge_color(i), 5)
-		draw_line(nodes[len(nodes) - 1], nodes[0], get_edge_color(len(nodes) - 1), 5)
-		
-		if current_node != null:
-			draw_circle(nodes[current_node], 10, Color.blue)
+	if current_state:
+		if current_state.has_method('draw'):
+			current_state.draw()
+		else:
+			for i in range(len(nodes) - 1):
+				draw_line(nodes[i], nodes[i+1], get_edge_color(i), 5)
+			draw_line(nodes[len(nodes) - 1], nodes[0], get_edge_color(len(nodes) - 1), 5)
+			
+			if current_node != null:
+				draw_circle(nodes[current_node], 10, Color.blue)
 			
 func get_edge_color(edge_index):
 	if edge_index != current_edge:

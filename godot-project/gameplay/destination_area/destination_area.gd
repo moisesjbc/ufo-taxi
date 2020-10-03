@@ -4,9 +4,11 @@ var passengers_goal = 1
 var passengers_left = 0
 var railtrack = null
 
-func _ready():
-	railtrack = get_parent()
+func reset(railtrack, n_pickup_areas):
+	self.railtrack = railtrack
 	global_position = to_global(railtrack.nodes[0])
+	passengers_left = 0
+	passengers_goal = n_pickup_areas
 
 
 func update_passengers_label():
