@@ -15,6 +15,13 @@ func _on_railtrack_warning_added(text):
 
 
 func set_current_level(level_index):
+	if current_level:
+		for child in current_level.get_children():
+			child.visible = false
+
+		if current_level.has_method('end'):
+			current_level.end()
+	
 	current_level = $levels.get_node(str(level_index))
 	$railtrack.reset(current_level.railtrack_nodes)
 	$destination_area.reset($railtrack, 1)
@@ -27,21 +34,23 @@ func set_current_level(level_index):
 		$pickup_areas.add_child(pickup_area)
 		pickup_area.global_position = pickup_area_position
 
+	for child in current_level.get_children():
+		child.visible = true
+
 	if current_level.has_method('start'):
 		current_level.start()
 
 
 func next_level():
-	if current_level != null:
-		#set_current_level(int(current_level.name) + 1)
-		set_current_level(int(current_level.name))
+	if current_level != null and $levels.get_node(str(int(current_level.name) + 1)):
+		set_current_level(int(current_level.name) + 1)
 		
 func restart_level():
 	if current_level != null:
 		set_current_level(int(current_level.name))
 
 func _on_destination_area_all_passengers_left():
-	$menus/level_win_menu.display()
+	$gui/level_win_menu.display()
 
 
 func _on_level_win_menu_continue_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gameplay/main/levels/1.gd" type="Script" id=8]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -76,11 +77,50 @@ margin_top = 446.144
 margin_right = 817.836
 margin_bottom = 495.144
 bbcode_text = "4. Maybe if you click
-on this node
+on this vertex
 and remove it..."
 text = "4. Maybe if you click
-on this node
+on this vertex
 and remove it..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Node2D" parent="levels"]
+script = ExtResource( 8 )
+
+[node name="1" type="RichTextLabel" parent="levels/1"]
+visible = false
+margin_left = 477.0
+margin_top = 244.0
+margin_right = 606.0
+margin_bottom = 281.0
+text = "1. You can also add 
+new vertices"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="RichTextLabel" parent="levels/1"]
+visible = false
+margin_left = 522.0
+margin_top = 328.0
+margin_right = 664.0
+margin_bottom = 349.0
+text = "2. Click on this edge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="RichTextLabel" parent="levels/1"]
+visible = false
+margin_left = 840.0
+margin_top = 214.0
+margin_right = 1013.0
+margin_bottom = 269.0
+text = "3. Click again close to
+this pickup area to
+create the new vertex"
 __meta__ = {
 "_edit_use_anchors_": false
 }
