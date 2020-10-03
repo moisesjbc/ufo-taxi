@@ -62,7 +62,7 @@ func get_closest_node(mouse_position):
 
 	return closest_node_index
 	
-func get_closest_edge(mouse_position, ref_node):
+func get_closest_edge(mouse_position, ref_node, max_distance):
 	var next_node = nodes[get_next_index(ref_node)]
 	var previous_node = nodes[get_previous_index(ref_node)]
 	var current_node = nodes[ref_node]
@@ -76,9 +76,12 @@ func get_closest_edge(mouse_position, ref_node):
 	var distance_to_previous_pos = mouse_position.distance_to(previous_pos)
 	
 	if distance_to_next_pos < distance_to_previous_pos:
-		return ref_node
+		if distance_to_next_pos < max_distance:
+			return ref_node
 	else:
-		return get_previous_index(ref_node)
+		if distance_to_previous_pos < max_distance:
+			return get_previous_index(ref_node)
+	return null
 
 func get_previous_index(current_index):
 	if current_index > 0:

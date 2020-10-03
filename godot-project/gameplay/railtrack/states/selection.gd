@@ -2,6 +2,7 @@ extends Node
 
 var railtrack = null
 export var node_selection_distance: int = 50
+export var edge_selection_distance: int = 100
 
 func input(event):
 	if event is InputEventMouseMotion:
@@ -14,7 +15,7 @@ func input(event):
 			else:
 				railtrack.highlight_node(null)
 				
-				var closest_edge = railtrack.get_closest_edge(mouse_position, node_index)
+				var closest_edge = railtrack.get_closest_edge(mouse_position, node_index, edge_selection_distance)
 				railtrack.highlight_edge(closest_edge)
 				
 	elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
