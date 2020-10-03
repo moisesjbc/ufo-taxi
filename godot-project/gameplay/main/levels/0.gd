@@ -8,5 +8,5 @@ var railtrack_nodes = [
 ]
 
 var pickup_area_positions = [
-	Vector2(550, 300)
+	Vector2(525, 300)
 ]

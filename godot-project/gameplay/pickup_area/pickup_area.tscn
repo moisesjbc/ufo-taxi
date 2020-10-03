@@ -4,7 +4,7 @@
 [ext_resource path="res://gameplay/pickup_area/pickup_area.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 52.1883
+radius = 32.1669
 
 [node name="pickup_area" type="Area2D"]
 script = ExtResource( 2 )
