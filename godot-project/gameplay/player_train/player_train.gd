@@ -32,3 +32,14 @@ func _physics_process(delta):
 		# change to next node.
 		move_and_collide(velocity.normalized() * position.distance_to(railtrack.nodes[next_node_index]))
 		change_next_node()
+
+
+func _on_railtrack_node_removed(node_index):
+	if node_index <= current_node_index:
+		current_node_index -= 1
+		if current_node_index < 0:
+			current_node_index = len(railtrack.nodes) - 1
+			
+		next_node_index -= 1
+		if current_node_index < 0:
+			current_node_index = len(railtrack.nodes) - 1

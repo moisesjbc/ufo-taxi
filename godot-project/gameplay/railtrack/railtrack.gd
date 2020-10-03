@@ -2,15 +2,18 @@ tool
 extends Node2D
 
 
-var nodes = [
+var initial_nodes = [
 	Vector2(150, 150),
+	Vector2(300, 150),
 	Vector2(300, 300),
-	Vector2(200, 400),
-	Vector2(125, 500)
+	Vector2(150, 300)
 ]
+var nodes = initial_nodes
 
 var current_state = null
 var current_node = null
+
+signal node_removed
 
 func _ready():
 	change_state("selection")
@@ -66,8 +69,16 @@ func get_next_index(current_index):
 func highlight_node(node_index):
 	if node_index != current_node:
 		current_node = node_index
-	update()
+		update()
 
 func select_current_node():
 	if current_node != null:
-		print("Selected!")
+		change_state("node_selected")
+
+func remove_current_node():
+	if current_node != null:
+		nodes.remove(current_node)
+		emit_signal("node_removed", current_node)
+		current_node = null
+		update()
+		
