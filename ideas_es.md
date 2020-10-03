@@ -26,7 +26,7 @@ Stuck in a loop
 
 ## Objetivo
 
-El personaje del jugador itera siguiendo un polígono donde uno de las aristas es la meta. El objetivo en cada nivel es pasar N veces por la meta, pero cada vez que el personaje pasa por ella, pierde una carga. Hay N cargas sueltas por el mapa, pero están fuera del polígono original, así que el jugador tiene que alterar dicho polígono para recolectar las cargas antes de quedarse sin energía.
+El personaje del jugador itera siguiendo un polígono donde uno de las aristas es la estación de destino. El objetivo en cada nivel es recoger a todos los pasajeros repartidos por el mapa con un conjunto limitado de acciones. El jugador debe alterar dicho polígono para recolectar a los pasajeros y llevarlos al destino.
 
 ## Mecánicas
 
