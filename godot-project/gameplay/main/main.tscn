@@ -143,6 +143,17 @@ __meta__ = {
 [node name="2" type="Node2D" parent="levels"]
 script = ExtResource( 9 )
 
+[node name="1" type="Label" parent="levels/2"]
+margin_left = 6.91144
+margin_top = 703.044
+margin_right = 346.911
+margin_bottom = 751.044
+text = "1. From now on, all levels will have a maximum number of
+actions (add / remove vertex) allowed ->"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="pickup_areas" type="Node2D" parent="."]
 
 [node name="gui" type="Node" parent="."]

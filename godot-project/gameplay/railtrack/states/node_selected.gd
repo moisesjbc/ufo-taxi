@@ -4,7 +4,11 @@ var railtrack = null
 
 func start():
 	$buttons_container.visible = true
-	$buttons_container.set_global_position(railtrack.to_global(railtrack.nodes[railtrack.current_node]) + Vector2(0, 15))
+	var vertex_pos = railtrack.to_global(railtrack.nodes[railtrack.current_node])
+	if vertex_pos.y < 600:
+		$buttons_container.set_global_position(vertex_pos + Vector2(0, 15))
+	else:
+		$buttons_container.set_global_position(vertex_pos + Vector2(0, -80))
 
 
 func _on_remove_button_pressed():
