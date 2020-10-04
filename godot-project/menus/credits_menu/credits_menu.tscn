@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/credits_menu/credits_menu.gd" type="Script" id=1]
+
+[node name="credits_menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="container"]
+margin_left = 111.0
+margin_top = 82.0
+margin_right = 911.0
+margin_bottom = 682.0
+rect_min_size = Vector2( 800, 600 )
+
+[node name="margin_container" type="MarginContainer" parent="container/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="container/panel/margin_container"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 780.0
+margin_bottom = 662.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="container/panel/margin_container/vbox_container"]
+margin_right = 760.0
+margin_bottom = 14.0
+text = "CREDITS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="RichTextLabel" parent="container/panel/margin_container/vbox_container"]
+margin_top = 18.0
+margin_right = 760.0
+margin_bottom = 618.0
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[center]
+[color=green]Idea, programming, graphics[/color]
+
+[color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
+
+
+[color=green]Fonts[/color]
+
+[color=white]Ubuntu font - [url=https://design.ubuntu.com/font/]https://design.ubuntu.com/font/[/url][/color]
+
+
+[color=green]Software used[/color]
+
+[color=white]Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url][/color]
+[color=white]Gimp - [url=https://www.gimp.org/]https://www.gimp.org/[/url][/color]
+[/center]"
+text = "
+Idea, programming, graphics
+
+Moisés J. Bonilla Caraballo (moisesjbc) - https://moisesjose.com
+
+
+Fonts
+
+Ubuntu font - https://design.ubuntu.com/font/
+
+
+Software used
+
+Godot engine - https://godotengine.org/
+Gimp - https://www.gimp.org/
+"
+
+[node name="return_button" type="Button" parent="container/panel/margin_container/vbox_container"]
+margin_top = 622.0
+margin_right = 760.0
+margin_bottom = 642.0
+text = "Return to main menu"
+[connection signal="meta_clicked" from="container/panel/margin_container/vbox_container/body" to="." method="_on_body_meta_clicked"]
+[connection signal="pressed" from="container/panel/margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]
