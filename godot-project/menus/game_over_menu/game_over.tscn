@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/game_over_menu/game_over.gd" type="Script" id=1]
+
+[node name="game_over" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center_container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="panel" type="Panel" parent="center_container"]
+margin_left = 412.0
+margin_top = 282.0
+margin_right = 612.0
+margin_bottom = 482.0
+rect_min_size = Vector2( 200, 200 )
+
+[node name="margin_container" type="MarginContainer" parent="center_container/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="center_container/panel/margin_container"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 180.0
+margin_bottom = 180.0
+
+[node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
+margin_right = 160.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="restart_level_button" type="Button" parent="center_container/panel/margin_container/vbox_container"]
+pause_mode = 2
+margin_top = 140.0
+margin_right = 160.0
+margin_bottom = 160.0
+text = "Restart level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="center_container/panel/margin_container/vbox_container/restart_level_button" to="." method="_on_restart_level_button_pressed"]

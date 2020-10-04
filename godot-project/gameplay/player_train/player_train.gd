@@ -6,6 +6,8 @@ var next_node_index: int = 1
 export var speed: int = 200
 var n_passengers: int = 0
 
+signal game_over
+
 func _ready():
 	set_physics_process(false)
 
@@ -72,3 +74,6 @@ func leave_passengers():
 	
 func update_passengers_label():
 	$passengers_label.set_text(str(n_passengers))
+
+func die():
+	emit_signal("game_over")

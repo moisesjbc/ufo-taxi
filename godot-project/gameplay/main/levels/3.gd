@@ -4,8 +4,8 @@ var railtrack_nodes = [
 	Vector2(200, 200),
 	Vector2(900, 200),
 	Vector2(900, 500),
-	Vector2(700, 600),
-	Vector2(400, 600),
+	Vector2(700, 650),
+	Vector2(400, 650),
 	Vector2(200, 500)
 ]
 

@@ -69,3 +69,12 @@ func _on_restart_level_button_button_down():
 
 func _on_railtrack_n_remaining_actions_updated(n_remaining_actions):
 	$gui/remaining_actions_label.text = "Remaining actions: " + str(n_remaining_actions)
+
+
+func _on_player_train_game_over():
+	print("on game over!")
+	$gui/game_over.display()
+
+
+func _on_game_over_restart_level_requested():
+	restart_level()

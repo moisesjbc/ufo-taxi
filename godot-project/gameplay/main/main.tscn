@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://gameplay/main/levels/2.gd" type="Script" id=9]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://gameplay/main/levels/3.gd" type="Script" id=11]
+[ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -195,11 +196,16 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="game_over" parent="gui" instance=ExtResource( 12 )]
+visible = false
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="n_remaining_actions_updated" from="railtrack" to="." method="_on_railtrack_n_remaining_actions_updated"]
 [connection signal="node_added" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_added"]
 [connection signal="node_removed" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_removed"]
 [connection signal="warning_added" from="railtrack" to="." method="_on_railtrack_warning_added"]
+[connection signal="game_over" from="railtrack/player_train" to="." method="_on_player_train_game_over"]
 [connection signal="all_passengers_left" from="destination_area" to="." method="_on_destination_area_all_passengers_left"]
 [connection signal="continue_pressed" from="gui/level_win_menu" to="." method="_on_level_win_menu_continue_pressed"]
 [connection signal="button_down" from="gui/restart_level_button" to="." method="_on_restart_level_button_button_down"]
+[connection signal="restart_level_requested" from="gui/game_over" to="." method="_on_game_over_restart_level_requested"]
