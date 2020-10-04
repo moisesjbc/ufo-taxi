@@ -59,7 +59,7 @@ margin_bottom = 167.0
 bbcode_text = "<-
 2. You have to take here as many passengers as indicated on the right number"
 text = "<-
-2. You have to take here as many passengers as indicated on the right number"
+2. You have to take here as many wos  as indicated on the right number"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -68,25 +68,24 @@ __meta__ = {
 visible = false
 margin_left = 688.0
 margin_top = 346.0
-margin_right = 894.0
+margin_right = 961.0
 margin_bottom = 522.0
 text = "<- 
 3. Cows must be 
-picked at 
-these farms"
+picked at these farms"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="4" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 727.0
-margin_top = 623.0
-margin_right = 899.0
-margin_bottom = 717.0
-text = "4. Maybe if you click ^
-on this vertex
-and remove it... "
+margin_left = 499.941
+margin_top = 623.059
+margin_right = 927.941
+margin_bottom = 718.059
+text = "4. Maybe if you click on this vertex and remove it... ^
+(It can't be removed if the spaceship is 
+traveling from / to it!)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
