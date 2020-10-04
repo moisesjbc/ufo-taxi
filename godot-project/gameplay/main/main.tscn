@@ -160,6 +160,18 @@ __meta__ = {
 [node name="3" type="Node2D" parent="levels"]
 script = ExtResource( 11 )
 
+[node name="1" type="RichTextLabel" parent="levels/3"]
+margin_left = 321.017
+margin_top = 669.581
+margin_right = 471.017
+margin_bottom = 691.581
+bbcode_enabled = true
+bbcode_text = "[color=red]1. Avoid these! ->[/color]"
+text = "1. Avoid these! ->"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="pickup_areas" type="Node2D" parent="."]
 
 [node name="area_51_areas" type="Node2D" parent="."]
