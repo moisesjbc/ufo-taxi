@@ -59,7 +59,7 @@ margin_bottom = 167.0
 bbcode_text = "<-
 2. You have to take here as many passengers as indicated on the right number"
 text = "<-
-2. You have to take here as many wos  as indicated on the right number"
+2. You have to take here as many passengers as indicated on the right number"
 __meta__ = {
 "_edit_use_anchors_": false
 }

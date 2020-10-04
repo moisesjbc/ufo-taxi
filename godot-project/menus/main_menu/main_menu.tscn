@@ -33,7 +33,7 @@ __meta__ = {
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 924.0
-margin_bottom = 687.0
+margin_bottom = 676.0
 custom_constants/separation = 400
 
 [node name="title_container" type="CenterContainer" parent="margin_container/vbox_container"]
@@ -60,7 +60,7 @@ align = 1
 margin_top = 72.0
 margin_right = 264.0
 margin_bottom = 86.0
-text = "v0.1"
+text = "v0.2"
 align = 1
 
 [node name="Sprite" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer"]
