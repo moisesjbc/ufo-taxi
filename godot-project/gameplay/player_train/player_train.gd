@@ -32,6 +32,7 @@ func change_next_node():
 func _physics_process(delta):
 	# Compute velocity
 	var velocity = railtrack.nodes[next_node_index] - railtrack.nodes[current_node_index]
+	$sprite_body.rotate(0.01)
 
 	if position.distance_to(railtrack.nodes[next_node_index]) > speed * delta:
 		# Train is still far to next node. Advance.
