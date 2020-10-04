@@ -75,7 +75,6 @@ func _on_railtrack_n_remaining_actions_updated(n_remaining_actions):
 
 
 func _on_player_train_game_over():
-	print("on game over!")
 	$gui/game_over.display()
 
 
