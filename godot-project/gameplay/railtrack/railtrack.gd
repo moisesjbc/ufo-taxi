@@ -52,7 +52,7 @@ func _draw():
 			
 func get_edge_color(edge_index):
 	if edge_index != current_edge:
-		return Color.red
+		return Color.aquamarine
 	else:
 		return Color.blue
 
