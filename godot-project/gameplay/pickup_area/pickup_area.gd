@@ -10,6 +10,7 @@ func _on_pickup_area_body_entered(body):
 		has_passengers = false
 		update_label()
 		body.pick_passenger()
+		$pickup_sound.play()
 
 func update_label():
 	if has_passengers:
