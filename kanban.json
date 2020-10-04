@@ -1,0 +1,202 @@
+{
+  "name": "ludum-dare-47",
+  "numberOfColumns": 3,
+  "columns": [
+    {
+      "name": "ToDo",
+      "cards": [
+        {
+          "name": "Copia de seguridad de Kanban",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Actualizar versión (título ventana y menú)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "[Split] Gameplay - añadir restricciones de número de acciones",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Gameplay",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Gráficos",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Entrevar v0.1",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Revisar duda sobre base-code (marcadores)",
+          "details": "- https://ldjam.com/events/ludum-dare/47/$222627/$223265\n- https://twitter.com/moises_jbc/status/1312316584057286656",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Split] Menús",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Música y sonido",
+          "details": "",
+          "color": "FCC7FC"
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "name": "On going",
+      "cards": [],
+      "settings": {
+        "limit": 2
+      }
+    },
+    {
+      "name": "Done",
+      "cards": [
+        {
+          "name": "Eliminar icono de Godot y poner el del UFO",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir fuente y colocar textos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sprite de vaca (contadores)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sprite festival",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sprite granja",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sprite animado de nave",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir fondo verde",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir distancia máxima para seleccionar vértice",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir distancia máxima para crear nuevo vértice",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir fase 1",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir botón de resetear",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir fase 0",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir restricción de no dividir arista en uso",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir restricción de no eliminar punto en uso",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir restricción de no mover punto de dejar a la gente",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Implementar destino (y soltar pasajeros)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Implementar contador de pasajeros",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Implementar pickup points",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Permitir dividir una arista",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Permitir seleccionar la arista más cercana",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Permitir eliminar nodo (sin check de uso)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Permitir seleccionar el nodo más cercano",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir ideas sobre aero-train y recoger pasajeros a ideas_es.md",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Personaje sigue el bucle continuamente",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Dibujar triángulo simple",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Lluvia de ideas",
+          "details": "",
+          "color": "FAFCD2"
+        }
+      ],
+      "settings": {}
+    }
+  ],
+  "archived": [],
+  "settings": {}
+}
