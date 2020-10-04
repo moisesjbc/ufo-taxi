@@ -35,4 +35,5 @@ ui_pause={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+environment/default_clear_color=Color( 0.560784, 0.737255, 0.270588, 1 )
 environment/default_environment="res://default_env.tres"
