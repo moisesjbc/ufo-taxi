@@ -40,7 +40,7 @@ __meta__ = {
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 780.0
-margin_bottom = 662.0
+margin_bottom = 580.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -58,7 +58,7 @@ __meta__ = {
 [node name="body" type="RichTextLabel" parent="container/panel/margin_container/vbox_container"]
 margin_top = 18.0
 margin_right = 760.0
-margin_bottom = 618.0
+margin_bottom = 536.0
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[center]
@@ -95,9 +95,9 @@ Gimp - https://www.gimp.org/
 "
 
 [node name="return_button" type="Button" parent="container/panel/margin_container/vbox_container"]
-margin_top = 622.0
+margin_top = 540.0
 margin_right = 760.0
-margin_bottom = 642.0
+margin_bottom = 560.0
 text = "Return to main menu"
 [connection signal="meta_clicked" from="container/panel/margin_container/vbox_container/body" to="." method="_on_body_meta_clicked"]
 [connection signal="pressed" from="container/panel/margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]

@@ -6,7 +6,7 @@ var src_position = null
 var dst_position = null
 var middle_point = null
 var event_mouse_position = null
-var max_distance = 200
+var max_distance = 100
 var distance_to_middle_point = 0
 
 

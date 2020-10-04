@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gameplay/main/levels/1.gd" type="Script" id=8]
+[ext_resource path="res://gameplay/main/levels/2.gd" type="Script" id=9]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -84,6 +85,7 @@ __meta__ = {
 }
 
 [node name="5" type="RichTextLabel" parent="levels/0"]
+visible = false
 margin_left = 457.0
 margin_top = 732.0
 margin_right = 858.0
@@ -132,6 +134,9 @@ the new vertex"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="2" type="Node2D" parent="levels"]
+script = ExtResource( 9 )
 
 [node name="pickup_areas" type="Node2D" parent="."]
 
