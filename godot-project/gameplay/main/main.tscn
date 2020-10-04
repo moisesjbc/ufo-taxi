@@ -161,6 +161,7 @@ __meta__ = {
 script = ExtResource( 11 )
 
 [node name="1" type="RichTextLabel" parent="levels/3"]
+visible = false
 margin_left = 321.017
 margin_top = 669.581
 margin_right = 471.017
