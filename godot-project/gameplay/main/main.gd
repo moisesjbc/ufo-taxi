@@ -7,7 +7,7 @@ onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.
 
 
 func _ready():
-	set_current_level(0)
+	set_current_level(2)
 
 
 func _on_railtrack_warning_added(text):
@@ -23,8 +23,9 @@ func set_current_level(level_index):
 			current_level.end()
 	
 	current_level = $levels.get_node(str(level_index))
-	$railtrack.reset(current_level.railtrack_nodes)
+	$railtrack.reset(current_level.railtrack_nodes, current_level.n_remaining_actions)
 	$destination_area.reset($railtrack, 1)
+	$gui/remaining_actions_label.visible = (current_level.n_remaining_actions != null)
 	
 	for pickup_area in $pickup_areas.get_children():
 		pickup_area.queue_free()
@@ -59,3 +60,7 @@ func _on_level_win_menu_continue_pressed():
 
 func _on_restart_level_button_button_down():
 	restart_level()
+
+
+func _on_railtrack_n_remaining_actions_updated(n_remaining_actions):
+	$gui/remaining_actions_label.text = "Remaining actions: " + str(n_remaining_actions)

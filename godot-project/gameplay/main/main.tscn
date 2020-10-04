@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gameplay/main/levels/1.gd" type="Script" id=8]
 [ext_resource path="res://gameplay/main/levels/2.gd" type="Script" id=9]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 10 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -158,7 +163,21 @@ text = "Restart level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="remaining_actions_label" type="Label" parent="gui"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -43.0
+margin_bottom = -9.0
+custom_fonts/font = SubResource( 1 )
+text = "Remaining actions: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
+[connection signal="n_remaining_actions_updated" from="railtrack" to="." method="_on_railtrack_n_remaining_actions_updated"]
 [connection signal="node_added" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_added"]
 [connection signal="node_removed" from="railtrack" to="railtrack/player_train" method="_on_railtrack_node_removed"]
 [connection signal="warning_added" from="railtrack" to="." method="_on_railtrack_warning_added"]

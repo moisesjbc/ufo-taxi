@@ -8,14 +8,19 @@ var player = null
 signal node_removed
 signal node_added
 signal warning_added
+signal n_remaining_actions_updated
+
+var n_remaining_actions = null
 
 var nodes = []
 	
-func reset(nodes):
+func reset(nodes, n_remaining_actions):
 	self.nodes = nodes.duplicate()
+	self.n_remaining_actions = n_remaining_actions
 	player = $player_train
 	player.reset(self)
 	var destination_area = get_node('/root/main/railtrack/destination_area')
+	emit_signal("n_remaining_actions_updated", n_remaining_actions)
 	change_state("selection")
 	update()
 	
@@ -114,11 +119,18 @@ func select_current_node():
 func confirm_current_selection():
 	if current_node != null:
 		if current_node:
-			change_state("node_selected")
+			if n_remaining_actions != 0:
+				change_state("node_selected")
+			else:
+				warning("No actions remaining!")
 		else:
 			warning("You can't move destination")
+				
 	elif current_edge != null:
-		change_state("edge_selected")
+		if n_remaining_actions != 0:
+			change_state("edge_selected")
+		else:
+			warning("No actions remaining!")
 
 func remove_current_node():
 	if current_node != null:
@@ -126,6 +138,7 @@ func remove_current_node():
 			nodes.remove(current_node)
 			emit_signal("node_removed", current_node)
 			current_node = null
+			consume_action()
 			update()
 		else:
 			warning('Node in use!')
@@ -134,9 +147,15 @@ func add_node(new_position):
 	if current_edge != player.current_node_index:
 		nodes.insert(current_edge + 1, to_local(new_position))
 		emit_signal("node_added", current_edge + 1)
+		consume_action()
 		update()
 	else:
 		warning('Edge in use!')
+		
+func consume_action():
+	if n_remaining_actions != null:
+		n_remaining_actions -= 1
+		emit_signal("n_remaining_actions_updated", n_remaining_actions)
 
 func warning(text):
 	emit_signal("warning_added", text)

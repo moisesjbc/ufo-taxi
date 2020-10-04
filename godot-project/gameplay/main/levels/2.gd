@@ -16,3 +16,5 @@ var pickup_area_positions = [
 	Vector2(500, 470)
 ]
 
+# null = Unlimited actions
+var n_remaining_actions = 2

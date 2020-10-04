@@ -10,3 +10,6 @@ var railtrack_nodes = [
 var pickup_area_positions = [
 	Vector2(600, 375)
 ]
+
+# null = Unlimited actions
+var n_remaining_actions = null
