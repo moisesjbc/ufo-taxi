@@ -75,9 +75,11 @@ bbcode_text = "[center]
 
 [color=green]Software used[/color]
 
-[color=white]Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url][/color]
-[color=white]Gimp - [url=https://www.gimp.org/]https://www.gimp.org/[/url][/color]
-[color=sfxr]sfxr - [url=http://www.drpetter.se/project_sfxr.html]http://www.drpetter.se/project_sfxr.html[/url][/color]
+[color=white]Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url]
+Gimp - [url=https://www.gimp.org/]https://www.gimp.org/[/url]
+sfxr - [url=http://www.drpetter.se/project_sfxr.html]http://www.drpetter.se/project_sfxr.html[/url]
+LMMS - [url=https://lmms.io]https://lmms.io[/url]
+[/color]
 
 [color=white]Made for  Ludum Dare #47 - [url=https://ldjam.com/]https://ldjam.com/[/url]
 (Theme: \"Stuck in a loop\")[/color]
@@ -99,6 +101,8 @@ Software used
 Godot engine - https://godotengine.org/
 Gimp - https://www.gimp.org/
 sfxr - http://www.drpetter.se/project_sfxr.html
+LMMS - https://lmms.io
+
 
 Made for  Ludum Dare #47 - https://ldjam.com/
 (Theme: \"Stuck in a loop\")

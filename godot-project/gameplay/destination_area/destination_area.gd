@@ -19,7 +19,8 @@ func update_passengers_label():
 
 
 func _on_destination_area_body_entered(body):
-	if body.name == 'player':
+	if body.name == 'player' and body.n_passengers:
+		$leaving_cow_audio.play()
 		passengers_left += body.n_passengers
 		body.leave_passengers()
 		update_passengers_label()

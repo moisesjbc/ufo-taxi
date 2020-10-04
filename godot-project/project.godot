@@ -19,6 +19,10 @@ config/name="UFO taxi! - v0.1"
 run/main_scene="res://menus/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Music="*res://music/music.tscn"
+
 [display]
 
 window/size/height=764
