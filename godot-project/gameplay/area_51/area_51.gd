@@ -7,3 +7,4 @@ func _on_area_51_body_entered(body):
 	# for avoiding killing the player at the begining ;-)
 	if $cooldown_timer.time_left <= 0 and body.name == 'player':
 		body.die()
+		$ufo_explosion_sound.play()
