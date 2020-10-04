@@ -2,10 +2,24 @@
 
 [ext_resource path="res://gameplay/warning_label/warning_label.gd" type="Script" id=1]
 
-[node name="warning_label" type="Label"]
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="warning_label" type="Node2D"]
+visible = false
+z_index = 2
 script = ExtResource( 1 )
+
+[node name="color_rect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 29.0
+color = Color( 0.682353, 0.101961, 0.101961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="color_rect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
