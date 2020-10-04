@@ -8,7 +8,7 @@ onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
 
 func _ready():
-	set_current_level(3)
+	set_current_level(0)
 
 
 func _on_railtrack_warning_added(text):

@@ -6,7 +6,7 @@ func _ready():
 	update_label()
 
 func _on_pickup_area_body_entered(body):
-	if body.name == 'player_train' and has_passengers:
+	if body.name == 'player' and has_passengers:
 		has_passengers = false
 		update_label()
 		body.pick_passenger()

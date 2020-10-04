@@ -17,7 +17,7 @@ var nodes = []
 func reset(nodes, n_remaining_actions):
 	self.nodes = nodes.duplicate()
 	self.n_remaining_actions = n_remaining_actions
-	player = $player_train
+	player = $player
 	player.reset(self)
 	var destination_area = get_node('/root/main/railtrack/destination_area')
 	emit_signal("n_remaining_actions_updated", n_remaining_actions)

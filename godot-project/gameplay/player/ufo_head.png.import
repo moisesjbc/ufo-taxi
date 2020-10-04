@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ufo_head.png-4035154039394c6aa41a0ea71cf8f248.stex"
+path="res://.import/ufo_head.png-ebc5dcf2d8bcb28d52fcca0bb9c33ea2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay/player_train/ufo_head.png"
-dest_files=[ "res://.import/ufo_head.png-4035154039394c6aa41a0ea71cf8f248.stex" ]
+source_file="res://gameplay/player/ufo_head.png"
+dest_files=[ "res://.import/ufo_head.png-ebc5dcf2d8bcb28d52fcca0bb9c33ea2.stex" ]
 
 [params]
 
