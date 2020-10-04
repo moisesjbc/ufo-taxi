@@ -7,7 +7,7 @@ onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.
 
 
 func _ready():
-	set_current_level(2)
+	set_current_level(3)
 
 
 func _on_railtrack_warning_added(text):

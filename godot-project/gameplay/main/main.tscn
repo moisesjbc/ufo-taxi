@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://gameplay/main/levels/1.gd" type="Script" id=8]
 [ext_resource path="res://gameplay/main/levels/2.gd" type="Script" id=9]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://gameplay/main/levels/3.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -144,6 +145,7 @@ __meta__ = {
 script = ExtResource( 9 )
 
 [node name="1" type="Label" parent="levels/2"]
+visible = false
 margin_left = 6.91144
 margin_top = 703.044
 margin_right = 346.911
@@ -153,6 +155,9 @@ actions (add / remove vertex) allowed ->"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="3" type="Node2D" parent="levels"]
+script = ExtResource( 11 )
 
 [node name="pickup_areas" type="Node2D" parent="."]
 
@@ -176,6 +181,7 @@ __meta__ = {
 }
 
 [node name="remaining_actions_label" type="Label" parent="gui"]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
