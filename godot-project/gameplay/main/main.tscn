@@ -31,58 +31,64 @@ script = ExtResource( 3 )
 
 [node name="1" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 124.919
-margin_top = 76.6529
-margin_right = 268.919
-margin_bottom = 114.653
-bbcode_text = "1. This is the 
-destination point"
+margin_left = 45.0
+margin_top = 95.0
+margin_right = 289.0
+margin_bottom = 177.0
 text = "1. This is the 
-destination point"
+destination point 
+THE COW FESTIVAL! ->"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="2" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 341.431
-margin_top = 138.266
-margin_right = 571.431
-margin_bottom = 315.266
-bbcode_text = "2. You have to take here as many passengers as indicated on the right number"
-text = "2. You have to take here as many passengers as indicated on the right number"
+margin_left = 385.0
+margin_top = 46.0
+margin_right = 628.0
+margin_bottom = 167.0
+bbcode_text = "<-
+2. You have to take here as many passengers as indicated on the right number"
+text = "<-
+2. You have to take here as many passengers as indicated on the right number"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="3" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 514.29
-margin_top = 345.921
-margin_right = 744.29
-margin_bottom = 522.921
-bbcode_text = "3. You have to take 
-passengers from 
-these pickup areas"
-text = "3. You have to take 
-passengers from 
-these pickup areas"
+margin_left = 688.0
+margin_top = 346.0
+margin_right = 894.0
+margin_bottom = 522.0
+text = "<- 
+3. Cows must be 
+picked at 
+these farms"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="4" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 649.836
-margin_top = 446.144
-margin_right = 817.836
-margin_bottom = 495.144
-bbcode_text = "4. Maybe if you click
+margin_left = 727.0
+margin_top = 623.0
+margin_right = 899.0
+margin_bottom = 717.0
+text = "4. Maybe if you click ^
 on this vertex
-and remove it..."
-text = "4. Maybe if you click
-on this vertex
-and remove it..."
+and remove it... "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="RichTextLabel" parent="levels/0"]
+margin_left = 457.0
+margin_top = 732.0
+margin_right = 858.0
+margin_bottom = 824.0
+text = "5. You can always restart the level by cliking here ->"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,36 +98,37 @@ script = ExtResource( 8 )
 
 [node name="1" type="RichTextLabel" parent="levels/1"]
 visible = false
-margin_left = 477.0
-margin_top = 244.0
-margin_right = 606.0
-margin_bottom = 281.0
+margin_left = 431.811
+margin_top = 336.298
+margin_right = 603.811
+margin_bottom = 399.298
 text = "1. You can also add 
-new vertices"
+new vertices too"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="2" type="RichTextLabel" parent="levels/1"]
 visible = false
-margin_left = 522.0
-margin_top = 328.0
-margin_right = 664.0
-margin_bottom = 349.0
-text = "2. Click on this edge"
+margin_left = 474.406
+margin_top = 432.865
+margin_right = 722.406
+margin_bottom = 453.865
+text = "2. Click on this edge ->"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="3" type="RichTextLabel" parent="levels/1"]
 visible = false
-margin_left = 840.0
-margin_top = 214.0
-margin_right = 1013.0
-margin_bottom = 269.0
-text = "3. Click again close to
-this pickup area to
-create the new vertex"
+margin_left = 840.729
+margin_top = 265.027
+margin_right = 1013.73
+margin_bottom = 360.027
+text = "<- 
+3. Click again close to
+this farm  to create 
+the new vertex"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -138,8 +145,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -92.0
-margin_top = -20.0
+margin_left = -126.487
+margin_top = -35.4597
+margin_right = -34.4871
+margin_bottom = -15.4597
 text = "Restart level"
 __meta__ = {
 "_edit_use_anchors_": false

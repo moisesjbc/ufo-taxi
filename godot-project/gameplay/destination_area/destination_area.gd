@@ -15,7 +15,7 @@ func reset(railtrack, n_pickup_areas):
 
 
 func update_passengers_label():
-	$passengers_label.text = str(passengers_left) + ' / ' + str(passengers_goal)
+	$passengers_label.set_text(str(passengers_left) + ' / ' + str(passengers_goal))
 
 
 func _on_destination_area_body_entered(body):

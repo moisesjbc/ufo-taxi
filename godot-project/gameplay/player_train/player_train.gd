@@ -71,4 +71,4 @@ func leave_passengers():
 	update_passengers_label()
 	
 func update_passengers_label():
-	$passengers_label.text = str(n_passengers) + " passenger(s)"
+	$passengers_label.set_text(str(n_passengers))

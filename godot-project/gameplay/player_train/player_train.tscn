@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gameplay/player_train/player_train.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/player_train/ufo_body.png" type="Texture" id=2]
 [ext_resource path="res://gameplay/player_train/ufo_head.png" type="Texture" id=3]
+[ext_resource path="res://gameplay/cow_label/cow_counter.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 39.3773
@@ -20,11 +21,8 @@ texture = ExtResource( 3 )
 position = Vector2( 1.47157, 0.840897 )
 shape = SubResource( 1 )
 
-[node name="passengers_label" type="Label" parent="."]
-margin_left = -52.0
-margin_top = -54.0
-margin_right = 52.0
-margin_bottom = -40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="passengers_label" parent="." instance=ExtResource( 4 )]
+margin_left = 0.280609
+margin_top = -70.1539
+margin_right = 0.280609
+margin_bottom = -70.1539
