@@ -161,6 +161,8 @@ script = ExtResource( 11 )
 
 [node name="pickup_areas" type="Node2D" parent="."]
 
+[node name="area_51_areas" type="Node2D" parent="."]
+
 [node name="gui" type="Node" parent="."]
 
 [node name="level_win_menu" parent="gui" instance=ExtResource( 7 )]

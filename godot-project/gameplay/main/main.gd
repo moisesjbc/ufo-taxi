@@ -4,6 +4,7 @@ signal game_over
 
 var current_level = null
 onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.tscn")
+onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
 
 func _ready():
@@ -24,16 +25,11 @@ func set_current_level(level_index):
 	
 	current_level = $levels.get_node(str(level_index))
 	$railtrack.reset(current_level.railtrack_nodes, current_level.n_remaining_actions)
-	$destination_area.reset($railtrack, 1)
+	$destination_area.reset($railtrack, len(current_level.pickup_area_positions))
 	$gui/remaining_actions_label.visible = (current_level.n_remaining_actions != null)
 	
-	for pickup_area in $pickup_areas.get_children():
-		pickup_area.queue_free()
-	
-	for pickup_area_position in current_level.pickup_area_positions:
-		var pickup_area = pickup_area_scene.instance()
-		$pickup_areas.add_child(pickup_area)
-		pickup_area.global_position = pickup_area_position
+	instantiate_areas($pickup_areas, current_level.pickup_area_positions, pickup_area_scene)
+	instantiate_areas($area_51_areas, current_level.area_51_positions, area_51_scene)
 
 	for child in current_level.get_children():
 		child.visible = true
@@ -41,6 +37,15 @@ func set_current_level(level_index):
 	if current_level.has_method('start'):
 		current_level.start()
 
+
+func instantiate_areas(parent_node, positions, scene):
+	for area in parent_node.get_children():
+		area.queue_free()
+	
+	for position in positions:
+		var area = scene.instance()
+		parent_node.add_child(area)
+		area.global_position = position
 
 func next_level():
 	if current_level != null and $levels.get_node(str(int(current_level.name) + 1)):

@@ -18,3 +18,5 @@ var pickup_area_positions = [
 
 # null = Unlimited actions
 var n_remaining_actions = 2
+
+var area_51_positions = []

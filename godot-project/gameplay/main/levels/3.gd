@@ -1,13 +1,21 @@
 extends Node2D
 
 var railtrack_nodes = [
-	Vector2(500, 200),
-	Vector2(800, 600),
-	Vector2(200, 600)
+	Vector2(200, 200),
+	Vector2(900, 200),
+	Vector2(900, 500),
+	Vector2(700, 600),
+	Vector2(400, 600),
+	Vector2(200, 500)
 ]
 
 var pickup_area_positions = [
-	Vector2(750, 300)
+	Vector2(700, 500),
+	Vector2(400, 500)
 ]
 
-var n_remaining_actions = 3
+var n_remaining_actions = 2
+
+var area_51_positions = [
+	Vector2(550, 650)
+]
