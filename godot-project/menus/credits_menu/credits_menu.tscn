@@ -76,6 +76,10 @@ bbcode_text = "[center]
 
 [color=white]Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url][/color]
 [color=white]Gimp - [url=https://www.gimp.org/]https://www.gimp.org/[/url][/color]
+
+
+[color=white]Made for  Ludum Dare #47 - [url=https://ldjam.com/]https://ldjam.com/[/url]
+(Theme: \"Stuck in a loop\")[/color]
 [/center]"
 text = "
 Idea, programming, graphics
@@ -92,6 +96,10 @@ Software used
 
 Godot engine - https://godotengine.org/
 Gimp - https://www.gimp.org/
+
+
+Made for  Ludum Dare #47 - https://ldjam.com/
+(Theme: \"Stuck in a loop\")
 "
 
 [node name="return_button" type="Button" parent="container/panel/margin_container/vbox_container"]
