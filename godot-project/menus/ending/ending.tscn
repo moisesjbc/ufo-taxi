@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menus/ending/ending.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://cow.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="ending" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center_container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="center_container"]
+margin_left = 212.0
+margin_top = 181.0
+margin_right = 812.0
+margin_bottom = 581.0
+rect_min_size = Vector2( 600, 400 )
+
+[node name="margin_container" type="MarginContainer" parent="center_container/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="center_container/Panel/margin_container"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 570.0
+margin_bottom = 370.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="center_container/Panel/margin_container/vbox_container"]
+margin_top = 141.0
+margin_right = 540.0
+margin_bottom = 175.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "THANKS FOR PLAYING!"
+align = 1
+
+[node name="return_button" type="Button" parent="center_container/Panel/margin_container/vbox_container"]
+margin_top = 320.0
+margin_right = 540.0
+margin_bottom = 340.0
+text = "Return to main menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="ufo_sprite" type="Sprite" parent="sprites"]
+position = Vector2( 309.363, 256.39 )
+texture = ExtResource( 3 )
+
+[node name="ufo_sprite3" type="Sprite" parent="sprites"]
+position = Vector2( 507.363, 456.39 )
+texture = ExtResource( 3 )
+
+[node name="ufo_sprite2" type="Sprite" parent="sprites"]
+position = Vector2( 717.363, 256.39 )
+texture = ExtResource( 3 )
+
+[node name="cow_sprite" type="Sprite" parent="sprites"]
+position = Vector2( 506.423, 260.628 )
+texture = ExtResource( 4 )
+
+[node name="cow_sprite2" type="Sprite" parent="sprites"]
+position = Vector2( 310.423, 457.628 )
+texture = ExtResource( 4 )
+
+[node name="cow_sprite3" type="Sprite" parent="sprites"]
+position = Vector2( 719.423, 457.628 )
+texture = ExtResource( 4 )
+[connection signal="pressed" from="center_container/Panel/margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]

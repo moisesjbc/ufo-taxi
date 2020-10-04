@@ -48,8 +48,11 @@ func instantiate_areas(parent_node, positions, scene):
 		area.global_position = position
 
 func next_level():
-	if current_level != null and $levels.get_node(str(int(current_level.name) + 1)):
-		set_current_level(int(current_level.name) + 1)
+	if current_level != null:
+		if $levels.get_node(str(int(current_level.name) + 1)):
+			set_current_level(int(current_level.name) + 1)
+		else:
+			get_tree().change_scene("res://menus/ending/ending.tscn")
 		
 func restart_level():
 	if current_level != null:
