@@ -7,6 +7,7 @@ var dst_position = null
 var middle_point = null
 var event_mouse_position = null
 var max_distance = 100
+var min_distance = 30
 var distance_to_middle_point = 0
 
 
@@ -22,15 +23,12 @@ func input(event):
 		distance_to_middle_point = middle_point.distance_to(event_mouse_position)
 		update()
 	elif event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
-			if distance_to_middle_point <= max_distance:
+		if event.button_index == BUTTON_LEFT and not event.pressed:
+			if event_mouse_position != null and distance_to_middle_point >= min_distance and distance_to_middle_point <= max_distance:
 				railtrack.add_node(event_mouse_position)
-				railtrack.change_state("selection")
-				event_mouse_position = null
-				update()
-			else:
+			elif distance_to_middle_point > max_distance:
 				railtrack.warning("Too far!")
-		elif event.button_index == BUTTON_RIGHT:
+
 			railtrack.change_state("selection")
 			event_mouse_position = null
 			update()
