@@ -33,21 +33,21 @@ __meta__ = {
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 924.0
-margin_bottom = 676.0
+margin_bottom = 718.0
 custom_constants/separation = 400
 
 [node name="title_container" type="CenterContainer" parent="margin_container/vbox_container"]
 margin_right = 824.0
-margin_bottom = 86.0
+margin_bottom = 91.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="margin_container/vbox_container/title_container"]
 margin_left = 280.0
 margin_right = 544.0
-margin_bottom = 86.0
+margin_bottom = 91.0
 
 [node name="vbox_container" type="VBoxContainer" parent="margin_container/vbox_container/title_container/HBoxContainer"]
 margin_right = 264.0
-margin_bottom = 86.0
+margin_bottom = 91.0
 
 [node name="title" type="Label" parent="margin_container/vbox_container/title_container/HBoxContainer/vbox_container"]
 margin_right = 264.0
@@ -59,8 +59,8 @@ align = 1
 [node name="version" type="Label" parent="margin_container/vbox_container/title_container/HBoxContainer/vbox_container"]
 margin_top = 72.0
 margin_right = 264.0
-margin_bottom = 86.0
-text = "v0.2"
+margin_bottom = 91.0
+text = "v0.3"
 align = 1
 
 [node name="Sprite" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer"]
@@ -73,26 +73,26 @@ scale = Vector2( 2.0901, 2.0901 )
 texture = ExtResource( 3 )
 
 [node name="buttons_container" type="VBoxContainer" parent="margin_container/vbox_container"]
-margin_top = 486.0
+margin_top = 491.0
 margin_right = 824.0
-margin_bottom = 576.0
+margin_bottom = 596.0
 custom_constants/separation = 15
 
 [node name="start_game_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
 margin_right = 824.0
-margin_bottom = 20.0
+margin_bottom = 25.0
 text = "Start game"
 
 [node name="credits_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
-margin_top = 35.0
+margin_top = 40.0
 margin_right = 824.0
-margin_bottom = 55.0
+margin_bottom = 65.0
 text = "Credits"
 
 [node name="exit_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
-margin_top = 70.0
+margin_top = 80.0
 margin_right = 824.0
-margin_bottom = 90.0
+margin_bottom = 105.0
 text = "Exit"
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/start_game_button" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/credits_button" to="." method="_on_credits_button_pressed"]
