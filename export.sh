@@ -5,6 +5,8 @@ ZIP_DIRPATH=`pwd`"/export/zip"
 
 name=$1
 version=$2
+platform=$3
+
 
 if [ -z "$GODOT_EXECUTABLE" ] || [ ! -f "$GODOT_EXECUTABLE" ]; then
     echo "ERROR: \$GODOT_EXECUTABLE variable is not set or does not point to valid file [$GODOT_EXECUTABLE]"
@@ -46,7 +48,12 @@ function export_game {
     fi
 }
 
-export_game "Linux/X11" "${name}_linux" "${name}_linux"
-export_game "Windows Desktop" "${name}_windows" "${name}_windows.exe"
-export_game "HTML5" "${name}_html" "index.html" # itch.io expects an index.html in zip
+if [ -z "$platform" ]; then
+    export_game "Linux/X11" "${name}_linux" "${name}_linux"
+    export_game "Windows Desktop" "${name}_windows" "${name}_windows.exe"
+    export_game "HTML5" "${name}_html" "index.html" # itch.io expects an index.html in zip
+else
+    export_game "$platform" "${name}_html" "index.html" # itch.io expects an index.html in zip
+fi
+
 
