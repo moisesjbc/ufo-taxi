@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gameplay/railtrack/railtrack.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/railtrack/states/selection.gd" type="Script" id=2]
 [ext_resource path="res://gameplay/railtrack/states/node_selected.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/railtrack/states/edge_selected.gd" type="Script" id=4]
+[ext_resource path="res://gameplay/node_deletion_menu/buttons_container.tscn" type="PackedScene" id=5]
 
 [node name="railtrack" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,29 +17,9 @@ script = ExtResource( 2 )
 [node name="node_selected" type="Node" parent="states"]
 script = ExtResource( 3 )
 
-[node name="buttons_container" type="VBoxContainer" parent="states/node_selected"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="remove_button" type="Button" parent="states/node_selected/buttons_container"]
-margin_right = 64.0
-margin_bottom = 20.0
-text = "Remove"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cancel_button" type="Button" parent="states/node_selected/buttons_container"]
-margin_top = 24.0
-margin_right = 64.0
-margin_bottom = 44.0
-text = "Cancel"
+[node name="node_deletion_menu" parent="states/node_selected" instance=ExtResource( 5 )]
 
 [node name="edge_selected" type="Node2D" parent="states"]
 script = ExtResource( 4 )
-[connection signal="pressed" from="states/node_selected/buttons_container/remove_button" to="states/node_selected" method="_on_remove_button_pressed"]
-[connection signal="pressed" from="states/node_selected/buttons_container/cancel_button" to="states/node_selected" method="_on_cancel_button_pressed"]
+[connection signal="cancelled" from="states/node_selected/node_deletion_menu" to="states/node_selected" method="_on_node_deletion_menu_cancelled"]
+[connection signal="confirmed" from="states/node_selected/node_deletion_menu" to="states/node_selected" method="_on_node_deletion_menu_confirmed"]
