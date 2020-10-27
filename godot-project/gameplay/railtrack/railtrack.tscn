@@ -18,6 +18,7 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="node_deletion_menu" parent="states/node_selected" instance=ExtResource( 5 )]
+visible = false
 
 [node name="edge_selected" type="Node2D" parent="states"]
 script = ExtResource( 4 )

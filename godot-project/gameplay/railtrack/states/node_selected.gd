@@ -20,3 +20,7 @@ func _on_node_deletion_menu_confirmed():
 func _on_node_deletion_menu_cancelled():
 	$node_deletion_menu.visible = false
 	railtrack.change_state("selection")
+
+
+func end():
+	$node_deletion_menu.visible = false

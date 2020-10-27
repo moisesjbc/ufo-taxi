@@ -25,6 +25,8 @@ func reset(nodes, n_remaining_actions):
 	update()
 	
 func change_state(new_state_name):
+	if current_state and current_state.has_method('end'):
+		current_state.end()
 	current_state = $states.get_node(new_state_name)
 	current_state.railtrack = self
 	if current_state and current_state.has_method('start'):

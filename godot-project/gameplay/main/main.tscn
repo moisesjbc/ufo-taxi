@@ -21,6 +21,7 @@ font_data = ExtResource( 10 )
 script = ExtResource( 1 )
 
 [node name="railtrack" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0.943848, 0 )
 
 [node name="player" parent="railtrack" instance=ExtResource( 4 )]
 position = Vector2( -323.269, -1.12244 )
