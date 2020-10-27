@@ -15,6 +15,10 @@ func start():
 	src_position = railtrack.to_global(railtrack.nodes[railtrack.current_edge])
 	dst_position = railtrack.to_global(railtrack.nodes[railtrack.get_next_index(railtrack.current_edge)])
 	middle_point = Vector2((src_position.x + dst_position.x) / 2, (src_position.y + dst_position.y) / 2)
+	
+func end():
+	event_mouse_position = null
+	update()
 
 
 func input(event):
