@@ -1,0 +1,14 @@
+{
+    "version": "0.3",
+    "railtrack_nodes": [
+        [300, 150],
+	    [900, 150],
+	    [900, 600],
+	    [300, 600]
+    ],
+    "pickup_area_positions": [
+        [600, 375]
+    ],
+    "n_remaining_actions": null,
+    "area_51_positions": []
+}

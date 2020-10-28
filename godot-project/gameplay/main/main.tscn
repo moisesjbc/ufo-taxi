@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://gameplay/main/levels/3.gd" type="Script" id=11]
 [ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
+[ext_resource path="res://gameplay/main/level.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -31,6 +32,9 @@ z_index = 1
 position = Vector2( 383.882, -112.246 )
 
 [node name="warning_label" parent="." instance=ExtResource( 2 )]
+
+[node name="current_level" type="Node" parent="."]
+script = ExtResource( 13 )
 
 [node name="levels" type="Node" parent="."]
 

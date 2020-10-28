@@ -2,7 +2,6 @@ extends Node2D
 
 signal game_over
 
-var current_level = null
 onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.tscn")
 onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
@@ -16,26 +15,17 @@ func _on_railtrack_warning_added(text):
 
 
 func set_current_level(level_index):
-	if current_level:
-		for child in current_level.get_children():
-			child.visible = false
+	$current_level.load_from_file(0, level_index)
+	reset_current_level()
 
-		if current_level.has_method('end'):
-			current_level.end()
+
+func reset_current_level():
+	$railtrack.reset($current_level.railtrack_nodes, $current_level.n_remaining_actions)
+	$destination_area.reset($railtrack, len($current_level.pickup_area_positions))
+	$gui/remaining_actions_label.visible = ($current_level.n_remaining_actions != null)
 	
-	current_level = $levels.get_node(str(level_index))
-	$railtrack.reset(current_level.railtrack_nodes, current_level.n_remaining_actions)
-	$destination_area.reset($railtrack, len(current_level.pickup_area_positions))
-	$gui/remaining_actions_label.visible = (current_level.n_remaining_actions != null)
-	
-	instantiate_areas($pickup_areas, current_level.pickup_area_positions, pickup_area_scene)
-	instantiate_areas($area_51_areas, current_level.area_51_positions, area_51_scene)
-
-	for child in current_level.get_children():
-		child.visible = true
-
-	if current_level.has_method('start'):
-		current_level.start()
+	instantiate_areas($pickup_areas, $current_level.pickup_area_positions, pickup_area_scene)
+	instantiate_areas($area_51_areas, $current_level.area_51_positions, area_51_scene)
 
 
 func instantiate_areas(parent_node, positions, scene):
@@ -48,15 +38,12 @@ func instantiate_areas(parent_node, positions, scene):
 		area.global_position = position
 
 func next_level():
-	if current_level != null:
-		if $levels.get_node(str(int(current_level.name) + 1)):
-			set_current_level(int(current_level.name) + 1)
-		else:
-			get_tree().change_scene("res://menus/ending/ending.tscn")
-		
+	$current_level.load_next_level()
+	reset_current_level()
+
 func restart_level():
-	if current_level != null:
-		set_current_level(int(current_level.name))
+	if $current_level != null:
+		set_current_level($current_level.level_index)
 
 func _on_destination_area_all_passengers_left():
 	$gui/level_win_menu.display()
