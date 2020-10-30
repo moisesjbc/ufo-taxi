@@ -1,16 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
-[ext_resource path="res://gameplay/main/levels/0.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
-[ext_resource path="res://gameplay/main/levels/1.gd" type="Script" id=8]
-[ext_resource path="res://gameplay/main/levels/2.gd" type="Script" id=9]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://gameplay/main/levels/3.gd" type="Script" id=11]
 [ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
 [ext_resource path="res://gameplay/main/level.gd" type="Script" id=13]
 
@@ -35,147 +31,6 @@ position = Vector2( 383.882, -112.246 )
 
 [node name="current_level" type="Node" parent="."]
 script = ExtResource( 13 )
-
-[node name="levels" type="Node" parent="."]
-
-[node name="0" type="Node2D" parent="levels"]
-script = ExtResource( 3 )
-
-[node name="1" type="RichTextLabel" parent="levels/0"]
-visible = false
-margin_left = 47.0
-margin_top = 73.0
-margin_right = 357.0
-margin_bottom = 171.0
-text = "1. This is the 
-destination point 
-THE COW FESTIVAL! ->"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="2" type="RichTextLabel" parent="levels/0"]
-visible = false
-margin_left = 490.0
-margin_top = 42.0
-margin_right = 1025.0
-margin_bottom = 150.0
-bbcode_text = "<-
-2. You have to take here as many passengers as indicated on the right number"
-text = "<-
-2. You have to take here as many passengers as indicated on the right number"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="3" type="RichTextLabel" parent="levels/0"]
-visible = false
-margin_left = 785.0
-margin_top = 348.0
-margin_right = 1108.0
-margin_bottom = 480.0
-text = "<- 
-3. Cows must be
-picked at these 
-farms"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="4" type="RichTextLabel" parent="levels/0"]
-visible = false
-margin_left = 395.0
-margin_top = 617.0
-margin_right = 1113.0
-margin_bottom = 725.0
-text = "^ 4. Maybe if you click on this vertex and remove it...
-(It can't be removed if the spaceship is 
-traveling from / to it!)"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="5" type="RichTextLabel" parent="levels/0"]
-visible = false
-margin_left = 457.0
-margin_top = 732.0
-margin_right = 858.0
-margin_bottom = 824.0
-text = "5. You can always restart the level by cliking here ->"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1" type="Node2D" parent="levels"]
-script = ExtResource( 8 )
-
-[node name="1" type="RichTextLabel" parent="levels/1"]
-visible = false
-margin_left = 431.811
-margin_top = 336.298
-margin_right = 603.811
-margin_bottom = 399.298
-text = "1. You can add 
-new vertices too"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="2" type="RichTextLabel" parent="levels/1"]
-visible = false
-margin_left = 474.406
-margin_top = 432.865
-margin_right = 722.406
-margin_bottom = 453.865
-text = "2. Click on this edge ->"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="3" type="RichTextLabel" parent="levels/1"]
-visible = false
-margin_left = 840.729
-margin_top = 265.027
-margin_right = 1013.73
-margin_bottom = 360.027
-text = "<- 
-3. Click again close to
-this farm  to create 
-the new vertex"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="2" type="Node2D" parent="levels"]
-script = ExtResource( 9 )
-
-[node name="1" type="Label" parent="levels/2"]
-visible = false
-margin_left = 6.91144
-margin_top = 703.044
-margin_right = 346.911
-margin_bottom = 751.044
-text = "1. From now on, all levels will have a maximum number of
-actions (add / remove vertex) allowed ->"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="3" type="Node2D" parent="levels"]
-script = ExtResource( 11 )
-
-[node name="1" type="RichTextLabel" parent="levels/3"]
-visible = false
-margin_left = 321.017
-margin_top = 669.581
-margin_right = 471.017
-margin_bottom = 691.581
-bbcode_enabled = true
-bbcode_text = "[color=red]1. Avoid these! ->[/color]"
-text = "1. Avoid these! ->"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="pickup_areas" type="Node2D" parent="."]
 
