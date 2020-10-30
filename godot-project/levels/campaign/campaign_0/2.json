@@ -1,18 +1,25 @@
 {
     "version": "0.3",
     "railtrack_nodes": [
-        [500, 150],
-	    [800, 200],
-	    [900, 400],
-	    [800, 600],
-	    [500, 700],
-	    [200, 600],
-	    [100, 400],
-	    [200, 200]
+        [650, 125],
+	    [950, 200],
+	    [1050, 400],
+	    [950, 600],
+	    [650, 700],
+	    [350, 600],
+	    [250, 400],
+	    [350, 200]
     ],
     "pickup_area_positions": [
-        [500, 470]
+        [650, 470]
     ],
     "n_remaining_actions": 2,
-    "area_51_positions": []
+    "area_51_positions": [],
+    "texts": [
+        {
+            "position": [7, 650],
+            "size": [659, 59],
+            "text": "1. From now on, all levels will have a maximum number of\nactions (add / remove vertex) allowed ->"
+        }
+    ]
 }

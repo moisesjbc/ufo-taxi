@@ -36,6 +36,12 @@ func load_from_file(campaign_index: int, level_index: int):
 	
 	self.campaign_index = campaign_index
 	self.level_index = level_index
+	
+	
+	for child in get_children():
+		child.queue_free()
+		
+	self._set_texts_from_json(dict['texts'])
 
 
 func _read_vector2_list_from_json(json_list):
@@ -49,6 +55,15 @@ func _read_vector2_list_from_json(json_list):
 		res.push_back(Vector2(json_railtrack_node[0], json_railtrack_node[1]))
 	
 	return res
+
+
+func _set_texts_from_json(json_texts):
+	for json_text in json_texts:
+		var label = Label.new()
+		label.set_global_position(Vector2(json_text['position'][0], json_text['position'][1]))
+		label.set_size(Vector2(json_text['size'][0], json_text['size'][1]))
+		label.text = json_text['text']
+		add_child(label)
 
 
 func _get_level_filepath(campaign_index: int, level_index: int):

@@ -43,10 +43,10 @@ script = ExtResource( 3 )
 
 [node name="1" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 45.0
-margin_top = 95.0
-margin_right = 289.0
-margin_bottom = 177.0
+margin_left = 47.0
+margin_top = 73.0
+margin_right = 357.0
+margin_bottom = 171.0
 text = "1. This is the 
 destination point 
 THE COW FESTIVAL! ->"
@@ -56,10 +56,10 @@ __meta__ = {
 
 [node name="2" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 385.0
-margin_top = 46.0
-margin_right = 628.0
-margin_bottom = 167.0
+margin_left = 490.0
+margin_top = 42.0
+margin_right = 1025.0
+margin_bottom = 150.0
 bbcode_text = "<-
 2. You have to take here as many passengers as indicated on the right number"
 text = "<-
@@ -70,24 +70,25 @@ __meta__ = {
 
 [node name="3" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 688.0
-margin_top = 346.0
-margin_right = 961.0
-margin_bottom = 522.0
+margin_left = 785.0
+margin_top = 348.0
+margin_right = 1108.0
+margin_bottom = 480.0
 text = "<- 
-3. Cows must be 
-picked at these farms"
+3. Cows must be
+picked at these 
+farms"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="4" type="RichTextLabel" parent="levels/0"]
 visible = false
-margin_left = 499.941
-margin_top = 623.059
-margin_right = 927.941
-margin_bottom = 718.059
-text = "4. Maybe if you click on this vertex and remove it... ^
+margin_left = 395.0
+margin_top = 617.0
+margin_right = 1113.0
+margin_bottom = 725.0
+text = "^ 4. Maybe if you click on this vertex and remove it...
 (It can't be removed if the spaceship is 
 traveling from / to it!)"
 __meta__ = {
@@ -190,10 +191,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -126.487
-margin_top = -35.4597
-margin_right = -34.4871
-margin_bottom = -15.4597
+margin_left = -184.021
+margin_top = -55.4899
+margin_right = -14.021
+margin_bottom = -20.4899
 text = "Restart level"
 __meta__ = {
 "_edit_use_anchors_": false

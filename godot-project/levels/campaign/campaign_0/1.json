@@ -9,5 +9,22 @@
         [750, 300]
     ],
     "n_remaining_actions": null,
-    "area_51_positions": []
+    "area_51_positions": [],
+    "texts": [
+        {
+            "position": [430, 336],
+            "size": [172, 63],
+            "text": "1. You can add \nnew vertices too"
+        },
+        {
+            "position": [400, 432.865],
+            "size": [248, 21],
+            "text": "2. Click on this edge ->"
+        },
+        {
+            "position": [840, 280],
+            "size": [173.001, 95],
+            "text": "<- \n3. Click again close to\nthis farm  to create \nthe new vertex"
+        }
+    ]
 }
