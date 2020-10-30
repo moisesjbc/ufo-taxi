@@ -19,12 +19,12 @@
         {
             "position": [400, 432.865],
             "size": [248, 21],
-            "text": "2. Click on this edge ->"
+            "text": "2. Drag this edge... ->"
         },
         {
             "position": [840, 280],
             "size": [173.001, 95],
-            "text": "<- \n3. Click again close to\nthis farm  to create \nthe new vertex"
+            "text": "<- \n3. ...and drop it close to\nthis farm  to create \nthe new vertex"
         }
     ]
 }
