@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="level_editor" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 28.0
+text = "Welcome to the level editor!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

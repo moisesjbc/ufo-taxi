@@ -21,6 +21,7 @@ __meta__ = {
 [node name="margin_container" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 161.0
 custom_constants/margin_right = 100
 custom_constants/margin_top = 100
 custom_constants/margin_left = 100
@@ -33,21 +34,21 @@ __meta__ = {
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 1180.0
-margin_bottom = 723.0
-custom_constants/separation = 400
+margin_bottom = 720.0
+custom_constants/separation = 300
 
 [node name="title_container" type="CenterContainer" parent="margin_container/vbox_container"]
 margin_right = 1080.0
-margin_bottom = 91.0
+margin_bottom = 100.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="margin_container/vbox_container/title_container"]
 margin_left = 408.0
 margin_right = 672.0
-margin_bottom = 91.0
+margin_bottom = 100.0
 
 [node name="vbox_container" type="VBoxContainer" parent="margin_container/vbox_container/title_container/HBoxContainer"]
 margin_right = 264.0
-margin_bottom = 91.0
+margin_bottom = 100.0
 
 [node name="title" type="Label" parent="margin_container/vbox_container/title_container/HBoxContainer/vbox_container"]
 margin_right = 264.0
@@ -59,7 +60,7 @@ align = 1
 [node name="version" type="Label" parent="margin_container/vbox_container/title_container/HBoxContainer/vbox_container"]
 margin_top = 72.0
 margin_right = 264.0
-margin_bottom = 91.0
+margin_bottom = 100.0
 text = "v0.3"
 align = 1
 
@@ -73,9 +74,9 @@ scale = Vector2( 2.0901, 2.0901 )
 texture = ExtResource( 3 )
 
 [node name="buttons_container" type="VBoxContainer" parent="margin_container/vbox_container"]
-margin_top = 491.0
+margin_top = 400.0
 margin_right = 1080.0
-margin_bottom = 623.0
+margin_bottom = 581.0
 custom_constants/separation = 15
 
 [node name="start_game_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
@@ -83,17 +84,24 @@ margin_right = 1080.0
 margin_bottom = 34.0
 text = "Start game"
 
-[node name="credits_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
+[node name="level_editor_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
 margin_top = 49.0
 margin_right = 1080.0
 margin_bottom = 83.0
-text = "Credits"
+text = "Level editor"
 
-[node name="exit_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
+[node name="credits_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
 margin_top = 98.0
 margin_right = 1080.0
 margin_bottom = 132.0
+text = "Credits"
+
+[node name="exit_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
+margin_top = 147.0
+margin_right = 1080.0
+margin_bottom = 181.0
 text = "Exit"
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/start_game_button" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/buttons_container/level_editor_button" to="." method="_on_level_editor_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/exit_button" to="." method="_on_exit_button_pressed"]
