@@ -4,6 +4,7 @@ var current_state = null
 var current_node = null
 var current_edge = null
 var player = null
+var closed = true
 
 signal node_removed
 signal node_added
@@ -41,13 +42,14 @@ func _input(event):
 		current_state.input(event)
 		
 func _draw():
-	if current_state:
-		if current_state.has_method('draw'):
+	if current_state or not player:
+		if current_state and current_state.has_method('draw'):
 			current_state.draw()
 		else:
 			for i in range(len(nodes) - 1):
 				draw_line(nodes[i], nodes[i+1], get_edge_color(i), 5)
-			draw_line(nodes[len(nodes) - 1], nodes[0], get_edge_color(len(nodes) - 1), 5)
+			if closed:
+				draw_line(nodes[len(nodes) - 1], nodes[0], get_edge_color(len(nodes) - 1), 5)
 			
 			if current_node != null:
 				draw_circle(nodes[current_node], 10, Color.blue)
@@ -154,6 +156,13 @@ func add_node(new_position):
 	else:
 		warning('Edge in use!')
 		
+func push_node(new_position):
+	"""
+	Used in level editor
+	"""
+	nodes.push_back(new_position)
+	update()
+		
 func consume_action():
 	if n_remaining_actions != null:
 		n_remaining_actions -= 1
@@ -161,3 +170,8 @@ func consume_action():
 
 func warning(text):
 	emit_signal("warning_added", text)
+
+
+func close():
+	closed = true
+	update()

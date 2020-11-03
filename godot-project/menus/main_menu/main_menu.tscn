@@ -34,7 +34,7 @@ __meta__ = {
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 1180.0
-margin_bottom = 720.0
+margin_bottom = 781.0
 custom_constants/separation = 300
 
 [node name="title_container" type="CenterContainer" parent="margin_container/vbox_container"]
