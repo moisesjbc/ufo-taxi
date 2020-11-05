@@ -16,7 +16,6 @@ script = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="tools_container" type="HBoxContainer" parent="state_machine/idle"]
-visible = false
 anchor_right = 1.0
 margin_right = 1278.0
 margin_bottom = 34.0
@@ -28,6 +27,12 @@ __meta__ = {
 margin_right = 158.0
 margin_bottom = 34.0
 text = "Add vertices"
+
+[node name="play_button" type="Button" parent="state_machine/idle/tools_container"]
+margin_left = 162.0
+margin_right = 223.0
+margin_bottom = 34.0
+text = "Play"
 
 [node name="add_vertices" type="Node2D" parent="state_machine"]
 script = ExtResource( 2 )
@@ -43,4 +48,5 @@ __meta__ = {
 
 [node name="railtrack" parent="." instance=ExtResource( 4 )]
 [connection signal="pressed" from="state_machine/idle/tools_container/add_vertices_button" to="state_machine/idle" method="_on_add_vertices_button_pressed"]
+[connection signal="pressed" from="state_machine/idle/tools_container/play_button" to="state_machine/idle" method="_on_play_button_pressed"]
 [connection signal="pressed" from="state_machine/add_vertices/add_vertices_exit_button" to="state_machine/add_vertices" method="_on_add_vertices_exit_button_pressed"]

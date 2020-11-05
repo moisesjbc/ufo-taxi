@@ -42,6 +42,7 @@ script = ExtResource( 13 )
 visible = false
 
 [node name="restart_level_button" type="Button" parent="gui"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -71,6 +72,17 @@ __meta__ = {
 
 [node name="game_over" parent="gui" instance=ExtResource( 12 )]
 visible = false
+
+[node name="return_to_level_editor_button" type="Button" parent="gui"]
+visible = false
+margin_left = 1002.37
+margin_top = 665.248
+margin_right = 1266.37
+margin_bottom = 699.248
+text = "Return to level editor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="n_remaining_actions_updated" from="railtrack" to="." method="_on_railtrack_n_remaining_actions_updated"]
 [connection signal="node_added" from="railtrack" to="railtrack/player" method="_on_railtrack_node_added"]
@@ -81,3 +93,4 @@ visible = false
 [connection signal="continue_pressed" from="gui/level_win_menu" to="." method="_on_level_win_menu_continue_pressed"]
 [connection signal="button_down" from="gui/restart_level_button" to="." method="_on_restart_level_button_button_down"]
 [connection signal="restart_level_requested" from="gui/game_over" to="." method="_on_game_over_restart_level_requested"]
+[connection signal="pressed" from="gui/return_to_level_editor_button" to="." method="_on_return_to_level_editor_button_pressed"]

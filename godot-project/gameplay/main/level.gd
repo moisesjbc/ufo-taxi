@@ -16,6 +16,7 @@ var area_51_positions = []
 var campaign_index = null;
 var level_index = null;
 
+
 func load_from_file(campaign_index: int, level_index: int):
 	"""
 	Loads the level info from the JSON file indexed by the given campaign_index
@@ -28,7 +29,11 @@ func load_from_file(campaign_index: int, level_index: int):
 	
 	var dict = JSON.parse(text).result
 	
+	load_from_dict(dict)
 	file.close()
+	
+
+func load_from_dict(dict):
 	railtrack_nodes = self._read_vector2_list_from_json(dict['railtrack_nodes'])
 	pickup_area_positions = self._read_vector2_list_from_json(dict['pickup_area_positions'])
 	area_51_positions = self._read_vector2_list_from_json(dict['area_51_positions'])

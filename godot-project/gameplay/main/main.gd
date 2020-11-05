@@ -7,7 +7,13 @@ onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
 
 func _ready():
-	set_current_level(0)
+	if not get_parent().name == 'level_editor':
+		set_current_level(0)
+		$gui/restart_level_button.visible = true
+		$gui/return_to_level_editor_button.visible = false
+	else:
+		$gui/restart_level_button.visible = false
+		$gui/return_to_level_editor_button.visible = true
 
 
 func _on_railtrack_warning_added(text):
@@ -17,8 +23,7 @@ func _on_railtrack_warning_added(text):
 func set_current_level(level_index):
 	$current_level.load_from_file(0, level_index)
 	reset_current_level()
-
-
+	
 func reset_current_level():
 	$railtrack.reset($current_level.railtrack_nodes, $current_level.n_remaining_actions)
 	$destination_area.reset($railtrack, len($current_level.pickup_area_positions))
@@ -26,6 +31,11 @@ func reset_current_level():
 	
 	instantiate_areas($pickup_areas, $current_level.pickup_area_positions, pickup_area_scene)
 	instantiate_areas($area_51_areas, $current_level.area_51_positions, area_51_scene)
+
+
+func play_level(level_dict):
+	$current_level.load_from_dict(level_dict)
+	reset_current_level()
 
 
 func instantiate_areas(parent_node, positions, scene):
@@ -67,3 +77,7 @@ func _on_player_train_game_over():
 
 func _on_game_over_restart_level_requested():
 	restart_level()
+
+
+func _on_return_to_level_editor_button_pressed():
+	get_parent().stop()
