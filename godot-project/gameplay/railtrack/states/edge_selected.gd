@@ -9,11 +9,11 @@ var event_mouse_position = null
 var max_distance = 100
 var min_distance = 30
 var distance_to_middle_point = 0
-
+var state_machine = null
 
 func start():
-	src_position = railtrack.to_global(railtrack.nodes[railtrack.current_edge])
-	dst_position = railtrack.to_global(railtrack.nodes[railtrack.get_next_index(railtrack.current_edge)])
+	src_position = railtrack.to_global(railtrack.get_node('path').nodes[railtrack.get_node('path').current_edge])
+	dst_position = railtrack.to_global(railtrack.get_node('path').nodes[railtrack.get_node('path').get_next_index(railtrack.get_node('path').current_edge)])
 	middle_point = Vector2((src_position.x + dst_position.x) / 2, (src_position.y + dst_position.y) / 2)
 	
 func end():
@@ -33,7 +33,7 @@ func input(event):
 			elif distance_to_middle_point > max_distance:
 				railtrack.warning("Too far!")
 
-			railtrack.change_state("selection")
+			state_machine.change_state("selection")
 			event_mouse_position = null
 			update()
 

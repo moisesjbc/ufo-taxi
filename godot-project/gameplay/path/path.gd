@@ -6,8 +6,8 @@ var current_node = null
 var current_edge = null
 
 func set_nodes(nodes):
-	self.nodes = nodes.cloned()
-	
+	self.nodes = nodes.duplicate()
+
 func _draw():
 	for i in range(len(nodes) - 1):
 		draw_line(nodes[i], nodes[i+1], get_edge_color(i), 5)

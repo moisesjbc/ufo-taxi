@@ -26,7 +26,7 @@ func set_current_level(level_index):
 	
 func reset_current_level():
 	$railtrack.reset($current_level.railtrack_nodes, $current_level.n_remaining_actions)
-	$destination_area.reset($railtrack, len($current_level.pickup_area_positions))
+	$destination_area.reset($railtrack.get_node('path'), len($current_level.pickup_area_positions))
 	$gui/remaining_actions_label.visible = ($current_level.n_remaining_actions != null)
 	
 	instantiate_areas($pickup_areas, $current_level.pickup_area_positions, pickup_area_scene)
