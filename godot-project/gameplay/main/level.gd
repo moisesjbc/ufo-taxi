@@ -29,6 +29,9 @@ func load_from_file(campaign_index: int, level_index: int):
 	
 	var dict = JSON.parse(text).result
 	
+	self.campaign_index = campaign_index
+	self.level_index = level_index
+
 	load_from_dict(dict)
 	file.close()
 	
@@ -38,10 +41,6 @@ func load_from_dict(dict):
 	pickup_area_positions = self._read_vector2_list_from_json(dict['pickup_area_positions'])
 	area_51_positions = self._read_vector2_list_from_json(dict['area_51_positions'])
 	n_remaining_actions = dict['n_remaining_actions']
-	
-	self.campaign_index = campaign_index
-	self.level_index = level_index
-	
 	
 	for child in get_children():
 		child.queue_free()
