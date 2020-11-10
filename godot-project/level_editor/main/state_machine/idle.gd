@@ -30,7 +30,14 @@ func _on_add_pickup_area_button_pressed():
 	
 	# Set every pickup_area on a different "layer" so we can select always one maximum.
 	pickup_area.z_index = level_editor.get_node('pickup_areas_container').get_children().size()
+	
+	print("pickup_area.get_node('clicable')", pickup_area.get_node('clicable'))
+	pickup_area.get_node('clicable').connect("clicked", self, "_on_object_selected")
 
+
+func _on_object_selected(object):
+	if not level_editor.playing_level:
+		state_machine.set_current_state('move_object', object)
 
 func _on_play_button_pressed():
 	$tools_container.visible = false
@@ -47,6 +54,7 @@ func _on_play_button_pressed():
 	var main = main_scene.instance()
 	level_editor.add_child(main)
 	level_editor.get_node('main').play_level(level_dict)
+	level_editor.playing_level = true
 
 
 func _vector2_array_to_json_dist(vector2_array):

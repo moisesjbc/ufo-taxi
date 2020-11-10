@@ -7,7 +7,7 @@ func _ready():
 	set_current_state('idle')
 
 
-func set_current_state(new_state_name):
+func set_current_state(new_state_name, arg=null):
 	var new_state = get_node(new_state_name)
 
 	if current_state:
@@ -21,7 +21,10 @@ func set_current_state(new_state_name):
 	
 	if current_state:
 		if current_state.has_method('start'):
-			current_state.start()
+			if arg:
+				current_state.start(arg)
+			else:
+				current_state.start()
 		for child in current_state.get_children():
 			child.visible = true
 
