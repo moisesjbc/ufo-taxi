@@ -11,7 +11,7 @@ func set_nodes(nodes):
 func _draw():
 	for i in range(len(nodes) - 1):
 		draw_line(nodes[i], nodes[i+1], get_edge_color(i), 5)
-	if closed:
+	if closed and len(nodes):
 		draw_line(nodes[len(nodes) - 1], nodes[0], get_edge_color(len(nodes) - 1), 5)
 	
 	if current_node != null:
@@ -85,4 +85,14 @@ func push_node(new_position):
 
 func close():
 	closed = true
+	update()
+	
+func open():
+	closed = false
+	update()
+	
+func remove_all_nodes():
+	nodes = []
+	current_edge = null
+	current_edge = null
 	update()

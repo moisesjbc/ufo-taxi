@@ -3,9 +3,19 @@ extends Node2D
 var state_machine = null
 var level_editor = null
 
+func start():
+	if level_editor.get_node('path').nodes.size() > 0:
+		$tools_container/clear_vertices_button.visible = true
+	else:
+		$tools_container/clear_vertices_button.visible = false
+
 
 func _on_add_vertices_button_pressed():
 	state_machine.set_current_state('add_vertices')
+
+
+func _on_clear_vertices_button_pressed():
+	level_editor.get_node('path').remove_all_nodes()
 
 
 func _on_play_button_pressed():

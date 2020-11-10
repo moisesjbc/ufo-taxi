@@ -28,9 +28,15 @@ margin_right = 158.0
 margin_bottom = 34.0
 text = "Add vertices"
 
-[node name="play_button" type="Button" parent="state_machine/idle/tools_container"]
+[node name="clear_vertices_button" type="Button" parent="state_machine/idle/tools_container"]
 margin_left = 162.0
-margin_right = 223.0
+margin_right = 334.0
+margin_bottom = 34.0
+text = "Clear vertices"
+
+[node name="play_button" type="Button" parent="state_machine/idle/tools_container"]
+margin_left = 338.0
+margin_right = 399.0
 margin_bottom = 34.0
 text = "Play"
 
@@ -48,5 +54,6 @@ __meta__ = {
 
 [node name="path" parent="." instance=ExtResource( 6 )]
 [connection signal="pressed" from="state_machine/idle/tools_container/add_vertices_button" to="state_machine/idle" method="_on_add_vertices_button_pressed"]
+[connection signal="pressed" from="state_machine/idle/tools_container/clear_vertices_button" to="state_machine/idle" method="_on_clear_vertices_button_pressed"]
 [connection signal="pressed" from="state_machine/idle/tools_container/play_button" to="state_machine/idle" method="_on_play_button_pressed"]
 [connection signal="pressed" from="state_machine/add_vertices/add_vertices_exit_button" to="state_machine/add_vertices" method="_on_add_vertices_exit_button_pressed"]
