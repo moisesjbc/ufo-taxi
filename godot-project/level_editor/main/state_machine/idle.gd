@@ -2,6 +2,7 @@ extends Node2D
 
 var state_machine = null
 var level_editor = null
+var pickup_area_scene = preload('res://gameplay//pickup_area/pickup_area.tscn')
 
 func start():
 	$tools_container.visible = true
@@ -20,6 +21,15 @@ func _on_add_vertices_button_pressed():
 
 func _on_clear_vertices_button_pressed():
 	level_editor.get_node('path').remove_all_nodes()
+
+
+func _on_add_pickup_area_button_pressed():
+	var pickup_area = pickup_area_scene.instance()
+	level_editor.get_node('pickup_areas_container').add_child(pickup_area)
+	pickup_area.global_position = Vector2(OS.window_size.x / 2.0, OS.window_size.y / 2.0)
+	
+	# Set every pickup_area on a different "layer" so we can select always one maximum.
+	pickup_area.z_index = level_editor.get_node('pickup_areas_container').get_children().size()
 
 
 func _on_play_button_pressed():
