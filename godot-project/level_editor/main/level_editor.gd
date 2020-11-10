@@ -6,4 +6,4 @@ func _ready():
 func stop():
 	if get_node('main'):
 		get_node('main').queue_free()
-		$path.visible = true
+		$state_machine.set_current_state('idle')
