@@ -13,6 +13,8 @@ func set_current_state(new_state_name, arg=null):
 	if current_state:
 		for child in current_state.get_children():
 			child.visible = false
+		if current_state.has_method('stop'):
+			current_state.stop()
 	
 	current_state = new_state
 	
