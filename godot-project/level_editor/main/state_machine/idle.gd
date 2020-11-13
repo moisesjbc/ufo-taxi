@@ -13,6 +13,9 @@ func start():
 		$tools_container/clear_vertices_button.visible = false
 		
 	level_editor.get_node('path').visible = true
+	
+	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
+		pickup_area.visible = true
 
 
 func _on_add_vertices_button_pressed():
@@ -49,6 +52,9 @@ func _on_play_button_pressed():
 	var level_dict = {}
 	level_dict['railtrack_nodes'] = _vector2_array_to_json_dist(level_editor.get_node('path').nodes)
 	level_dict['pickup_area_positions'] = []
+	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
+		level_dict['pickup_area_positions'].push_back(pickup_area.global_position)
+		pickup_area.visible = false
 	level_dict['area_51_positions'] = []
 	level_dict['n_remaining_actions'] = null
 	level_dict['texts'] = []

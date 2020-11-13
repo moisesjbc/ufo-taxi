@@ -6,7 +6,9 @@ func _ready():
 	update_label()
 
 func _on_pickup_area_body_entered(body):
-	if body.name == 'player' and has_passengers:
+	# When playing level from level editor, pickup areas from editor are hiden
+	# and replaced by realtime copies. Disable collisions for the not visible.
+	if visible and body.name == 'player' and has_passengers:
 		has_passengers = false
 		update_label()
 		body.pick_passenger()
