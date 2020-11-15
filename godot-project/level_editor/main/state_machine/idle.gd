@@ -35,11 +35,14 @@ func _on_clear_vertices_button_pressed():
 	level_editor.get_node('path').remove_all_nodes()
 
 
+
 func _on_add_pickup_area_button_pressed():
 	add_object(pickup_area_scene, level_editor.get_node('pickup_areas_container'))
 
+
 func _on_add_area_51_area_pressed():
 	add_object(area_51_scene, level_editor.get_node('area_51_container'))
+
 
 func add_object(object_scene, objects_container):
 	var object = object_scene.instance()
@@ -74,6 +77,8 @@ func _on_play_button_pressed():
 		level_dict['area_51_positions'].push_back(area_51.global_position)
 		area_51.visible = false
 	level_dict['n_remaining_actions'] = null
+	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
+		level_dict['n_remaining_actions'] = $tools_container/actions_limit_container/actions_limit_input.value
 	level_dict['texts'] = []
 	
 	level_editor.get_node('path').visible = false
