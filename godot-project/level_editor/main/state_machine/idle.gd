@@ -3,6 +3,7 @@ extends Node2D
 var state_machine = null
 var level_editor = null
 var pickup_area_scene = preload('res://gameplay//pickup_area/pickup_area.tscn')
+var area_51_scene = preload('res://gameplay//area_51/area_51.tscn')
 
 func start():
 	$tools_container.visible = true
@@ -27,16 +28,21 @@ func _on_clear_vertices_button_pressed():
 
 
 func _on_add_pickup_area_button_pressed():
-	var pickup_area = pickup_area_scene.instance()
-	level_editor.get_node('pickup_areas_container').add_child(pickup_area)
-	pickup_area.global_position = Vector2(OS.window_size.x / 2.0, OS.window_size.y / 2.0)
+	add_object(pickup_area_scene, level_editor.get_node('pickup_areas_container'))
+
+func _on_add_area_51_area_pressed():
+	add_object(area_51_scene, level_editor.get_node('area_51_container'))
+
+func add_object(object_scene, objects_container):
+	var object = object_scene.instance()
+	objects_container.add_child(object)
+	object.global_position = Vector2(OS.window_size.x / 2.0, OS.window_size.y / 2.0)
 	
-	# Set every pickup_area on a different "layer" so we can select always one maximum.
-	pickup_area.z_index = -level_editor.get_node('pickup_areas_container').get_children().size() - 1
+	# Set every object on a different "layer" so we can select always one maximum.
+	object.z_index = -objects_container.get_children().size() - 1
 
-	pickup_area.get_node('clicable').connect("clicked", self, "_on_object_selected")
-	pickup_area.get_node('clicable').connect("double_clicked", self, "_on_object_double_selected")
-
+	object.get_node('clicable').connect("clicked", self, "_on_object_selected")
+	object.get_node('clicable').connect("double_clicked", self, "_on_object_double_selected")
 
 func _on_object_selected(object):
 	if not level_editor.playing_level:

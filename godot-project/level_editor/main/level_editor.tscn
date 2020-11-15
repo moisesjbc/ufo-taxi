@@ -42,9 +42,15 @@ margin_right = 536.0
 margin_bottom = 34.0
 text = "Add pickup area"
 
-[node name="play_button" type="Button" parent="state_machine/idle/tools_container"]
+[node name="add_area_51_area" type="Button" parent="state_machine/idle/tools_container"]
 margin_left = 540.0
-margin_right = 601.0
+margin_right = 689.0
+margin_bottom = 34.0
+text = "Add area 51"
+
+[node name="play_button" type="Button" parent="state_machine/idle/tools_container"]
+margin_left = 693.0
+margin_right = 754.0
 margin_bottom = 34.0
 text = "Play"
 
@@ -69,8 +75,11 @@ script = ExtResource( 7 )
 [node name="path" parent="." instance=ExtResource( 6 )]
 
 [node name="pickup_areas_container" type="Node2D" parent="."]
+
+[node name="area_51_container" type="Node2D" parent="."]
 [connection signal="pressed" from="state_machine/idle/tools_container/add_vertices_button" to="state_machine/idle" method="_on_add_vertices_button_pressed"]
 [connection signal="pressed" from="state_machine/idle/tools_container/clear_vertices_button" to="state_machine/idle" method="_on_clear_vertices_button_pressed"]
 [connection signal="pressed" from="state_machine/idle/tools_container/add_pickup_area_button" to="state_machine/idle" method="_on_add_pickup_area_button_pressed"]
+[connection signal="pressed" from="state_machine/idle/tools_container/add_area_51_area" to="state_machine/idle" method="_on_add_area_51_area_pressed"]
 [connection signal="pressed" from="state_machine/idle/tools_container/play_button" to="state_machine/idle" method="_on_play_button_pressed"]
 [connection signal="pressed" from="state_machine/add_vertices/add_vertices_exit_button" to="state_machine/add_vertices" method="_on_add_vertices_exit_button_pressed"]
