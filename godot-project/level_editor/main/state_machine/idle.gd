@@ -17,6 +17,14 @@ func start():
 	
 	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
 		pickup_area.visible = true
+		
+	reset_objects_container_for_level_editor(level_editor.get_node('pickup_areas_container'))
+	reset_objects_container_for_level_editor(level_editor.get_node('area_51_container'))
+
+
+func reset_objects_container_for_level_editor(objects_container):
+	for object in objects_container.get_children():
+		object.visible = true
 
 
 func _on_add_vertices_button_pressed():
@@ -62,6 +70,9 @@ func _on_play_button_pressed():
 		level_dict['pickup_area_positions'].push_back(pickup_area.global_position)
 		pickup_area.visible = false
 	level_dict['area_51_positions'] = []
+	for area_51 in level_editor.get_node('area_51_container').get_children():
+		level_dict['area_51_positions'].push_back(area_51.global_position)
+		area_51.visible = false
 	level_dict['n_remaining_actions'] = null
 	level_dict['texts'] = []
 	
