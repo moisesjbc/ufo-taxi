@@ -17,14 +17,14 @@ var campaign_index = null;
 var level_index = null;
 
 
-func load_from_file(campaign_index: int, level_index: int):
+func load_from_file(filepath: String):
 	"""
 	Loads the level info from the JSON file indexed by the given campaign_index
 	and level_index
 	"""
 	# Source: https://godotengine.org/qa/8291/how-to-parse-a-json-file-i-wrote-myself
 	var file = File.new()
-	file.open(self._get_level_filepath(campaign_index, level_index), file.READ)
+	file.open(filepath, file.READ)
 	var text = file.get_as_text()
 	
 	var dict = JSON.parse(text).result
@@ -34,7 +34,6 @@ func load_from_file(campaign_index: int, level_index: int):
 
 	load_from_dict(dict)
 	file.close()
-	
 
 func load_from_dict(dict):
 	railtrack_nodes = self._read_vector2_list_from_json(dict['railtrack_nodes'])
@@ -68,15 +67,3 @@ func _set_texts_from_json(json_texts):
 		label.set_size(Vector2(json_text['size'][0], json_text['size'][1]))
 		label.text = json_text['text']
 		add_child(label)
-
-
-func _get_level_filepath(campaign_index: int, level_index: int):
-	return "res://levels/campaign/campaign_" + str(campaign_index) + "/" + str(level_index) + ".json";
-
-
-func load_next_level():
-	# Source: https://godotengine.org/qa/424/how-do-you-check-if-a-file-resource-exist
-	if File.new().file_exists(_get_level_filepath(campaign_index, level_index + 1)):
-		self.load_from_file(campaign_index, level_index + 1)
-	else:
-		get_tree().change_scene("res://menus/ending/ending.tscn")
