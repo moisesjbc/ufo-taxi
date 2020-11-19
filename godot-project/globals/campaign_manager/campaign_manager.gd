@@ -5,16 +5,16 @@ var level_ids = []
 var current_level_index = 0
 
 func load_level(campaign_index: int, level_index: int):
-	self._load_campaign_info(campaign_index)
+	self.load_campaign_info(campaign_index)
 	self._load_level(level_index)
 
 
 func _load_level(level_index: int):
 	self.current_level_index = level_index
-	$current_level.load_from_file(self._level_filepath(level_index))
+	level_manager.load_from_file(self._level_filepath(level_index))
 
 
-func _load_campaign_info(campaign_index: int):
+func load_campaign_info(campaign_index: int):
 	var file = File.new()
 	file.open('res://levels/campaign/campaigns.json', file.READ)
 	var text = file.get_as_text()

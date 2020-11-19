@@ -27,31 +27,31 @@ __meta__ = {
 
 [node name="add_vertices_button" type="Button" parent="state_machine/idle/tools_container"]
 margin_right = 158.0
-margin_bottom = 108.0
+margin_bottom = 70.0
 text = "Add vertices"
 
 [node name="clear_vertices_button" type="Button" parent="state_machine/idle/tools_container"]
 margin_left = 162.0
 margin_right = 334.0
-margin_bottom = 108.0
+margin_bottom = 70.0
 text = "Clear vertices"
 
 [node name="add_pickup_area_button" type="Button" parent="state_machine/idle/tools_container"]
 margin_left = 338.0
 margin_right = 536.0
-margin_bottom = 108.0
+margin_bottom = 70.0
 text = "Add pickup area"
 
 [node name="add_area_51_area" type="Button" parent="state_machine/idle/tools_container"]
 margin_left = 540.0
 margin_right = 689.0
-margin_bottom = 108.0
+margin_bottom = 70.0
 text = "Add area 51"
 
 [node name="actions_limit_container" type="VBoxContainer" parent="state_machine/idle/tools_container"]
 margin_left = 693.0
 margin_right = 841.0
-margin_bottom = 108.0
+margin_bottom = 70.0
 
 [node name="actions_limit_label" type="Label" parent="state_machine/idle/tools_container/actions_limit_container"]
 margin_right = 148.0
@@ -66,7 +66,7 @@ margin_bottom = 70.0
 [node name="play_button" type="Button" parent="state_machine/idle/tools_container"]
 margin_left = 845.0
 margin_right = 906.0
-margin_bottom = 108.0
+margin_bottom = 70.0
 text = "Play"
 
 [node name="add_vertices" type="Node2D" parent="state_machine"]

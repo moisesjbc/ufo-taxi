@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/level_selector/level_selector.gd" type="Script" id=1]
+
+[node name="level_selector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="margin_container"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1270.0
+margin_bottom = 710.0
+custom_constants/separation = 50
+
+[node name="title" type="Label" parent="margin_container/vbox_container"]
+margin_right = 1260.0
+margin_bottom = 28.0
+text = "Level selector"
+align = 1
+
+[node name="levels_container" type="GridContainer" parent="margin_container/vbox_container"]
+margin_top = 78.0
+margin_right = 1260.0
+margin_bottom = 78.0
+custom_constants/vseparation = 50
+custom_constants/hseparation = 50
+columns = 3

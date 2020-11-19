@@ -1,15 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
-[ext_resource path="res://gameplay/main/current_campaign.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
-[ext_resource path="res://gameplay/main/level.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -30,15 +28,11 @@ position = Vector2( 383.882, -112.246 )
 
 [node name="warning_label" parent="." instance=ExtResource( 2 )]
 
-[node name="current_campaign" type="Node" parent="."]
-script = ExtResource( 3 )
-
-[node name="current_level" type="Node" parent="current_campaign"]
-script = ExtResource( 13 )
-
 [node name="pickup_areas" type="Node2D" parent="."]
 
 [node name="area_51_areas" type="Node2D" parent="."]
+
+[node name="texts" type="Node2D" parent="."]
 
 [node name="gui" type="Node" parent="."]
 
