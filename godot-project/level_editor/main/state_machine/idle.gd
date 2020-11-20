@@ -66,23 +66,8 @@ func _on_object_double_selected(object):
 func _on_play_button_pressed():
 	$tools_container.visible = false
 	
-	var level_dict = {}
+	_save_data_to_level_manager()
 	
-	level_manager.railtrack_nodes = level_editor.get_node('path').nodes
-	level_manager.pickup_area_positions = []
-	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
-		level_manager.pickup_area_positions.push_back(pickup_area.global_position)
-		pickup_area.visible = false
-	level_manager.area_51_positions = []
-	for area_51 in level_editor.get_node('area_51_container').get_children():
-		level_manager.area_51_positions.push_back(area_51.global_position)
-		area_51.visible = false
-	level_manager.n_remaining_actions = null
-	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
-		level_manager.n_remaining_actions = $tools_container/actions_limit_container/actions_limit_input.value
-	level_manager.texts = []
-	
-	level_manager.save()
 	level_manager.playing_from_level_editor = true
 	get_tree().change_scene("res://gameplay/main/main.tscn")
 	
@@ -92,3 +77,22 @@ func _on_play_button_pressed():
 	level_editor.add_child(main)
 	level_editor.get_node('main').play_level(level_dict)
 	level_editor.playing_level = true"""
+
+
+func _on_save_button_pressed():
+	_save_data_to_level_manager()
+	level_manager.save() # Save to file
+
+
+func _save_data_to_level_manager():
+	level_manager.railtrack_nodes = level_editor.get_node('path').nodes
+	level_manager.pickup_area_positions = []
+	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
+		level_manager.pickup_area_positions.push_back(pickup_area.global_position)
+	level_manager.area_51_positions = []
+	for area_51 in level_editor.get_node('area_51_container').get_children():
+		level_manager.area_51_positions.push_back(area_51.global_position)
+	level_manager.n_remaining_actions = null
+	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
+		level_manager.n_remaining_actions = $tools_container/actions_limit_container/actions_limit_input.value
+	level_manager.texts = []
