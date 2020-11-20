@@ -7,13 +7,9 @@ onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
 
 func _ready():
-	if not get_parent().name == 'level_editor':
-		set_current_level(0)
-		$gui/restart_level_button.visible = true
-		$gui/return_to_level_editor_button.visible = false
-	else:
-		$gui/restart_level_button.visible = false
-		$gui/return_to_level_editor_button.visible = true
+	reset_current_level()
+	$gui/restart_level_button.visible = not level_manager.playing_from_level_editor
+	$gui/return_to_level_editor_button.visible = level_manager.playing_from_level_editor
 
 
 func _on_railtrack_warning_added(text):
@@ -93,4 +89,4 @@ func _on_game_over_restart_level_requested():
 
 
 func _on_return_to_level_editor_button_pressed():
-	get_parent().stop()
+	get_tree().change_scene("res://level_editor/main/level_editor.tscn")

@@ -20,11 +20,15 @@ var texts = [];
 
 var level_id = null
 
+var playing_from_level_editor: bool = false
+
 
 func load_campaign_level_from_file(level_id: int):
 	"""
 	Loads the level info from the JSON file indexed by the given ID
 	"""
+	playing_from_level_editor = false
+
 	# Source: https://godotengine.org/qa/8291/how-to-parse-a-json-file-i-wrote-myself
 	var file = File.new()
 	file.open(campaign_level_filepath(level_id), file.READ)
@@ -86,9 +90,18 @@ func save():
 	var file = File.new()
 	file.open(campaign_level_filepath(level_id), file.WRITE)
 	file.store_string(JSON.print({
-		'railtrack_nodes': railtrack_nodes,
-		'pickup_area_positions': pickup_area_positions,
-		'area_51_positions': area_51_positions,
+		'railtrack_nodes': _vector2_array_to_json_dist(railtrack_nodes),
+		'pickup_area_positions': _vector2_array_to_json_dist(pickup_area_positions),
+		'area_51_positions': _vector2_array_to_json_dist(area_51_positions),
 		'n_remaining_actions': n_remaining_actions,
 		'texts': texts
 	}, '\t'))
+
+
+func _vector2_array_to_json_dist(vector2_array):
+	var res = []
+	
+	for vector2 in vector2_array:
+		res.push_back([vector2.x, vector2.y])
+		
+	return res

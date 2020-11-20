@@ -67,32 +67,28 @@ func _on_play_button_pressed():
 	$tools_container.visible = false
 	
 	var level_dict = {}
-	level_dict['railtrack_nodes'] = _vector2_array_to_json_dist(level_editor.get_node('path').nodes)
-	level_dict['pickup_area_positions'] = []
-	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
-		level_dict['pickup_area_positions'].push_back(pickup_area.global_position)
-		pickup_area.visible = false
-	level_dict['area_51_positions'] = []
-	for area_51 in level_editor.get_node('area_51_container').get_children():
-		level_dict['area_51_positions'].push_back(area_51.global_position)
-		area_51.visible = false
-	level_dict['n_remaining_actions'] = null
-	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
-		level_dict['n_remaining_actions'] = $tools_container/actions_limit_container/actions_limit_input.value
-	level_dict['texts'] = []
 	
-	level_editor.get_node('path').visible = false
+	level_manager.railtrack_nodes = level_editor.get_node('path').nodes
+	level_manager.pickup_area_positions = []
+	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
+		level_manager.pickup_area_positions.push_back(pickup_area.global_position)
+		pickup_area.visible = false
+	level_manager.area_51_positions = []
+	for area_51 in level_editor.get_node('area_51_container').get_children():
+		level_manager.area_51_positions.push_back(area_51.global_position)
+		area_51.visible = false
+	level_manager.n_remaining_actions = null
+	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
+		level_manager.n_remaining_actions = $tools_container/actions_limit_container/actions_limit_input.value
+	level_manager.texts = []
+	
+	level_manager.save()
+	level_manager.playing_from_level_editor = true
+	get_tree().change_scene("res://gameplay/main/main.tscn")
+	
+	"""level_editor.get_node('path').visible = false
 	var main_scene = load("res://gameplay/main/main.tscn")
 	var main = main_scene.instance()
 	level_editor.add_child(main)
 	level_editor.get_node('main').play_level(level_dict)
-	level_editor.playing_level = true
-
-
-func _vector2_array_to_json_dist(vector2_array):
-	var res = []
-	
-	for vector2 in vector2_array:
-		res.push_back([vector2.x, vector2.y])
-		
-	return res
+	level_editor.playing_level = true"""
