@@ -18,15 +18,16 @@ var level_index = null;
 
 var texts = [];
 
+var level_id = null
 
-func load_from_file(filepath: String):
+
+func load_campaign_level_from_file(level_id: int):
 	"""
-	Loads the level info from the JSON file indexed by the given campaign_index
-	and level_index
+	Loads the level info from the JSON file indexed by the given ID
 	"""
 	# Source: https://godotengine.org/qa/8291/how-to-parse-a-json-file-i-wrote-myself
 	var file = File.new()
-	file.open(filepath, file.READ)
+	file.open(campaign_level_filepath(level_id), file.READ)
 	var text = file.get_as_text()
 	
 	var dict = JSON.parse(text).result
@@ -36,6 +37,7 @@ func load_from_file(filepath: String):
 
 	load_from_dict(dict)
 	file.close()
+
 
 func load_from_dict(dict):
 	railtrack_nodes = self._read_vector2_list_from_json(dict['railtrack_nodes'])
@@ -60,3 +62,33 @@ func _read_vector2_list_from_json(json_list):
 		res.push_back(Vector2(json_railtrack_node[0], json_railtrack_node[1]))
 	
 	return res
+
+
+func reset(level_id):
+	railtrack_nodes = []
+	pickup_area_positions = []
+	n_remaining_actions = null
+	area_51_positions = []
+	texts = [];
+	self.level_id = level_id
+
+
+func create_campaign_level(level_id: int, campaign_index: int = 0):
+	reset(level_id)
+	save()
+
+
+func campaign_level_filepath(level_id: int):
+	return campaign_manager.levels_dirpath() + '/' + String(level_id) + '.json'
+
+
+func save():
+	var file = File.new()
+	file.open(campaign_level_filepath(level_id), file.WRITE)
+	file.store_string(JSON.print({
+		'railtrack_nodes': railtrack_nodes,
+		'pickup_area_positions': pickup_area_positions,
+		'area_51_positions': area_51_positions,
+		'n_remaining_actions': n_remaining_actions,
+		'texts': texts
+	}, '\t'))
