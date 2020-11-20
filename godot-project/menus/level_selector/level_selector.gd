@@ -29,3 +29,5 @@ func _add_level():
 	var level_id: int = len(campaign_manager.level_ids)
 	level_manager.create_campaign_level(level_id)
 	campaign_manager.add_level(level_id)
+	
+	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
