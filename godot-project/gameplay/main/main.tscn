@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gameplay/main/gui/fast_forward/off.png" type="Texture" id=3]
 [ext_resource path="res://gameplay/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gameplay/main/gui/fast_forward/on.png" type="Texture" id=8]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
 
@@ -41,14 +43,10 @@ visible = false
 
 [node name="restart_level_button" type="Button" parent="gui"]
 visible = false
-anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -184.021
-margin_top = -55.4899
-margin_right = -14.021
-margin_bottom = -20.4899
+margin_top = -34.9999
+margin_right = 170.0
 text = "Restart level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -73,11 +71,25 @@ visible = false
 
 [node name="return_to_level_editor_button" type="Button" parent="gui"]
 visible = false
-margin_left = 1002.37
-margin_top = 665.248
-margin_right = 1266.37
-margin_bottom = 699.248
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -34.0
+margin_right = 264.0
 text = "Return to level editor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fast_foward_button" type="TextureButton" parent="gui"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -100.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,3 +104,4 @@ __meta__ = {
 [connection signal="button_down" from="gui/restart_level_button" to="." method="_on_restart_level_button_button_down"]
 [connection signal="restart_level_requested" from="gui/game_over" to="." method="_on_game_over_restart_level_requested"]
 [connection signal="pressed" from="gui/return_to_level_editor_button" to="." method="_on_return_to_level_editor_button_pressed"]
+[connection signal="toggled" from="gui/fast_foward_button" to="." method="_on_fast_foward_button_toggled"]

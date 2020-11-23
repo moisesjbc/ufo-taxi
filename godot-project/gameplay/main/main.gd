@@ -3,6 +3,7 @@ extends Node2D
 signal game_over
 
 export (bool) var edit_mode = false
+var fast_foward_activated: bool = false
 
 onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.tscn")
 onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
@@ -32,6 +33,9 @@ func reset_current_level():
 	instantiate_areas($pickup_areas, level_manager.pickup_area_positions, pickup_area_scene)
 	instantiate_areas($area_51_areas, level_manager.area_51_positions, area_51_scene)
 	instantiate_texts($texts, level_manager.texts)
+	
+	fast_foward_activated = false
+	$gui/fast_foward_button.pressed = false
 
 
 # TODO: REMOVE
@@ -131,3 +135,14 @@ func get_areas_51():
 	
 func get_texts():
 	return $texts.get_children()
+
+
+func _on_fast_foward_button_toggled(button_pressed):
+	fast_foward_activated = button_pressed
+
+
+func fast_foward_bonus():
+	if fast_foward_activated:
+		return 2.5
+	else:
+		return 1

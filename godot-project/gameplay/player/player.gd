@@ -35,10 +35,12 @@ func _physics_process(delta):
 	# Compute velocity
 	var velocity = path.nodes[next_node_index] - path.nodes[current_node_index]
 	$sprite_body.rotate(0.01)
+	
+	var fast_foward_bonus = get_parent().get_parent().fast_foward_bonus()
 
-	if position.distance_to(path.nodes[next_node_index]) > speed * delta:
+	if position.distance_to(path.nodes[next_node_index]) > speed * delta * fast_foward_bonus:
 		# Train is still far to next node. Advance.
-		move_and_collide(velocity.normalized() * speed * delta)
+		move_and_collide(velocity.normalized() * speed * delta * fast_foward_bonus)
 	else:
 		# Trail is very close to the next node. Advance to its position and
 		# change to next node.
