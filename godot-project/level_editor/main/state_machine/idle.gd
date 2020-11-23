@@ -1,25 +1,16 @@
 extends Node2D
 
 var state_machine = null
+var main = null
 var level_editor = null
-var pickup_area_scene = preload('res://gameplay//pickup_area/pickup_area.tscn')
-var area_51_scene = preload('res://gameplay//area_51/area_51.tscn')
 
 func start():
 	$tools_container.visible = true
 	
-	if level_editor.get_node('path').nodes.size() > 0:
+	if main.get_path().nodes.size() > 0:
 		$tools_container/clear_vertices_button.visible = true
 	else:
 		$tools_container/clear_vertices_button.visible = false
-		
-	level_editor.get_node('path').visible = true
-	
-	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
-		pickup_area.visible = true
-		
-	reset_objects_container_for_level_editor(level_editor.get_node('pickup_areas_container'))
-	reset_objects_container_for_level_editor(level_editor.get_node('area_51_container'))
 
 
 func reset_objects_container_for_level_editor(objects_container):
@@ -32,28 +23,16 @@ func _on_add_vertices_button_pressed():
 
 
 func _on_clear_vertices_button_pressed():
-	level_editor.get_node('path').remove_all_nodes()
-
+	main.get_path().remove_all_nodes()
 
 
 func _on_add_pickup_area_button_pressed():
-	add_object(pickup_area_scene, level_editor.get_node('pickup_areas_container'))
+	main.add_pickup_area(self, '_on_object_selected', '_on_object_double_selected')
 
 
 func _on_add_area_51_area_pressed():
-	add_object(area_51_scene, level_editor.get_node('area_51_container'))
+	main.add_area_51(self, '_on_object_selected', '_on_object_double_selected')
 
-
-func add_object(object_scene, objects_container):
-	var object = object_scene.instance()
-	objects_container.add_child(object)
-	object.global_position = Vector2(OS.window_size.x / 2.0, OS.window_size.y / 2.0)
-	
-	# Set every object on a different "layer" so we can select always one maximum.
-	object.z_index = -objects_container.get_children().size() - 1
-
-	object.get_node('clicable').connect("clicked", self, "_on_object_selected")
-	object.get_node('clicable').connect("double_clicked", self, "_on_object_double_selected")
 
 func _on_object_selected(object):
 	if not level_editor.playing_level:
@@ -71,7 +50,7 @@ func _on_play_button_pressed():
 	level_manager.playing_from_level_editor = true
 	get_tree().change_scene("res://gameplay/main/main.tscn")
 	
-	"""level_editor.get_node('path').visible = false
+	"""main.get_path().visible = false
 	var main_scene = load("res://gameplay/main/main.tscn")
 	var main = main_scene.instance()
 	level_editor.add_child(main)
@@ -85,14 +64,21 @@ func _on_save_button_pressed():
 
 
 func _save_data_to_level_manager():
-	level_manager.railtrack_nodes = level_editor.get_node('path').nodes
+	level_manager.railtrack_nodes = main.get_path().nodes
 	level_manager.pickup_area_positions = []
-	for pickup_area in level_editor.get_node('pickup_areas_container').get_children():
+	for pickup_area in main.get_pickup_areas():
 		level_manager.pickup_area_positions.push_back(pickup_area.global_position)
 	level_manager.area_51_positions = []
-	for area_51 in level_editor.get_node('area_51_container').get_children():
+	for area_51 in main.get_areas_51():
 		level_manager.area_51_positions.push_back(area_51.global_position)
 	level_manager.n_remaining_actions = null
 	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
 		level_manager.n_remaining_actions = $tools_container/actions_limit_container/actions_limit_input.value
 	level_manager.texts = []
+	for text_label in main.get_texts():
+		var text_dict = {
+			'position': [text_label.get_global_position().x, text_label.get_global_position().y],
+			'size': [text_label.get_size().x, text_label.get_size().y],
+			'text': text_label.text
+		}
+		level_manager.texts.push_back(text_dict)

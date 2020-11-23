@@ -32,6 +32,7 @@ func load_campaign_level_from_file(level_id: int):
 	# Source: https://godotengine.org/qa/8291/how-to-parse-a-json-file-i-wrote-myself
 	var file = File.new()
 	file.open(campaign_level_filepath(level_id), file.READ)
+	self.level_id = level_id
 	var text = file.get_as_text()
 	
 	var dict = JSON.parse(text).result

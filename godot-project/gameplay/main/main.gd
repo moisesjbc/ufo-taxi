@@ -2,6 +2,8 @@ extends Node2D
 
 signal game_over
 
+export (bool) var edit_mode = false
+
 onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.tscn")
 onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
@@ -20,8 +22,11 @@ func set_current_level(level_index):
 	reset_current_level()
 	
 func reset_current_level():
-	$railtrack.reset(level_manager.railtrack_nodes, level_manager.n_remaining_actions)
-	$destination_area.reset($railtrack.get_node('path'), len(level_manager.pickup_area_positions))
+	$railtrack.reset(level_manager.railtrack_nodes, level_manager.n_remaining_actions, edit_mode)
+	if not edit_mode:
+		$destination_area.reset($railtrack.get_node('path'), len(level_manager.pickup_area_positions))
+	else:
+		$destination_area.visible = false
 	$gui/remaining_actions_label.visible = (level_manager.n_remaining_actions != null)
 
 	instantiate_areas($pickup_areas, level_manager.pickup_area_positions, pickup_area_scene)
@@ -90,3 +95,39 @@ func _on_game_over_restart_level_requested():
 
 func _on_return_to_level_editor_button_pressed():
 	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
+
+
+func get_path():
+	return $railtrack/path
+
+
+func add_pickup_area(signal_target, on_object_selected, on_ojbect_double_selected):
+	add_object(pickup_area_scene, $pickup_areas, signal_target, on_object_selected, on_ojbect_double_selected)
+
+
+func _on_add_area_51_area_pressed(signal_target, on_object_selected, on_ojbect_double_selected):
+	add_object(area_51_scene, $area_51_areas, signal_target, on_object_selected, on_ojbect_double_selected)
+
+
+func add_object(object_scene, objects_container, signal_target, on_object_selected, on_ojbect_double_selected):
+	var object = object_scene.instance()
+	objects_container.add_child(object)
+	object.global_position = Vector2(OS.window_size.x / 2.0, OS.window_size.y / 2.0)
+	
+	# Set every object on a different "layer" so we can select always one maximum.
+	object.z_index = -objects_container.get_children().size() - 1
+
+	object.get_node('clicable').connect("clicked", signal_target, on_object_selected)
+	object.get_node('clicable').connect("double_clicked", signal_target, on_ojbect_double_selected)
+
+
+func get_pickup_areas():
+	return $pickup_areas.get_children()
+	
+
+func get_areas_51():
+	return $area_51_areas.get_children()
+	
+	
+func get_texts():
+	return $texts.get_children()

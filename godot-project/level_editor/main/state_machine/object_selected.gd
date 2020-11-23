@@ -1,6 +1,7 @@
 extends Node2D
 
 var state_machine = null
+var main = null
 var level_editor = null
 var object = null
 var popup = null

@@ -2,8 +2,11 @@ extends Node2D
 
 var playing_level = false
 
+
 func _ready():
-	$path.closed = false
+	$main.reset_current_level()
+	$main/railtrack/path.closed = false
+
 
 func stop():
 	if get_node('main'):

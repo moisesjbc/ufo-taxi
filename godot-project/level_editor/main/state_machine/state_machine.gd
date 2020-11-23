@@ -20,6 +20,7 @@ func set_current_state(new_state_name, arg=null):
 	
 	current_state.state_machine = self
 	current_state.level_editor = self.get_parent()
+	current_state.main = self.get_parent().get_node('main')
 	
 	if current_state:
 		if current_state.has_method('start'):

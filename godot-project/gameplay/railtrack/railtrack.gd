@@ -9,15 +9,18 @@ signal warning_added
 signal n_remaining_actions_updated
 
 var n_remaining_actions = null
+var edit_mode: bool = false
 
 func _ready():
 	$state_machine.railtrack = self
 
-func reset(nodes, n_remaining_actions):
+func reset(nodes, n_remaining_actions, edit_mode):
 	$path.set_nodes(nodes)
 	self.n_remaining_actions = n_remaining_actions
-	player = $player
-	player.reset($path)
+	self.edit_mode = edit_mode
+	if not edit_mode:
+		player = $player
+		player.reset($path)
 	var destination_area = get_node('/root/main/railtrack/destination_area')
 	emit_signal("n_remaining_actions_updated", n_remaining_actions)
 	$state_machine.change_state("selection")

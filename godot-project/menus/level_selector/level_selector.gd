@@ -8,6 +8,7 @@ func _ready():
 		var level_option = level_options_scene.instance()
 		level_option.set_level_info(level_index + 1, campaign_manager.level_ids[level_index])
 		level_option.connect('play_button_pressed', self, '_play_level', [level_index])
+		level_option.connect('edit_button_pressed', self, '_edit_level', [level_index])
 		$margin_container/vbox_container/levels_container.add_child(level_option)
 		
 	# Only when playing from editor add button for adding a new level.
@@ -29,5 +30,12 @@ func _add_level():
 	var level_id: int = len(campaign_manager.level_ids)
 	level_manager.create_campaign_level(level_id)
 	campaign_manager.add_level(level_id)
+	
+	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
+
+
+func _edit_level(level_index: int):
+	var level_id: int = campaign_manager.level_ids[level_index]
+	level_manager.load_campaign_level_from_file(level_id)
 	
 	get_tree().change_scene("res://level_editor/main/level_editor.tscn")

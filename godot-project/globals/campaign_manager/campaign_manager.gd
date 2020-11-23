@@ -21,8 +21,7 @@ func load_campaign_info(campaign_index: int):
 	var text = file.get_as_text()
 	
 	var dict = JSON.parse(text).result
-	
-	print(dict['campaigns'][campaign_index])
+
 	self.campaign_name = dict['campaigns'][campaign_index]['name']
 	self.level_ids = dict['campaigns'][campaign_index]['levels']
 
