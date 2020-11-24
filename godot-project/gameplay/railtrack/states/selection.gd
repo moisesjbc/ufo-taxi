@@ -11,7 +11,7 @@ func input(event):
 			var mouse_position = railtrack.get_node('path').to_local(event.position)
 			var node_index = railtrack.get_node('path').get_closest_node(mouse_position)
 			if node_index != null:
-				var node_position = railtrack.get_node('path').nodes[node_index]
+				var node_position = railtrack.get_node('path').get_nodes()[node_index].global_position
 				if mouse_position.distance_to(node_position) < node_selection_distance:
 					railtrack.get_node('path').highlight_node(node_index)
 				else:

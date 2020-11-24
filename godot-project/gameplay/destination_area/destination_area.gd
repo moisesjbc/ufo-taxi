@@ -8,7 +8,7 @@ signal all_passengers_left
 
 func reset(railtrack, n_pickup_areas):
 	self.railtrack = railtrack
-	global_position = railtrack.nodes[0]
+	global_position = railtrack.get_nodes()[0].global_position
 	passengers_left = 0
 	passengers_goal = n_pickup_areas
 	update_passengers_label()

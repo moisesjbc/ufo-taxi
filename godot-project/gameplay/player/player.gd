@@ -17,34 +17,35 @@ func reset(path):
 	n_passengers = 0
 	set_physics_process(true)
 	self.path = path
-	position = path.nodes[0]
+	position = path.get_nodes()[0].global_position
 	update_passengers_label()
 	
 func change_next_node():
 	# Update current node index
 	current_node_index = current_node_index + 1
-	if current_node_index >= len(path.nodes):
+	if current_node_index >= len(path.get_nodes()):
 		current_node_index = 0
 	
 	# Update next node index
 	next_node_index = next_node_index + 1
-	if next_node_index >= len(path.nodes):
+	if next_node_index >= len(path.get_nodes()):
 		next_node_index = 0
 	
 func _physics_process(delta):
+	Sprite
 	# Compute velocity
-	var velocity = path.nodes[next_node_index] - path.nodes[current_node_index]
+	var velocity = path.get_nodes()[next_node_index].global_position - path.get_nodes()[current_node_index].global_position
 	$sprite_body.rotate(0.01)
 	
 	var fast_foward_bonus = get_parent().get_parent().fast_foward_bonus()
 
-	if position.distance_to(path.nodes[next_node_index]) > speed * delta * fast_foward_bonus:
+	if position.distance_to(path.get_nodes()[next_node_index].global_position) > speed * delta * fast_foward_bonus:
 		# Train is still far to next node. Advance.
 		move_and_collide(velocity.normalized() * speed * delta * fast_foward_bonus)
 	else:
 		# Trail is very close to the next node. Advance to its position and
 		# change to next node.
-		move_and_collide(velocity.normalized() * position.distance_to(path.nodes[next_node_index]))
+		move_and_collide(velocity.normalized() * position.distance_to(path.get_nodes()[next_node_index].global_position))
 		change_next_node()
 
 

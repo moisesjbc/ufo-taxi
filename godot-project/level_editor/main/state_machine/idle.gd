@@ -7,7 +7,7 @@ var level_editor = null
 func start():
 	$tools_container.visible = true
 	
-	if main.get_path().nodes.size() > 0:
+	if main.get_node('railtrack').get_node('path').get_nodes().size() > 0:
 		$tools_container/clear_vertices_button.visible = true
 	else:
 		$tools_container/clear_vertices_button.visible = false
@@ -64,7 +64,9 @@ func _on_save_button_pressed():
 
 
 func _save_data_to_level_manager():
-	level_manager.railtrack_nodes = main.get_path().nodes
+	level_manager.railtrack_nodes = []
+	for node in main.get_path().get_nodes():
+		level_manager.railtrack_nodes.push_back(node.global_position)
 	level_manager.pickup_area_positions = []
 	for pickup_area in main.get_pickup_areas():
 		level_manager.pickup_area_positions.push_back(pickup_area.global_position)

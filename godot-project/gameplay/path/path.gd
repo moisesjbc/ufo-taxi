@@ -1,21 +1,27 @@
 extends Node2D
 
 var closed = true
-var nodes = []
 var current_node = null
 var current_edge = null
+onready var node_scene = preload('res://gameplay/path/node/node.tscn')
 
-func set_nodes(nodes):
-	self.nodes = nodes.duplicate()
+func set_nodes(nodes_positions):
+	for node in get_nodes():
+		node.free()
+		
+	for node_position in nodes_positions:
+		add_node(node_position)
+		
+	update()
+		
+func get_nodes():
+	return get_children()
 
 func _draw():
-	for i in range(len(nodes) - 1):
-		draw_line(nodes[i], nodes[i+1], get_edge_color(i), 5)
-	if closed and len(nodes):
-		draw_line(nodes[len(nodes) - 1], nodes[0], get_edge_color(len(nodes) - 1), 5)
-	
-	if current_node != null:
-		draw_circle(nodes[current_node], 10, Color.blue)
+	for i in range(len(get_nodes()) - 1):
+		draw_line(get_nodes()[i].global_position, get_nodes()[i+1].global_position, get_edge_color(i), 5)
+	if closed and len(get_nodes()):
+		draw_line(get_nodes()[len(get_nodes()) - 1].global_position, get_nodes()[0].global_position, get_edge_color(len(get_nodes()) - 1), 5)
 
 func get_edge_color(edge_index):
 	if edge_index != current_edge:
@@ -25,9 +31,9 @@ func get_edge_color(edge_index):
 
 func get_closest_node(mouse_position):
 	var closest_node_index = 0
-	var closest_distance = nodes[closest_node_index].distance_to(mouse_position)
-	for i in range(1, len(nodes)):
-		var new_distance = nodes[i].distance_to(mouse_position)
+	var closest_distance = get_nodes()[closest_node_index].global_position.distance_to(mouse_position)
+	for i in range(1, len(get_nodes())):
+		var new_distance = get_nodes()[i].global_position.distance_to(mouse_position)
 		if new_distance < closest_distance:
 			closest_node_index = i
 			closest_distance = new_distance
@@ -35,9 +41,9 @@ func get_closest_node(mouse_position):
 	return closest_node_index
 	
 func get_closest_edge(mouse_position, ref_node, max_distance):
-	var next_node = nodes[get_next_index(ref_node)]
-	var previous_node = nodes[get_previous_index(ref_node)]
-	var current_node = nodes[ref_node]
+	var next_node = get_nodes()[get_next_index(ref_node)].global_position
+	var previous_node = get_nodes()[get_previous_index(ref_node)].global_position
+	var current_node = get_nodes()[ref_node].global_position
 
 	var next_pos_multiplier = 0.5
 	var previous_pos_multiplier = 0.5
@@ -59,18 +65,23 @@ func get_previous_index(current_index):
 	if current_index > 0:
 		return current_index - 1
 	else:
-		return len(nodes) - 1
+		return len(get_nodes()) - 1
 
 func get_next_index(current_index):
-	if current_index < len(nodes) - 1:
+	if current_index < len(get_nodes()) - 1:
 		return current_index + 1
 	else:
 		return 0
 
 func highlight_node(node_index):
 	if node_index != current_node:
+		if current_node:
+			get_nodes()[current_node].set_selected(false)
+		
 		current_edge = null
 		current_node = node_index
+		if node_index:
+			get_nodes()[current_node].set_selected(true)
 		update()
 		
 func highlight_edge(edge_index):
@@ -79,9 +90,17 @@ func highlight_edge(edge_index):
 		current_edge = edge_index
 		update()
 	
-func push_node(new_position):
-	nodes.push_back(new_position)
+func add_node(node_position, index = null):
+	print('index', index)
+	if index == null:
+		index = len(get_nodes())
+	var new_node = node_scene.instance()
+	new_node.global_position = node_position
+	add_child(new_node)
+	move_child(new_node, index)
 	update()
+	
+
 
 func close():
 	closed = true
@@ -92,7 +111,13 @@ func open():
 	update()
 	
 func remove_all_nodes():
-	nodes = []
+	for node in get_children():
+		node.queue_free()
 	current_edge = null
 	current_edge = null
+	update()
+
+
+func remove_node(node_index):
+	get_children()[node_index].free()
 	update()

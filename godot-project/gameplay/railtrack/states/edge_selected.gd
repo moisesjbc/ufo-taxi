@@ -12,8 +12,8 @@ var distance_to_middle_point = 0
 var state_machine = null
 
 func start():
-	src_position = railtrack.to_global(railtrack.get_node('path').nodes[railtrack.get_node('path').current_edge])
-	dst_position = railtrack.to_global(railtrack.get_node('path').nodes[railtrack.get_node('path').get_next_index(railtrack.get_node('path').current_edge)])
+	src_position = railtrack.to_global(railtrack.get_node('path').get_nodes()[railtrack.get_node('path').current_edge].position)
+	dst_position = railtrack.to_global(railtrack.get_node('path').get_nodes()[railtrack.get_node('path').get_next_index(railtrack.get_node('path').current_edge)].position)
 	middle_point = Vector2((src_position.x + dst_position.x) / 2, (src_position.y + dst_position.y) / 2)
 	
 func end():
