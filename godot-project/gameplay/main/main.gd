@@ -105,15 +105,15 @@ func get_path():
 	return $railtrack/path
 
 
-func add_pickup_area(signal_target, on_object_selected, on_ojbect_double_selected):
-	add_object(pickup_area_scene, $pickup_areas, signal_target, on_object_selected, on_ojbect_double_selected)
+func add_pickup_area(signal_target, on_object_selected):
+	add_object(pickup_area_scene, $pickup_areas, signal_target, on_object_selected)
 
 
-func _on_add_area_51_area_pressed(signal_target, on_object_selected, on_ojbect_double_selected):
-	add_object(area_51_scene, $area_51_areas, signal_target, on_object_selected, on_ojbect_double_selected)
+func add_area_51(signal_target, on_object_selected):
+	add_object(area_51_scene, $area_51_areas, signal_target, on_object_selected)
 
 
-func add_object(object_scene, objects_container, signal_target, on_object_selected, on_ojbect_double_selected):
+func add_object(object_scene, objects_container, signal_target, on_object_selected):
 	var object = object_scene.instance()
 	objects_container.add_child(object)
 	object.global_position = Vector2(OS.window_size.x / 2.0, OS.window_size.y / 2.0)
@@ -122,7 +122,6 @@ func add_object(object_scene, objects_container, signal_target, on_object_select
 	object.z_index = -objects_container.get_children().size() - 1
 
 	object.get_node('clicable').connect("clicked", signal_target, on_object_selected)
-	object.get_node('clicable').connect("double_clicked", signal_target, on_ojbect_double_selected)
 
 
 func get_pickup_areas():

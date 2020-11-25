@@ -91,7 +91,6 @@ func highlight_edge(edge_index):
 		update()
 	
 func add_node(node_position, index = null):
-	print('index', index)
 	if index == null:
 		index = len(get_nodes())
 	var new_node = node_scene.instance()

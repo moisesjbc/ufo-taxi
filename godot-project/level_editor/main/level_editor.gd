@@ -6,6 +6,7 @@ var playing_level = false
 func _ready():
 	$main.reset_current_level()
 	$main/railtrack/path.closed = false
+	get_node('tools_container').get_node('object_properties').set_current_object(null)
 
 
 func stop():

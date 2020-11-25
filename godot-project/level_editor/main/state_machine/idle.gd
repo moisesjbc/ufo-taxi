@@ -5,12 +5,12 @@ var main = null
 var level_editor = null
 
 func start():
-	$tools_container.visible = true
+	#level_editor.get_node('tools_container').visible = true
 	
 	if main.get_node('railtrack').get_node('path').get_nodes().size() > 0:
-		$tools_container/clear_vertices_button.visible = true
+		level_editor.get_node('tools_container').get_node('clear_vertices_button').visible = true
 	else:
-		$tools_container/clear_vertices_button.visible = false
+		level_editor.get_node('tools_container').get_node('clear_vertices_button').visible = false
 
 
 func reset_objects_container_for_level_editor(objects_container):
@@ -27,23 +27,21 @@ func _on_clear_vertices_button_pressed():
 
 
 func _on_add_pickup_area_button_pressed():
-	main.add_pickup_area(self, '_on_object_selected', '_on_object_double_selected')
+	main.add_pickup_area(self, '_on_object_selected')
 
 
 func _on_add_area_51_area_pressed():
-	main.add_area_51(self, '_on_object_selected', '_on_object_double_selected')
+	main.add_area_51(self, '_on_object_selected')
 
 
 func _on_object_selected(object):
+	level_editor.get_node('tools_container').get_node('object_properties').set_current_object(object)
 	if not level_editor.playing_level:
 		state_machine.set_current_state('move_object', object)
 
-func _on_object_double_selected(object):
-	if not level_editor.playing_level:
-		state_machine.set_current_state('object_selected', object)
 
 func _on_play_button_pressed():
-	$tools_container.visible = false
+	level_editor.get_node('tools_container').visible = false
 	
 	_save_data_to_level_manager()
 	
@@ -74,8 +72,8 @@ func _save_data_to_level_manager():
 	for area_51 in main.get_areas_51():
 		level_manager.area_51_positions.push_back(area_51.global_position)
 	level_manager.n_remaining_actions = null
-	if $tools_container/actions_limit_container/actions_limit_input.value > 0:
-		level_manager.n_remaining_actions = $tools_container/actions_limit_container/actions_limit_input.value
+	if level_editor.get_node('tools_container').get_node('actions_limit_container').get_node('actions_limit_input').value > 0:
+		level_manager.n_remaining_actions = level_editor.get_node('actions_limit_container').get_node('actions_limit_input').value
 	level_manager.texts = []
 	for text_label in main.get_texts():
 		var text_dict = {
