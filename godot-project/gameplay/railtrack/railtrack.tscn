@@ -4,7 +4,7 @@
 [ext_resource path="res://gameplay/railtrack/states/selection.gd" type="Script" id=2]
 [ext_resource path="res://gameplay/railtrack/states/node_selected.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/railtrack/states/edge_selected.gd" type="Script" id=4]
-[ext_resource path="res://gameplay/node_deletion_menu/buttons_container.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gameplay/remove_button/remove_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gameplay/path/path.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gameplay/railtrack/state_machine.gd" type="Script" id=7]
 
@@ -22,10 +22,10 @@ script = ExtResource( 2 )
 [node name="node_selected" type="Node" parent="state_machine"]
 script = ExtResource( 3 )
 
-[node name="node_deletion_menu" parent="state_machine/node_selected" instance=ExtResource( 5 )]
+[node name="remove_button" parent="state_machine/node_selected" instance=ExtResource( 5 )]
 visible = false
 
 [node name="edge_selected" type="Node2D" parent="state_machine"]
 script = ExtResource( 4 )
-[connection signal="cancelled" from="state_machine/node_selected/node_deletion_menu" to="state_machine/node_selected" method="_on_node_deletion_menu_cancelled"]
-[connection signal="confirmed" from="state_machine/node_selected/node_deletion_menu" to="state_machine/node_selected" method="_on_node_deletion_menu_confirmed"]
+[connection signal="cancelled" from="state_machine/node_selected/remove_button" to="state_machine/node_selected" method="_on_remove_button_cancelled"]
+[connection signal="confirmed" from="state_machine/node_selected/remove_button" to="state_machine/node_selected" method="_on_remove_button_confirmed"]
