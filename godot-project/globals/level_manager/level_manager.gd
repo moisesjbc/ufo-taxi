@@ -106,3 +106,8 @@ func _vector2_array_to_json_dist(vector2_array):
 		res.push_back([vector2.x, vector2.y])
 		
 	return res
+
+
+func passed():
+	if not playing_from_level_editor:
+		user_data.set_level_passed(level_id)

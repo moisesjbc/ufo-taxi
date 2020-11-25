@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 Music="*res://music/music.tscn"
 campaign_manager="*res://globals/campaign_manager/campaign_manager.tscn"
 level_manager="*res://globals/level_manager/level_manager.tscn"
+user_data="*res://globals/user_data/user_data.tscn"
 
 [display]
 

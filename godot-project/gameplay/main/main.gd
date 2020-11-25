@@ -74,6 +74,7 @@ func restart_level():
 		set_current_level(campaign_manager.current_level_index)
 
 func _on_destination_area_all_passengers_left():
+	level_manager.passed()
 	$gui/level_win_menu.display()
 
 
