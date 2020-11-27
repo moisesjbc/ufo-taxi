@@ -78,7 +78,7 @@ func _save_data_to_level_manager():
 		level_manager.area_51_positions.push_back(area_51.global_position)
 	level_manager.n_remaining_actions = null
 	if level_editor.get_node('tools_container').get_node('actions_limit_container').get_node('actions_limit_input').value > 0:
-		level_manager.n_remaining_actions = level_editor.get_node('actions_limit_container').get_node('actions_limit_input').value
+		level_manager.n_remaining_actions = level_editor.get_node('tools_container').get_node('actions_limit_container').get_node('actions_limit_input').value
 	level_manager.texts = []
 	for text_label in main.get_texts():
 		var text_dict = {

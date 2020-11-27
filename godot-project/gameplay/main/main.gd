@@ -14,6 +14,7 @@ func _ready():
 	$gui/restart_level_button.visible = not level_manager.playing_from_level_editor and not edit_mode
 	$gui/return_to_level_editor_button.visible = level_manager.playing_from_level_editor and not edit_mode
 	$gui/fast_foward_button.visible = not edit_mode
+	$gui/remaining_actions_label.visible = not edit_mode
 
 
 func _on_railtrack_warning_added(text):
