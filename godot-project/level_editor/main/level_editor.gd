@@ -7,7 +7,8 @@ func _ready():
 	$main.reset_current_level($state_machine/idle, '_on_object_selected')
 	$main/railtrack/path.closed = false
 	$tools_container/object_properties.level_editor = self
-	$tools_container/actions_limit_container/actions_limit_input.value = level_manager.n_remaining_actions
+	if level_manager.n_remaining_actions:
+		$tools_container/actions_limit_container/actions_limit_input.value = level_manager.n_remaining_actions
 	get_node('tools_container').get_node('object_properties').set_current_object(null)
 
 
