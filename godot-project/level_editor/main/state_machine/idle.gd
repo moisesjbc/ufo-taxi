@@ -5,7 +5,7 @@ var main = null
 var level_editor = null
 
 func start():
-	#level_editor.get_node('tools_container').visible = true
+	level_editor.get_node('tools_container').visible = true
 	
 	if main.get_node('railtrack').get_node('path').get_nodes().size() > 0:
 		level_editor.get_node('tools_container').get_node('clear_vertices_button').visible = true
@@ -35,9 +35,14 @@ func _on_add_area_51_area_pressed():
 
 
 func _on_object_selected(object):
-	level_editor.get_node('tools_container').get_node('object_properties').set_current_object(object)
-	if not level_editor.playing_level:
-		state_machine.set_current_state('move_object', object)
+	# Next if is a workaround for when we are in the "add_vertices" status. It
+	# prevents the engine for adding a new node and then inmediatly selecting
+	# it, moving us to the "move_object" status.
+	# TODO: Refactor the logic so this workaround is not required.
+	if state_machine.current_state == self:
+		level_editor.get_node('tools_container').get_node('object_properties').set_current_object(object)
+		if not level_editor.playing_level:
+			state_machine.set_current_state('move_object', object)
 
 
 func _on_play_button_pressed():

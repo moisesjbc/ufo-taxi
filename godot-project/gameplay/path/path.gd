@@ -89,16 +89,27 @@ func highlight_edge(edge_index):
 		current_node = null
 		current_edge = edge_index
 		update()
-	
-func add_node(node_position, index = null):
+
+
+func add_node(node_position, index = null, on_node_selected_target = null, on_node_selected_callback = null):
 	if index == null:
 		index = len(get_nodes())
 	var new_node = node_scene.instance()
 	new_node.global_position = node_position
+	if on_node_selected_target:
+		new_node.get_node('clicable').connect('clicked', on_node_selected_target, on_node_selected_callback)
 	add_child(new_node)
 	move_child(new_node, index)
 	update()
-	
+
+
+func add_node_next(previous_index, on_node_selected_target = null, on_node_selected_callback = null):
+	if len(get_nodes()):
+		var new_node_index = get_next_index(previous_index)
+		var pos0 = get_child(previous_index).global_position
+		var pos1 = get_child(new_node_index).global_position
+		var new_node_position = Vector2((pos0.x + pos1.x) / 2, (pos0.y + pos1.y) / 2)
+		add_node(new_node_position, previous_index + 1, on_node_selected_target, on_node_selected_callback)
 
 
 func close():

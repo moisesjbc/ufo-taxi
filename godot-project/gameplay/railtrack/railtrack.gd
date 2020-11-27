@@ -57,10 +57,10 @@ func remove_current_node():
 		else:
 			warning('Node in use!')
 
-func add_node(new_position):
+func add_node(new_position, on_node_selected_target = null, on_node_selected_callback = null):
 	if $path.current_edge != player.current_node_index:
 		#$path.nodes.insert($path.current_edge + 1, to_local(new_position))
-		$path.add_node(to_local(new_position), $path.current_edge + 1)
+		$path.add_node(to_local(new_position), $path.current_edge + 1, on_node_selected_target, on_node_selected_callback)
 		emit_signal("node_added", $path.current_edge + 1)
 		consume_action()
 		$path.update()

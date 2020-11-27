@@ -8,3 +8,7 @@ func set_selected(selected: bool):
 		modulate = Color.blue
 	else:
 		modulate = Color.aquamarine
+
+func update():
+	if get_parent().has_method('update'):
+		get_parent().update()

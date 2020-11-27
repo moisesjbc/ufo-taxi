@@ -104,6 +104,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="add_node_next_button" type="Button" parent="tools_container/object_properties/margin_container/vbox_container"]
+margin_top = 70.0
+margin_right = 188.0
+margin_bottom = 104.0
+text = "Add node next"
+
 [node name="save_button" type="Button" parent="tools_container"]
 margin_top = 380.0
 margin_right = 198.0
@@ -144,6 +150,7 @@ edit_mode = true
 [connection signal="pressed" from="tools_container/add_pickup_area_button" to="state_machine/idle" method="_on_add_pickup_area_button_pressed"]
 [connection signal="pressed" from="tools_container/add_area_51_area" to="state_machine/idle" method="_on_add_area_51_area_pressed"]
 [connection signal="pressed" from="tools_container/object_properties/margin_container/vbox_container/delete_button" to="tools_container/object_properties" method="_on_delete_button_pressed"]
+[connection signal="pressed" from="tools_container/object_properties/margin_container/vbox_container/add_node_next_button" to="tools_container/object_properties" method="_on_add_node_next_button_pressed"]
 [connection signal="pressed" from="tools_container/save_button" to="state_machine/idle" method="_on_save_button_pressed"]
 [connection signal="pressed" from="tools_container/play_button" to="state_machine/idle" method="_on_play_button_pressed"]
 [connection signal="pressed" from="state_machine/add_vertices/add_vertices_exit_button" to="state_machine/add_vertices" method="_on_add_vertices_exit_button_pressed"]

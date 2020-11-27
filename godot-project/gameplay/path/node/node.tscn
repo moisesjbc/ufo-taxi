@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gameplay/path/node/node.png" type="Texture" id=1]
 [ext_resource path="res://gameplay/path/node/node.gd" type="Script" id=2]
+[ext_resource path="res://level_editor/clicable/clicable.tscn" type="PackedScene" id=3]
 
-[node name="node" type="Sprite"]
+[node name="node" type="Sprite" groups=[
+"nodes",
+]]
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+
+[node name="clicable" parent="." instance=ExtResource( 3 )]
+scale = Vector2( 1.5, 1.5 )
