@@ -22,17 +22,18 @@ func _on_railtrack_warning_added(text):
 
 func set_current_level(level_index):
 	reset_current_level()
-	
-func reset_current_level():
-	$railtrack.reset(level_manager.railtrack_nodes, level_manager.n_remaining_actions, edit_mode)
+
+
+func reset_current_level(on_object_selected_target = null, on_object_selected_callback = null):
+	$railtrack.reset(level_manager.railtrack_nodes, level_manager.n_remaining_actions, edit_mode, on_object_selected_target, on_object_selected_callback)
 	if not edit_mode:
 		$destination_area.reset($railtrack.get_node('path'), len(level_manager.pickup_area_positions))
 	else:
 		$destination_area.visible = false
 	$gui/remaining_actions_label.visible = (level_manager.n_remaining_actions != null)
 
-	instantiate_areas($pickup_areas, level_manager.pickup_area_positions, pickup_area_scene)
-	instantiate_areas($area_51_areas, level_manager.area_51_positions, area_51_scene)
+	instantiate_areas($pickup_areas, level_manager.pickup_area_positions, pickup_area_scene, on_object_selected_target, on_object_selected_callback)
+	instantiate_areas($area_51_areas, level_manager.area_51_positions, area_51_scene, on_object_selected_target, on_object_selected_callback)
 	instantiate_texts($texts, level_manager.texts)
 	
 	fast_foward_activated = false
@@ -45,7 +46,7 @@ func play_level(level_dict):
 	reset_current_level()
 
 
-func instantiate_areas(parent_node, positions, scene):
+func instantiate_areas(parent_node, positions, scene, on_object_selected_target = null, on_object_selected_callback = null):
 	for area in parent_node.get_children():
 		area.queue_free()
 	
@@ -53,6 +54,13 @@ func instantiate_areas(parent_node, positions, scene):
 		var area = scene.instance()
 		parent_node.add_child(area)
 		area.global_position = position
+		
+		connect_object_selected_signal(area, on_object_selected_target, on_object_selected_callback)
+			
+
+func connect_object_selected_signal(object, on_object_selected_target = null, on_object_selected_callback = null):
+	if on_object_selected_target:
+		object.get_node('clicable').connect("clicked", on_object_selected_target, on_object_selected_callback)
 
 
 func instantiate_texts(parent_node, texts):
@@ -123,7 +131,7 @@ func add_object(object_scene, objects_container, signal_target, on_object_select
 	# Set every object on a different "layer" so we can select always one maximum.
 	object.z_index = -objects_container.get_children().size() - 1
 
-	object.get_node('clicable').connect("clicked", signal_target, on_object_selected)
+	connect_object_selected_signal(object, signal_target, on_object_selected)
 
 
 func get_pickup_areas():

@@ -14,8 +14,8 @@ var edit_mode: bool = false
 func _ready():
 	$state_machine.railtrack = self
 
-func reset(nodes, n_remaining_actions, edit_mode):
-	$path.set_nodes(nodes)
+func reset(nodes, n_remaining_actions, edit_mode, on_object_selected_target = null, on_object_selected_callback = null):
+	$path.set_nodes(nodes, on_object_selected_target, on_object_selected_callback)
 	self.n_remaining_actions = n_remaining_actions
 	self.edit_mode = edit_mode
 	if not edit_mode:

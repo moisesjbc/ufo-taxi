@@ -5,12 +5,12 @@ var current_node = null
 var current_edge = null
 onready var node_scene = preload('res://gameplay/path/node/node.tscn')
 
-func set_nodes(nodes_positions):
+func set_nodes(nodes_positions, on_object_selected_target = null, on_object_selected_callback = null):
 	for node in get_nodes():
 		node.free()
 		
 	for node_position in nodes_positions:
-		add_node(node_position)
+		add_node(node_position, null, on_object_selected_target, on_object_selected_callback)
 		
 	update()
 		
