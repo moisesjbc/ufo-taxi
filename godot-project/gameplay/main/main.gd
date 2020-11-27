@@ -11,8 +11,9 @@ onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
 
 func _ready():
 	reset_current_level()
-	$gui/restart_level_button.visible = not level_manager.playing_from_level_editor
-	$gui/return_to_level_editor_button.visible = level_manager.playing_from_level_editor
+	$gui/restart_level_button.visible = not level_manager.playing_from_level_editor and not edit_mode
+	$gui/return_to_level_editor_button.visible = level_manager.playing_from_level_editor and not edit_mode
+	$gui/fast_foward_button.visible = not edit_mode
 
 
 func _on_railtrack_warning_added(text):
