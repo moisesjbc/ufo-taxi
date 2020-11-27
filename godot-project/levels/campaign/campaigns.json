@@ -1,14 +1,15 @@
 {
-    "version": "0.3",
-    "campaigns": [
-        {
-            "name": "Intro",
-            "levels": [
-                0,
-                1,
-                2,
-                3
-            ]
-        }
-    ]
+	"version": "0.3",
+	"campaigns": [
+		{
+			"name": "Intro",
+			"levels": [
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	]
 }
