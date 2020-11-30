@@ -37,7 +37,15 @@ align = 1
 [node name="levels_container" type="GridContainer" parent="margin_container/vbox_container"]
 margin_top = 78.0
 margin_right = 1260.0
-margin_bottom = 78.0
+margin_bottom = 616.0
+size_flags_vertical = 3
 custom_constants/vseparation = 50
 custom_constants/hseparation = 50
 columns = 3
+
+[node name="return_button" type="Button" parent="margin_container/vbox_container"]
+margin_top = 666.0
+margin_right = 1260.0
+margin_bottom = 700.0
+text = "Return to main menu"
+[connection signal="pressed" from="margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]

@@ -39,3 +39,7 @@ func _edit_level(level_index: int):
 	level_manager.load_campaign_level_from_file(level_id)
 	
 	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
+
+
+func _on_return_button_pressed():
+	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
