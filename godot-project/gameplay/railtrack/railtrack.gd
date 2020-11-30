@@ -79,8 +79,8 @@ func warning(text):
 func get_closest_node(mouse_position):
 	return $path.get_closest_node(mouse_position)
 
-func get_closest_edge(mouse_position, node_index, edge_selection_distance):
-	return $path.get_closest_edge(mouse_position, node_index, edge_selection_distance)
+func get_closest_edge(mouse_position, edge_selection_distance):
+	return $path.get_closest_edge(mouse_position, edge_selection_distance)
 
 func highlight_node(node):
 	return $path.highlight_node(node)

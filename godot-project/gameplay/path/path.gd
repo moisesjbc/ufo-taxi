@@ -40,26 +40,24 @@ func get_closest_node(mouse_position):
 
 	return closest_node_index
 	
-func get_closest_edge(mouse_position, ref_node, max_distance):
-	var next_node = get_nodes()[get_next_index(ref_node)].global_position
-	var previous_node = get_nodes()[get_previous_index(ref_node)].global_position
-	var current_node = get_nodes()[ref_node].global_position
+func get_closest_edge(mouse_position, max_distance):
+	var current_closest_edge = null
+	var current_closest_edge_distance = null
 
-	var next_pos_multiplier = 0.5
-	var previous_pos_multiplier = 0.5
-	var next_pos = Vector2((current_node.x + next_node.x) * next_pos_multiplier, (current_node.y + next_node.y) * next_pos_multiplier)
-	var previous_pos = Vector2((previous_node.x + current_node.x) * previous_pos_multiplier, (previous_node.y + current_node.y) * previous_pos_multiplier)
+	for current_node_index in range(len(get_nodes())):
+		var next_node = get_nodes()[get_next_index(current_node_index)].global_position
+		var current_node = get_nodes()[current_node_index].global_position	
 
-	var distance_to_next_pos = mouse_position.distance_to(next_pos)
-	var distance_to_previous_pos = mouse_position.distance_to(previous_pos)
-	
-	if distance_to_next_pos < distance_to_previous_pos:
-		if distance_to_next_pos < max_distance:
-			return ref_node
-	else:
-		if distance_to_previous_pos < max_distance:
-			return get_previous_index(ref_node)
-	return null
+		for multiplier in [0.3, 0.5, 0.7]:
+			var next_pos = Vector2(current_node.x + (next_node.x - current_node.x) * multiplier, current_node.y + (next_node.y - current_node.y) * multiplier)
+
+			var current_distance = mouse_position.distance_to(next_pos)
+			
+			if current_distance < max_distance and (current_closest_edge == null or current_distance < current_closest_edge_distance):
+				current_closest_edge = current_node_index
+				current_closest_edge_distance = current_distance
+		
+	return current_closest_edge
 
 func get_previous_index(current_index):
 	if current_index > 0:
