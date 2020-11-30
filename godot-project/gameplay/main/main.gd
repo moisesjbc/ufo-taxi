@@ -14,7 +14,6 @@ func _ready():
 	$gui/restart_level_button.visible = not level_manager.playing_from_level_editor and not edit_mode
 	$gui/return_to_level_editor_button.visible = level_manager.playing_from_level_editor and not edit_mode
 	$gui/fast_foward_button.visible = not edit_mode
-	$gui/pause_menu.visible = not edit_mode
 
 
 func _on_railtrack_warning_added(text):
@@ -26,6 +25,7 @@ func set_current_level(level_index):
 
 
 func reset_current_level(on_object_selected_target = null, on_object_selected_callback = null):
+	$gui/pause_menu.visible = not edit_mode
 	$railtrack.reset(level_manager.railtrack_nodes, level_manager.n_remaining_actions, edit_mode, on_object_selected_target, on_object_selected_callback)
 	if not edit_mode:
 		$destination_area.reset($railtrack.get_node('path'), len(level_manager.pickup_area_positions))
@@ -86,6 +86,7 @@ func restart_level():
 func _on_destination_area_all_passengers_left():
 	level_manager.passed()
 	$gui/level_win_menu.display()
+	$gui/pause_menu.visible = false
 
 
 func _on_level_win_menu_continue_pressed():
