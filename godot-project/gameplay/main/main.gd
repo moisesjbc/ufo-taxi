@@ -18,6 +18,11 @@ func _ready():
 
 func _on_railtrack_warning_added(text):
 	$warning_label.set_warning(text)
+	
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_pause") and not $gui/level_win_menu.visible:
+		$gui/pause_menu.start()
 
 
 func set_current_level(level_index):
