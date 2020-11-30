@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/warning_label/warning_label.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gameplay/main/gui/fast_forward/on.png" type="Texture" id=8]
+[ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
 
@@ -34,7 +35,6 @@ position = Vector2( 0.943848, 0 )
 
 [node name="player" parent="railtrack" instance=ExtResource( 4 )]
 position = Vector2( -323.269, -1.12244 )
-z_index = 1
 
 [node name="gui" type="Node" parent="."]
 
@@ -93,6 +93,8 @@ texture_pressed = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="pause_menu" parent="gui" instance=ExtResource( 9 )]
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="all_passengers_left" from="destination_area" to="." method="_on_destination_area_all_passengers_left"]
 [connection signal="n_remaining_actions_updated" from="railtrack" to="." method="_on_railtrack_n_remaining_actions_updated"]

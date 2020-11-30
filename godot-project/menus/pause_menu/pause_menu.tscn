@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/pause_menu/pause_menu.gd" type="Script" id=1]
+
+[node name="pause_menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center_container" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel" type="Panel" parent="center_container"]
+margin_left = 440.0
+margin_top = 260.0
+margin_right = 840.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 400, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="center_container/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="center_container/panel/margin_container"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 385.0
+margin_bottom = 185.0
+
+[node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
+margin_right = 370.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Game paused"
+align = 1
+
+[node name="buttons_container" type="VBoxContainer" parent="center_container/panel/margin_container/vbox_container"]
+margin_top = 87.0
+margin_right = 370.0
+margin_bottom = 170.0
+custom_constants/separation = 15
+
+[node name="resume_button" type="Button" parent="center_container/panel/margin_container/vbox_container/buttons_container"]
+margin_right = 370.0
+margin_bottom = 34.0
+text = "Resume game"
+
+[node name="return_button" type="Button" parent="center_container/panel/margin_container/vbox_container/buttons_container"]
+margin_top = 49.0
+margin_right = 370.0
+margin_bottom = 83.0
+text = "Return to main menu"
+
+[node name="pause_button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 34.0
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="center_container/panel/margin_container/vbox_container/buttons_container/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="center_container/panel/margin_container/vbox_container/buttons_container/return_button" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="pause_button" to="." method="_on_pause_button_pressed"]
