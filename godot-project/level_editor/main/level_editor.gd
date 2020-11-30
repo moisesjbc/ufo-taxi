@@ -26,3 +26,7 @@ func add_path_node_next(node_index):
 func add_path_node(node_index):
 	var main = get_node('main')
 	main.get_path().add_node(node_index, null, $state_machine/idle, '_on_object_selected')
+
+
+func _on_return_to_main_menu_button_pressed():
+	get_tree().change_scene("res://menus/level_selector/level_selector.tscn")
