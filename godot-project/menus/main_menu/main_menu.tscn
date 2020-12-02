@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://cow.png" type="Texture" id=3]
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=4]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -21,7 +22,8 @@ __meta__ = {
 [node name="margin_container" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 161.0
+margin_right = 1.0
+margin_bottom = 150.0
 custom_constants/margin_right = 100
 custom_constants/margin_top = 100
 custom_constants/margin_left = 100
@@ -33,12 +35,12 @@ __meta__ = {
 [node name="vbox_container" type="VBoxContainer" parent="margin_container"]
 margin_left = 100.0
 margin_top = 100.0
-margin_right = 1180.0
-margin_bottom = 781.0
-custom_constants/separation = 300
+margin_right = 1181.0
+margin_bottom = 770.0
+custom_constants/separation = 230
 
 [node name="title_container" type="CenterContainer" parent="margin_container/vbox_container"]
-margin_right = 1080.0
+margin_right = 1081.0
 margin_bottom = 100.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="margin_container/vbox_container/title_container"]
@@ -74,26 +76,25 @@ scale = Vector2( 2.0901, 2.0901 )
 texture = ExtResource( 3 )
 
 [node name="buttons_container" type="VBoxContainer" parent="margin_container/vbox_container"]
-margin_top = 400.0
-margin_right = 1080.0
-margin_bottom = 532.0
+margin_top = 330.0
+margin_right = 1081.0
+margin_bottom = 570.0
 custom_constants/separation = 15
 
-[node name="start_game_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
-margin_right = 1080.0
-margin_bottom = 34.0
-text = "Play"
+[node name="start_game_button" parent="margin_container/vbox_container/buttons_container" instance=ExtResource( 5 )]
+margin_right = 1081.0
+margin_bottom = 70.0
 
-[node name="credits_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
-margin_top = 49.0
-margin_right = 1080.0
-margin_bottom = 83.0
+[node name="credits_button" parent="margin_container/vbox_container/buttons_container" instance=ExtResource( 5 )]
+margin_top = 85.0
+margin_right = 1081.0
+margin_bottom = 155.0
 text = "Credits"
 
-[node name="exit_button" type="Button" parent="margin_container/vbox_container/buttons_container"]
-margin_top = 98.0
-margin_right = 1080.0
-margin_bottom = 132.0
+[node name="exit_button" parent="margin_container/vbox_container/buttons_container" instance=ExtResource( 5 )]
+margin_top = 170.0
+margin_right = 1081.0
+margin_bottom = 240.0
 text = "Exit"
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/start_game_button" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="margin_container/vbox_container/buttons_container/credits_button" to="." method="_on_credits_button_pressed"]
