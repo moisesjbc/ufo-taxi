@@ -1,36 +1,32 @@
 {
 	"railtrack_nodes": [
 		[
-			337,
-			169
+			605.943848,
+			80
 		],
 		[
-			911,
-			169
+			1053.943848,
+			529
 		],
 		[
-			912,
-			487
-		],
-		[
-			337,
-			488
+			207.943848,
+			529
 		]
 	],
 	"pickup_area_positions": [
 		[
-			629,
-			338
+			601,
+			436
 		],
 		[
-			630,
-			635
+			594,
+			656
 		]
 	],
 	"area_51_positions": [
 
 	],
-	"n_remaining_actions": null,
+	"n_remaining_actions": 2,
 	"texts": [
 
 	]
