@@ -23,10 +23,10 @@ __meta__ = {
 }
 
 [node name="panel" type="Panel" parent="container"]
-margin_left = 412.0
-margin_top = 282.0
-margin_right = 612.0
-margin_bottom = 482.0
+margin_left = 540.0
+margin_top = 260.0
+margin_right = 740.0
+margin_bottom = 460.0
 rect_min_size = Vector2( 200, 200 )
 
 [node name="MarginContainer" type="MarginContainer" parent="container/panel"]
@@ -43,15 +43,15 @@ __meta__ = {
 [node name="vbox_container" type="VBoxContainer" parent="container/panel/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 180.0
+margin_right = 201.0
 margin_bottom = 180.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="body_label" type="Label" parent="container/panel/MarginContainer/vbox_container"]
-margin_right = 160.0
-margin_bottom = 136.0
+margin_right = 181.0
+margin_bottom = 122.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "LEVEL PASSED!"
@@ -59,8 +59,8 @@ align = 1
 valign = 1
 
 [node name="continue_button" type="Button" parent="container/panel/MarginContainer/vbox_container"]
-margin_top = 140.0
-margin_right = 160.0
+margin_top = 126.0
+margin_right = 181.0
 margin_bottom = 160.0
 text = "Continue"
 [connection signal="pressed" from="container/panel/MarginContainer/vbox_container/continue_button" to="." method="_on_continue_button_pressed"]

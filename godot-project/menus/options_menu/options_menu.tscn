@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://menus/options_menu/options_menu.gd" type="Script" id=1]
+[ext_resource path="res://gameplay/pickup_area/pickup_sound.wav" type="AudioStream" id=2]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=3]
+
+[node name="options_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sample_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="margin_container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="margin_container"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1270.0
+margin_bottom = 710.0
+
+[node name="title" type="Label" parent="margin_container/vbox_container"]
+margin_right = 1260.0
+margin_bottom = 28.0
+text = "OPTIONS"
+align = 1
+
+[node name="options_container" type="VBoxContainer" parent="margin_container/vbox_container"]
+margin_top = 32.0
+margin_right = 1260.0
+margin_bottom = 626.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="music_container" type="VBoxContainer" parent="margin_container/vbox_container/options_container"]
+margin_right = 1260.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music_title" type="Label" parent="margin_container/vbox_container/options_container/music_container"]
+margin_right = 1260.0
+margin_bottom = 28.0
+text = "Music volume"
+
+[node name="music_slider" type="HSlider" parent="margin_container/vbox_container/options_container/music_container"]
+margin_top = 32.0
+margin_right = 1260.0
+margin_bottom = 48.0
+value = 100.0
+
+[node name="sfx_container" type="VBoxContainer" parent="margin_container/vbox_container/options_container"]
+margin_top = 98.0
+margin_right = 1260.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx_title" type="Label" parent="margin_container/vbox_container/options_container/sfx_container"]
+margin_right = 1260.0
+margin_bottom = 28.0
+text = "SFX volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="margin_container/vbox_container/options_container/sfx_container"]
+margin_top = 32.0
+margin_right = 1260.0
+margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx_slider" type="HSlider" parent="margin_container/vbox_container/options_container/sfx_container/HBoxContainer"]
+margin_right = 1036.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="play_sample_sound" parent="margin_container/vbox_container/options_container/sfx_container/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 1040.0
+margin_right = 1260.0
+margin_bottom = 70.0
+text = "Play sample sound"
+
+[node name="return_button" parent="margin_container/vbox_container" instance=ExtResource( 3 )]
+margin_top = 630.0
+margin_right = 1260.0
+margin_bottom = 700.0
+text = "Return to main menu"
+[connection signal="value_changed" from="margin_container/vbox_container/options_container/music_container/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="margin_container/vbox_container/options_container/sfx_container/HBoxContainer/sfx_slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="margin_container/vbox_container/options_container/sfx_container/HBoxContainer/play_sample_sound" to="." method="_on_play_sample_sound_pressed"]
+[connection signal="pressed" from="margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]

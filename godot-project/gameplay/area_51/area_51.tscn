@@ -25,6 +25,7 @@ autostart = true
 pause_mode = 2
 stream = ExtResource( 3 )
 volume_db = -15.0
+bus = "SFX"
 
 [node name="clicable" parent="." instance=ExtResource( 4 )]
 scale = Vector2( 7.5, 7.5 )

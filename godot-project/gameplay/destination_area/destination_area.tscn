@@ -25,4 +25,5 @@ margin_bottom = -90.6119
 [node name="leaving_cow_audio" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2
 stream = ExtResource( 4 )
+bus = "SFX"
 [connection signal="body_entered" from="." to="." method="_on_destination_area_body_entered"]
