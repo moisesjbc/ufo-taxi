@@ -13,9 +13,9 @@
     "area_51_positions": [],
     "texts": [
         {
-            "position": [47, 73],
+            "position": [60, 115],
             "size": [310, 98],
-            "text": "1. This is the \ndestination point \nTHE COW FESTIVAL! ->"
+            "text": "1. This is the \ndestination point: \nTHE COW FESTIVAL! ->"
         },
         {
             "position": [490, 42],
@@ -28,14 +28,9 @@
             "text": "<- \n3. Cows must be\npicked at these \nfarms"
         },
         {
-            "position": [395, 617],
+            "position": [395, 640],
             "size": [718, 108],
-            "text": "^ 4. Maybe if you click on this vertex and remove it...\n(It can't be removed if the spaceship is \ntraveling from / to it!)"
-        },
-        {
-            "position": [457, 732],
-            "size": [401, 92],
-            "text": "5. You can always restart the level by cliking here ->"
+            "text": "^ 4. Maybe if you click on this vertex and remove it...\n(It can't be removed if the UFO is traveling from / to it!)"
         }
     ]
 }
