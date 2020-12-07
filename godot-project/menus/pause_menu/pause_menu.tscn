@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/pause_menu/pause_menu.gd" type="Script" id=1]
+[ext_resource path="res://gameplay/main/gui/pause/pause_on.png" type="Texture" id=2]
+[ext_resource path="res://gameplay/main/gui/pause/pause_off.png" type="Texture" id=3]
 
 [node name="pause_menu" type="Control"]
 pause_mode = 2
@@ -72,13 +74,17 @@ margin_right = 370.0
 margin_bottom = 83.0
 text = "Return to main menu"
 
-[node name="pause_button" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 34.0
-text = "Pause"
+[node name="pause_button" type="TextureButton" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 45.0
+margin_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/buttons_container/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/buttons_container/return_button" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="pause_button" to="." method="_on_pause_button_pressed"]
+[connection signal="toggled" from="pause_button" to="." method="_on_pause_button_toggled"]
