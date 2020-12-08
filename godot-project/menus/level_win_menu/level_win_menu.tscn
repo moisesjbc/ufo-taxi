@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/level_win_menu/level_win_menu.gd" type="Script" id=1]
+[ext_resource path="res://gui/panel/panel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=3]
 
 [node name="level_win_menu" type="Control"]
 pause_mode = 2
@@ -22,12 +24,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="panel" type="Panel" parent="container"]
-margin_left = 540.0
+[node name="panel" parent="container" instance=ExtResource( 2 )]
+margin_left = 440.0
 margin_top = 260.0
-margin_right = 740.0
+margin_right = 840.0
 margin_bottom = 460.0
-rect_min_size = Vector2( 200, 200 )
+rect_min_size = Vector2( 400, 200 )
 
 [node name="MarginContainer" type="MarginContainer" parent="container/panel"]
 anchor_right = 1.0
@@ -43,24 +45,24 @@ __meta__ = {
 [node name="vbox_container" type="VBoxContainer" parent="container/panel/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 201.0
+margin_right = 380.0
 margin_bottom = 180.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="body_label" type="Label" parent="container/panel/MarginContainer/vbox_container"]
-margin_right = 181.0
-margin_bottom = 122.0
+margin_right = 360.0
+margin_bottom = 86.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "LEVEL PASSED!"
 align = 1
 valign = 1
 
-[node name="continue_button" type="Button" parent="container/panel/MarginContainer/vbox_container"]
-margin_top = 126.0
-margin_right = 181.0
+[node name="continue_button" parent="container/panel/MarginContainer/vbox_container" instance=ExtResource( 3 )]
+margin_top = 90.0
+margin_right = 360.0
 margin_bottom = 160.0
 text = "Continue"
 [connection signal="pressed" from="container/panel/MarginContainer/vbox_container/continue_button" to="." method="_on_continue_button_pressed"]
