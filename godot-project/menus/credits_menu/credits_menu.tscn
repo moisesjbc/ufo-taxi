@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/credits_menu/credits_menu.gd" type="Script" id=1]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/panel/panel.tscn" type="PackedScene" id=3]
 
 [node name="credits_menu" type="Control"]
 pause_mode = 2
@@ -11,23 +13,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="container" type="CenterContainer" parent="."]
+[node name="container" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
 
-[node name="panel" type="Panel" parent="container"]
-margin_left = 111.0
-margin_top = 82.0
-margin_right = 911.0
-margin_bottom = 682.0
-rect_min_size = Vector2( 800, 600 )
-
-[node name="margin_container" type="MarginContainer" parent="container/panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="margin_container" type="MarginContainer" parent="container"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1275.0
+margin_bottom = 715.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -36,18 +34,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="vbox_container" type="VBoxContainer" parent="container/panel/margin_container"]
+[node name="vbox_container" type="VBoxContainer" parent="container/margin_container"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 780.0
-margin_bottom = 580.0
+margin_right = 1250.0
+margin_bottom = 690.0
+custom_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="title" type="Label" parent="container/panel/margin_container/vbox_container"]
-margin_right = 760.0
-margin_bottom = 14.0
+[node name="title" type="Label" parent="container/margin_container/vbox_container"]
+margin_right = 1230.0
+margin_bottom = 28.0
 text = "CREDITS"
 align = 1
 valign = 1
@@ -55,25 +54,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="body" type="RichTextLabel" parent="container/panel/margin_container/vbox_container"]
-margin_top = 18.0
-margin_right = 760.0
-margin_bottom = 536.0
+[node name="panel" parent="container/margin_container/vbox_container" instance=ExtResource( 3 )]
+margin_top = 38.0
+margin_right = 1230.0
+margin_bottom = 590.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="body" type="RichTextLabel" parent="container/margin_container/vbox_container/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[center]
-[color=green]Idea, programming, graphics, sounds (*) [/color]
+[color=#FFB563]Idea, programming, graphics, sounds (*) [/color]
 
 [color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
 [color=white](*) Sounds were created sfxr[/color]
 
 
-[color=green]Fonts[/color]
+[color=#FFB563]Fonts[/color]
 
 [color=white]Ubuntu font - [url=https://design.ubuntu.com/font/]https://design.ubuntu.com/font/[/url][/color]
 
 
-[color=green]Software used[/color]
+[color=#FFB563]Software used[/color]
 
 [color=white]Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url]
 Gimp - [url=https://www.gimp.org/]https://www.gimp.org/[/url]
@@ -107,11 +112,14 @@ LMMS - https://lmms.io
 Made for  Ludum Dare #47 - https://ldjam.com/
 (Theme: \"Stuck in a loop\")
 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="return_button" type="Button" parent="container/panel/margin_container/vbox_container"]
-margin_top = 540.0
-margin_right = 760.0
-margin_bottom = 560.0
+[node name="return_button" parent="container/margin_container/vbox_container" instance=ExtResource( 2 )]
+margin_top = 600.0
+margin_right = 1230.0
+margin_bottom = 670.0
 text = "Return to main menu"
-[connection signal="meta_clicked" from="container/panel/margin_container/vbox_container/body" to="." method="_on_body_meta_clicked"]
-[connection signal="pressed" from="container/panel/margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]
+[connection signal="meta_clicked" from="container/margin_container/vbox_container/panel/body" to="." method="_on_body_meta_clicked"]
+[connection signal="pressed" from="container/margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]
