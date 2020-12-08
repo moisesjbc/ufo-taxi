@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://menus/game_over_menu/game_over.gd" type="Script" id=1]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/panel/panel.tscn" type="PackedScene" id=3]
 
 [node name="game_over" type="Control"]
 pause_mode = 2
@@ -14,13 +16,16 @@ __meta__ = {
 [node name="center_container" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="panel" type="Panel" parent="center_container"]
-margin_left = 412.0
-margin_top = 282.0
-margin_right = 612.0
-margin_bottom = 482.0
-rect_min_size = Vector2( 200, 200 )
+[node name="panel" parent="center_container" instance=ExtResource( 3 )]
+margin_left = 440.0
+margin_top = 260.0
+margin_right = 840.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 400, 200 )
 
 [node name="margin_container" type="MarginContainer" parent="center_container/panel"]
 anchor_right = 1.0
@@ -36,24 +41,20 @@ __meta__ = {
 [node name="vbox_container" type="VBoxContainer" parent="center_container/panel/margin_container"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 180.0
+margin_right = 380.0
 margin_bottom = 180.0
 
 [node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
-margin_right = 160.0
-margin_bottom = 136.0
+margin_right = 360.0
+margin_bottom = 86.0
 size_flags_vertical = 3
 text = "GAME OVER"
 align = 1
 valign = 1
 
-[node name="restart_level_button" type="Button" parent="center_container/panel/margin_container/vbox_container"]
-pause_mode = 2
-margin_top = 140.0
-margin_right = 160.0
+[node name="restart_level_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 2 )]
+margin_top = 90.0
+margin_right = 360.0
 margin_bottom = 160.0
 text = "Restart level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/restart_level_button" to="." method="_on_restart_level_button_pressed"]
