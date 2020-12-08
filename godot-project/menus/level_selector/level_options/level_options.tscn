@@ -13,15 +13,15 @@ __meta__ = {
 }
 
 [node name="play_button" parent="." instance=ExtResource( 2 )]
-margin_right = 55.0
-margin_bottom = 40.0
+margin_right = 185.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="edit_button" parent="." instance=ExtResource( 2 )]
-margin_left = 59.0
-margin_right = 113.0
-margin_bottom = 40.0
+margin_left = 189.0
+margin_right = 243.0
+margin_bottom = 70.0
 size_flags_vertical = 3
 text = "Edit"
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]

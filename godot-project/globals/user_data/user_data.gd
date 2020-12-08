@@ -34,7 +34,7 @@ func save_to_file():
 
 
 func set_level_passed(level_id: int):
-	levels_progress[level_id] = {
+	levels_progress[str(level_id)] = {
 		'passed': true
 	}
 	save_to_file()
