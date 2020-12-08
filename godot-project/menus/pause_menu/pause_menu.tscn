@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://menus/pause_menu/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/main/gui/pause/pause_on.png" type="Texture" id=2]
 [ext_resource path="res://gameplay/main/gui/pause/pause_off.png" type="Texture" id=3]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.294118, 0.333333, 0.431373, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.298039, 0.584314, 0.423529, 1 )
 
 [node name="pause_menu" type="Control"]
 pause_mode = 2
@@ -23,11 +32,12 @@ __meta__ = {
 }
 
 [node name="panel" type="Panel" parent="center_container"]
-margin_left = 440.0
-margin_top = 260.0
-margin_right = 840.0
-margin_bottom = 460.0
-rect_min_size = Vector2( 400, 200 )
+margin_left = 340.0
+margin_top = 235.0
+margin_right = 940.0
+margin_bottom = 485.0
+rect_min_size = Vector2( 600, 250 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,6 +45,10 @@ __meta__ = {
 [node name="margin_container" type="MarginContainer" parent="center_container/panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.33484
+margin_top = 1.33484
+margin_right = -1.33484
+margin_bottom = 1.33484
 custom_constants/margin_right = 15
 custom_constants/margin_top = 15
 custom_constants/margin_left = 15
@@ -46,32 +60,32 @@ __meta__ = {
 [node name="vbox_container" type="VBoxContainer" parent="center_container/panel/margin_container"]
 margin_left = 15.0
 margin_top = 15.0
-margin_right = 385.0
-margin_bottom = 185.0
+margin_right = 585.0
+margin_bottom = 235.0
 
 [node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
-margin_right = 370.0
-margin_bottom = 83.0
+margin_right = 570.0
+margin_bottom = 61.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Game paused"
 align = 1
 
 [node name="buttons_container" type="VBoxContainer" parent="center_container/panel/margin_container/vbox_container"]
-margin_top = 87.0
-margin_right = 370.0
-margin_bottom = 170.0
+margin_top = 65.0
+margin_right = 570.0
+margin_bottom = 220.0
 custom_constants/separation = 15
 
-[node name="resume_button" type="Button" parent="center_container/panel/margin_container/vbox_container/buttons_container"]
-margin_right = 370.0
-margin_bottom = 34.0
+[node name="resume_button" parent="center_container/panel/margin_container/vbox_container/buttons_container" instance=ExtResource( 4 )]
+margin_right = 570.0
+margin_bottom = 70.0
 text = "Resume game"
 
-[node name="return_button" type="Button" parent="center_container/panel/margin_container/vbox_container/buttons_container"]
-margin_top = 49.0
-margin_right = 370.0
-margin_bottom = 83.0
+[node name="return_button" parent="center_container/panel/margin_container/vbox_container/buttons_container" instance=ExtResource( 4 )]
+margin_top = 85.0
+margin_right = 570.0
+margin_bottom = 155.0
 text = "Return to main menu"
 
 [node name="pause_button" type="TextureButton" parent="."]
