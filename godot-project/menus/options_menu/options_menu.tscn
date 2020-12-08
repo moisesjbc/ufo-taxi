@@ -1,8 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://menus/options_menu/options_menu.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/pickup_area/pickup_sound.wav" type="AudioStream" id=2]
 [ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.364706, 0.419608, 0.537255, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.364706, 0.419608, 0.537255, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.215686, 0.247059, 0.317647, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.215686, 0.247059, 0.317647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.215686, 0.247059, 0.317647, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.215686, 0.247059, 0.317647, 1 )
 
 [node name="options_menu" type="Control"]
 anchor_right = 1.0
@@ -48,7 +72,7 @@ custom_constants/separation = 50
 
 [node name="music_container" type="VBoxContainer" parent="margin_container/vbox_container/options_container"]
 margin_right = 1260.0
-margin_bottom = 48.0
+margin_bottom = 72.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,13 +85,17 @@ text = "Music volume"
 [node name="music_slider" type="HSlider" parent="margin_container/vbox_container/options_container/music_container"]
 margin_top = 32.0
 margin_right = 1260.0
-margin_bottom = 48.0
+margin_bottom = 72.0
+size_flags_vertical = 1
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
 value = 100.0
 
 [node name="sfx_container" type="VBoxContainer" parent="margin_container/vbox_container/options_container"]
-margin_top = 98.0
+margin_top = 122.0
 margin_right = 1260.0
-margin_bottom = 200.0
+margin_bottom = 224.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,8 +115,12 @@ __meta__ = {
 
 [node name="sfx_slider" type="HSlider" parent="margin_container/vbox_container/options_container/sfx_container/HBoxContainer"]
 margin_right = 1036.0
-margin_bottom = 16.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
 value = 100.0
 
 [node name="play_sample_sound" parent="margin_container/vbox_container/options_container/sfx_container/HBoxContainer" instance=ExtResource( 3 )]
