@@ -23,3 +23,11 @@ func _on_play_sample_sound_pressed():
 
 func _on_return_button_pressed():
 	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
+
+
+func _on_change_fullscreen_button_toggled(button_pressed):
+	OS.window_fullscreen = button_pressed
+	if button_pressed:
+		$margin_container/vbox_container/options_container/fullscreen_container/change_fullscreen_button.text = 'Fullscreen: ON'
+	else:
+		$margin_container/vbox_container/options_container/fullscreen_container/change_fullscreen_button.text = 'Fullscreen: OFF'

@@ -129,6 +129,22 @@ margin_right = 1260.0
 margin_bottom = 70.0
 text = "Play sample sound"
 
+[node name="fullscreen_container" type="VBoxContainer" parent="margin_container/vbox_container/options_container"]
+margin_top = 274.0
+margin_right = 1260.0
+margin_bottom = 376.0
+
+[node name="title" type="Label" parent="margin_container/vbox_container/options_container/fullscreen_container"]
+margin_right = 1260.0
+margin_bottom = 28.0
+text = "Video mode"
+
+[node name="change_fullscreen_button" parent="margin_container/vbox_container/options_container/fullscreen_container" instance=ExtResource( 3 )]
+margin_top = 32.0
+margin_right = 1260.0
+margin_bottom = 102.0
+toggle_mode = true
+
 [node name="return_button" parent="margin_container/vbox_container" instance=ExtResource( 3 )]
 margin_top = 630.0
 margin_right = 1260.0
@@ -137,4 +153,5 @@ text = "Return to main menu"
 [connection signal="value_changed" from="margin_container/vbox_container/options_container/music_container/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="margin_container/vbox_container/options_container/sfx_container/HBoxContainer/sfx_slider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="margin_container/vbox_container/options_container/sfx_container/HBoxContainer/play_sample_sound" to="." method="_on_play_sample_sound_pressed"]
+[connection signal="toggled" from="margin_container/vbox_container/options_container/fullscreen_container/change_fullscreen_button" to="." method="_on_change_fullscreen_button_toggled"]
 [connection signal="pressed" from="margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]

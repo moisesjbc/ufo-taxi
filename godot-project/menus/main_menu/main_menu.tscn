@@ -87,6 +87,7 @@ custom_constants/separation = 15
 
 [node name="start_game_button" parent="margin_container/vbox_container/buttons_container" instance=ExtResource( 5 )]
 margin_bottom = 70.0
+text = "Play"
 
 [node name="options_menu" parent="margin_container/vbox_container/buttons_container" instance=ExtResource( 5 )]
 margin_top = 85.0
