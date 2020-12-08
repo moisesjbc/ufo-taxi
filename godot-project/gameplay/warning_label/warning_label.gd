@@ -2,7 +2,7 @@ extends Node2D
 
 func set_warning(text):
 	$color_rect/label.text = text
-	$color_rect.rect_size.x = 10 * len(text)
+	$color_rect.rect_size.x = 15 * len(text)
 	visible = true
 	$display_timer.start(2)
 	set_physics_process(true)
