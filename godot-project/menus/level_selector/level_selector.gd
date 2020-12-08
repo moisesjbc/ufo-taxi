@@ -3,7 +3,6 @@ extends Control
 var level_options_scene = preload('res://menus/level_selector/level_options/level_options.tscn')
 
 func _ready():
-	print('_ready')
 	campaign_manager.load_campaign_info(0)
 	for level_index in range(len(campaign_manager.level_ids)):
 		var level_option = level_options_scene.instance()
@@ -20,7 +19,6 @@ func _ready():
 
 func level_is_enabled(level_index: int):
 	var level_id = campaign_manager.level_ids[level_index]
-	print('level_index', level_index, level_index == 0, user_data.level_passed(level_id), user_data.level_passed(campaign_manager.level_ids[level_index - 1]))
 	return level_index == 0 or user_data.level_passed(level_id) or user_data.level_passed(campaign_manager.level_ids[level_index - 1])
 
 
