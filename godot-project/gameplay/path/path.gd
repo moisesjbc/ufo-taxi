@@ -4,6 +4,7 @@ var closed = true
 var current_node = null
 var current_edge = null
 onready var node_scene = preload('res://gameplay/path/node/node.tscn')
+var edges_ref_points = []
 
 func set_nodes(nodes_positions, on_object_selected_target = null, on_object_selected_callback = null):
 	for node in get_nodes():
@@ -13,6 +14,21 @@ func set_nodes(nodes_positions, on_object_selected_target = null, on_object_sele
 		add_node(node_position, null, on_object_selected_target, on_object_selected_callback)
 		
 	update()
+	
+func generate_edge_ref_points(edge_index, insert=false):
+	var next_node = get_nodes()[get_next_index(edge_index)].global_position
+	var current_node = get_nodes()[edge_index].global_position	
+
+	var edge_ref_points = []
+	for multiplier in [0.3, 0.5, 0.7]:
+		edge_ref_points.append(Vector2(current_node.x + (next_node.x - current_node.x) * multiplier, current_node.y + (next_node.y - current_node.y) * multiplier))
+	if edge_index < len(edges_ref_points):
+		if insert:
+			edges_ref_points.insert(edge_index, edge_ref_points)
+		else:
+			edges_ref_points[edge_index] = edge_ref_points
+	else:
+		edges_ref_points.push_back(edge_ref_points)
 		
 func get_nodes():
 	return get_children()
@@ -44,18 +60,13 @@ func get_closest_edge(mouse_position, max_distance):
 	var current_closest_edge = null
 	var current_closest_edge_distance = null
 
-	for current_node_index in range(len(get_nodes())):
-		var next_node = get_nodes()[get_next_index(current_node_index)].global_position
-		var current_node = get_nodes()[current_node_index].global_position	
-
-		for multiplier in [0.3, 0.5, 0.7]:
-			var next_pos = Vector2(current_node.x + (next_node.x - current_node.x) * multiplier, current_node.y + (next_node.y - current_node.y) * multiplier)
-
-			var current_distance = mouse_position.distance_to(next_pos)
+	for current_edge_index in range(len(get_nodes())):
+		for ref_point in edges_ref_points[current_edge_index]:
+			var current_distance = mouse_position.distance_to(ref_point)
 			
 			if current_distance < max_distance and (current_closest_edge == null or current_distance < current_closest_edge_distance):
-				current_closest_edge = current_node_index
-				current_closest_edge_distance = current_distance
+				current_closest_edge = current_edge_index
+				current_closest_edge_distance = current_distance		
 		
 	return current_closest_edge
 
@@ -96,8 +107,17 @@ func add_node(node_position, index = null, on_node_selected_target = null, on_no
 	new_node.global_position = node_position
 	if on_node_selected_target:
 		new_node.get_node('clicable').connect('clicked', on_node_selected_target, on_node_selected_callback)
+	
 	add_child(new_node)
 	move_child(new_node, index)
+	
+	if index == 0:
+		generate_edge_ref_points(len(get_nodes()) - 1)
+		generate_edge_ref_points(0, true)
+	else:
+		generate_edge_ref_points(index - 1)
+		generate_edge_ref_points(index, true)
+	
 	update()
 
 
@@ -128,4 +148,11 @@ func remove_all_nodes():
 
 func remove_node(node_index):
 	get_children()[node_index].free()
+	
+	edges_ref_points.remove(node_index)
+	if node_index == 0:
+		generate_edge_ref_points(len(get_nodes()) - 1)
+	else:
+		generate_edge_ref_points(node_index - 1)
+	
 	update()
