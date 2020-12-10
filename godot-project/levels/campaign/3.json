@@ -1,26 +1,59 @@
 {
-    "version": "0.3",
-    "railtrack_nodes": [
-        [350, 150],
-	    [1050, 150],
-	    [1050, 450],
-	    [850, 600],
-	    [550, 600],
-	    [350, 450]
-    ],
-    "pickup_area_positions": [
-        [850, 450],
-	    [550, 450]
-    ],
-    "n_remaining_actions": null,
-    "area_51_positions": [
-        [700, 600]    
-    ],
-    "texts": [
-        {
-            "position": [400, 610],
-            "size": [150, 22],
-            "text": "1. Avoid these! ->"
-        }
-    ]
+	"railtrack_nodes": [
+		[
+			252.438477,
+			148
+		],
+		[
+			1184.438477,
+			149
+		],
+		[
+			1187.438477,
+			504
+		],
+		[
+			871.708496,
+			600
+		],
+		[
+			571.708496,
+			600
+		],
+		[
+			253.775391,
+			504
+		]
+	],
+	"pickup_area_positions": [
+		[
+			974,
+			351
+		],
+		[
+			468,
+			352
+		]
+	],
+	"area_51_positions": [
+		[
+			713,
+			457
+		]
+	],
+	"n_remaining_actions": 2,
+	"texts": [
+		{
+			"position": [
+				640,
+				310
+			],
+			"size": [
+				199,
+				28
+			],
+			"text": "Avoid these!\n          v",
+            "color": "ed320b"
+		}
+	]
 }

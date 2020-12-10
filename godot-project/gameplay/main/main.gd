@@ -78,6 +78,8 @@ func instantiate_texts(parent_node, texts):
 		label.set_global_position(Vector2(text['position'][0], text['position'][1]))
 		label.set_size(Vector2(text['size'][0], text['size'][1]))
 		label.text = text['text']
+		if 'color' in text:
+			label.add_color_override('font_color', Color(text['color']))
 		parent_node.add_child(label)
 
 func next_level():
