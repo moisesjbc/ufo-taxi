@@ -61,7 +61,7 @@ align = 1
 margin_top = 72.0
 margin_right = 264.0
 margin_bottom = 100.0
-text = "v0.3"
+text = "v0.3.1"
 align = 1
 
 [node name="Sprite" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer"]

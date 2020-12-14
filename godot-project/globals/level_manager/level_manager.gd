@@ -91,6 +91,7 @@ func save():
 	var file = File.new()
 	file.open(campaign_level_filepath(level_id), file.WRITE)
 	file.store_string(JSON.print({
+		'version': '0.3.1',
 		'railtrack_nodes': _vector2_array_to_json_dist(railtrack_nodes),
 		'pickup_area_positions': _vector2_array_to_json_dist(pickup_area_positions),
 		'area_51_positions': _vector2_array_to_json_dist(area_51_positions),
