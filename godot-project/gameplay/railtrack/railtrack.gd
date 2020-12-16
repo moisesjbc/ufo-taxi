@@ -26,10 +26,6 @@ func reset(nodes, n_remaining_actions, edit_mode, on_object_selected_target = nu
 	$state_machine.change_state("selection")
 	$path.update()
 
-func select_current_node():
-	if $path.current_node != null:
-		$state_machine.change_state("node_selected")
-		
 func confirm_current_selection():
 	if $path.current_node != null:
 		if $path.current_node:

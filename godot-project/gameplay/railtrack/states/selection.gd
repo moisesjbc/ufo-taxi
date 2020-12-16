@@ -7,7 +7,7 @@ export var edge_selection_distance: int = 100
 
 func input(event):
 	if not railtrack.edit_mode:
-		if event is InputEventMouseMotion or event is InputEventScreenTouch:
+		if event is InputEventMouseMotion or event is InputEventScreenTouch or event is InputEventMouseButton:
 			var mouse_position = railtrack.get_node('path').to_local(event.position)
 			var node_index = railtrack.get_node('path').get_closest_node(mouse_position)
 			if node_index != null:
@@ -18,12 +18,6 @@ func input(event):
 					railtrack.get_node('path').highlight_node(null)
 					var closest_edge = railtrack.get_node('path').get_closest_edge(mouse_position, edge_selection_distance)
 					railtrack.get_node('path').highlight_edge(closest_edge)
-					
-			#var closest_edge = railtrack.get_node('path').get_closest_edge(mouse_position, edge_selection_distance)
-			#railtrack.get_node('path').highlight_edge(closest_edge)
-
-			if event is InputEventScreenTouch and event.pressed:
-				railtrack.confirm_current_selection()
 			
-		elif event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.pressed:
 			railtrack.confirm_current_selection()
