@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.3.1] - 2020-12-11
+
+### Fixed
+
+- Fix some hidden vertices in level 8.
+- Fixed "Fullscreen: OFF" label when entering options menu in fullscreen mode.
+- Fixed nodes / edge being highlighted but not selected on mobile.
+- Fixed reseting level when player had all cows trigerring level win.
+
 
 ## [0.3] - 2020-12-11
 
@@ -55,7 +64,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - First version upload to [Ludum Dare #47](https://ldjam.com/events/ludum-dare/47)
 
-[Unreleased]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3...HEAD
+[Unreleased]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3...v0.3.1
 [0.3]: https://github.com/moisesjbc/ufo-taxi/compare/v0.2...v0.3
 [0.2]: https://github.com/moisesjbc/ufo-taxi/compare/v0.1...v0.2
 [0.1]: https://github.com/moisesjbc/ufo-taxi/releases/tag/v0.1
