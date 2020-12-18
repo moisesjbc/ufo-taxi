@@ -70,7 +70,7 @@ bbcode_text = "[center]
 [color=#FFB563]Idea, programming, graphics, sounds (*) [/color]
 
 [color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
-[color=white](*) Sounds were created sfxr[/color]
+[color=white](*) Sounds were created using [url=http://www.drpetter.se/project_sfxr.html]sfxr[/url][/color]
 
 
 [color=#FFB563]Fonts[/color]
@@ -86,14 +86,19 @@ sfxr - [url=http://www.drpetter.se/project_sfxr.html]http://www.drpetter.se/proj
 LMMS - [url=https://lmms.io]https://lmms.io[/url]
 [/color]
 
-[color=white]Made for  Ludum Dare #47 - [url=https://ldjam.com/]https://ldjam.com/[/url]
-(Theme: \"Stuck in a loop\")[/color]
+[color=#FFB563]Thanks[/color]
+
+LeninGamers (Adrian, Cristian and Omar) - [url=https://www.twitch.tv/leningamers]https://www.twitch.tv/leningamers[/url]
+Himar - [url=https://www.facebook.com/sobrelamarcharockbandcovers]https://www.facebook.com/sobrelamarcharockbandcovers[/url]
+
+[color=#FFB563]Made for  Ludum Dare #47 - [url=https://ldjam.com/]https://ldjam.com/[/url][/color]
+(Theme: \"Stuck in a loop\")
 [/center]"
 text = "
 Idea, programming, graphics, sounds (*) 
 
 Moisés J. Bonilla Caraballo (moisesjbc) - https://moisesjose.com
-(*) Sounds were created sfxr
+(*) Sounds were created using sfxr
 
 
 Fonts
@@ -108,6 +113,11 @@ Gimp - https://www.gimp.org/
 sfxr - http://www.drpetter.se/project_sfxr.html
 LMMS - https://lmms.io
 
+
+Thanks
+
+LeninGamers (Adrian, Cristian and Omar) - https://www.twitch.tv/leningamers
+Himar - https://www.facebook.com/sobrelamarcharockbandcovers
 
 Made for  Ludum Dare #47 - https://ldjam.com/
 (Theme: \"Stuck in a loop\")
