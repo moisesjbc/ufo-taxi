@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$margin_container/vbox_container/title_container/HBoxContainer/vbox_container/version.text = 'v' + config.GAME_VERSION
 	if OS.get_name() == "HTML5":
 		$margin_container/vbox_container/buttons_container/exit_button.visible = false
 
