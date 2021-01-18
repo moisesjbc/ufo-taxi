@@ -1,3 +1,3 @@
 extends Node
 
-const GAME_VERSION = '0.3.2'
+const GAME_VERSION = '0.4'

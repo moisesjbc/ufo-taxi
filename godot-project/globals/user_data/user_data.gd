@@ -2,7 +2,6 @@ extends Node
 
 const USER_DATA_FILEPATH = 'user://user-data.json'
 
-var game_version = '0.3'
 var levels_progress = {}
 
 
@@ -20,7 +19,7 @@ func load_from_file():
 	var text = file.get_as_text()
 	
 	var dict = JSON.parse(text).result
-	self.game_version = dict['game_version']
+	# TODO: Perform upgrade (if required) when dict['game_version'] !== config.GAME_VERSION
 	self.levels_progress = dict['levels_progress']
 
 
@@ -28,7 +27,7 @@ func save_to_file():
 	var file = File.new()
 	file.open(USER_DATA_FILEPATH, file.WRITE)
 	file.store_string(JSON.print({
-		'game_version': self.game_version,
+		'game_version': config.GAME_VERSION,
 		'levels_progress': self.levels_progress
 	}, '\t'))
 
