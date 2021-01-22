@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="365"
+   height="365"
+   viewBox="0 0 96.572918 96.572918"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="farm.svg"
+   inkscape:export-filename="/home/moisesjbc/proyectos/videojuegos/ufo-taxi/godot-project/gameplay/pickup_area/farm.png"
+   inkscape:export-xdpi="33.279999"
+   inkscape:export-ydpi="33.279999">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="190.76812"
+     inkscape:cy="156.71429"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer5"
+     showgrid="false"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="gardeen"
+     transform="translate(0,-200.42707)">
+    <path
+       style="fill:#92ae37;fill-opacity:1;stroke:#000000;stroke-width:1.32291663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2.1462004,203.03107 0.016705,92.00844 H 94.578079 l 0.217154,-92.30745 -93.2930912,-0.0203"
+       id="path836"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/moisesjbc/proyectos/videojuegos/ufo-taxi/godot-project/gameplay/pickup_area/farm.png"
+       inkscape:export-xdpi="33.69912"
+       inkscape:export-ydpi="33.69912" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="house_shadow">
+    <rect
+       style="fill:#000000;fill-opacity:0.39215686;stroke:none;stroke-width:1.74183798;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect889"
+       width="56.043121"
+       height="47.551929"
+       x="7.6922135"
+       y="10.480976" />
+    <rect
+       style="fill:#000000;fill-opacity:0.39215686;stroke:none;stroke-width:0.50105989;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect889-3"
+       width="92.525414"
+       height="2.3833795"
+       x="2.1462004"
+       y="2.6040001" />
+    <rect
+       y="94.612442"
+       x="0.046238635"
+       height="2.3833795"
+       width="93.995399"
+       id="rect906"
+       style="fill:#000000;fill-opacity:0.39215686;stroke:none;stroke-width:0.50502443;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="fill:#000000;fill-opacity:0.39215686;stroke:none;stroke-width:0.49961042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect908"
+       width="91.990883"
+       height="2.3833795"
+       x="2.604876"
+       y="-2.4463105"
+       transform="matrix(-1.7646353e-4,0.99999998,-0.99999999,-1.6901738e-4,0,0)" />
+  </g>
+  <g
+     inkscape:label="house"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-200.42707)">
+    <path
+       style="fill:#ea6300;fill-opacity:1;stroke:#000000;stroke-width:1.85208333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 15.378961,210.33155 v 40.13596 h 48.88554 v -40.08863 z"
+       id="path831"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.11666656;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 15.360126,230.53205 h 48.52742 l 0.02132,0.0475"
+       id="path833"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

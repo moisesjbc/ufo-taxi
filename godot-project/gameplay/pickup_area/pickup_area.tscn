@@ -7,7 +7,7 @@
 [ext_resource path="res://level_editor/clicable/clicable.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 53, 51.75 )
+extents = Vector2( 61.0893, 61.4653 )
 
 [node name="pickup_area" type="Area2D"]
 script = ExtResource( 2 )
@@ -17,7 +17,7 @@ modulate = Color( 0.603922, 0.945098, 0.564706, 1 )
 texture = ExtResource( 1 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-position = Vector2( 2.75, 0 )
+position = Vector2( 0.860107, 0 )
 shape = SubResource( 1 )
 
 [node name="cow_label" parent="." instance=ExtResource( 3 )]
@@ -29,8 +29,8 @@ stream = ExtResource( 4 )
 bus = "SFX"
 
 [node name="clicable" parent="." instance=ExtResource( 5 )]
-position = Vector2( -5.05414, -2.0811 )
-scale = Vector2( 5.5, 5.5 )
+position = Vector2( 0.930489, -0.191248 )
+scale = Vector2( 6, 6 )
 
 [node name="cooldown_timer" type="Timer" parent="."]
 one_shot = true
