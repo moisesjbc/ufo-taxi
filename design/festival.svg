@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="365"
+   height="365"
+   viewBox="0 0 96.572918 96.572918"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="festival.svg"
+   inkscape:export-filename="/home/moisesjbc/proyectos/videojuegos/ufo-taxi/godot-project/gameplay/destination_area/festival.png"
+   inkscape:export-xdpi="33.279999"
+   inkscape:export-ydpi="33.279999">
+  <defs
+     id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 48.286459 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="96.572918 : 48.286459 : 1"
+       inkscape:persp3d-origin="48.286459 : 32.190973 : 1"
+       id="perspective936" />
+    <filter
+       inkscape:label="Pointillism"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:menu-tooltip="Gives a turbulent pointillist HSL sensitive transparency"
+       inkscape:menu="Scatter"
+       height="1.2"
+       width="1.2"
+       y="-0.1"
+       x="-0.1"
+       id="filter1649">
+      <feTurbulence
+         seed="50"
+         type="fractalNoise"
+         baseFrequency="1"
+         numOctaves="3"
+         result="result1"
+         id="feTurbulence1631" />
+      <feColorMatrix
+         type="luminanceToAlpha"
+         in="SourceGraphic"
+         result="result0"
+         id="feColorMatrix1633" />
+      <feColorMatrix
+         result="result2"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 "
+         id="feColorMatrix1635" />
+      <feComposite
+         result="result3"
+         operator="over"
+         in="result1"
+         in2="result2"
+         id="feComposite1637" />
+      <feColorMatrix
+         result="result91"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 5 -3.2"
+         id="feColorMatrix1639" />
+      <feComposite
+         in2="result91"
+         operator="arithmetic"
+         k1="1.5"
+         result="result93"
+         id="feComposite1641" />
+      <feComposite
+         in2="result93"
+         in="SourceGraphic"
+         operator="out"
+         result="result4"
+         id="feComposite1643" />
+      <feComposite
+         in2="result4"
+         operator="arithmetic"
+         k2="0.5"
+         k1="1"
+         id="feComposite1645" />
+      <feDisplacementMap
+         scale="15"
+         xChannelSelector="R"
+         yChannelSelector="A"
+         in2="result1"
+         result="result92"
+         id="feDisplacementMap1647" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="193.98135"
+     inkscape:cy="138.70519"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer8"
+     showgrid="false"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="gardeen"
+     transform="translate(0,-200.42707)"
+     style="display:inline">
+    <path
+       style="fill:#92ae37;fill-opacity:1;stroke:#000000;stroke-width:1.32291663;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 2.1462004,203.03107 0.016705,92.00844 H 94.578079 l 0.217154,-92.30745 -93.2930912,-0.0203"
+       id="path836"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/moisesjbc/proyectos/videojuegos/ufo-taxi/godot-project/gameplay/pickup_area/farm.png"
+       inkscape:export-xdpi="33.69912"
+       inkscape:export-ydpi="33.69912" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer8"
+     inkscape:label="people"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="stage_shadow"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#000000;fill-opacity:0.39215686;stroke:none;stroke-width:0.46627396;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect856-3"
+       width="7.8844666"
+       height="23.11882"
+       x="78.309975"
+       y="10.287838" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="vallas shadow" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="vallas">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26555285px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 2.4054257,34.165481 H 94.078871"
+       id="path933"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:label="stage"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-200.42707)"
+     style="display:inline">
+    <rect
+       style="fill:#c8c8c8;fill-opacity:1;stroke:#000000;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect848"
+       width="72.430038"
+       height="20.713387"
+       x="13.76438"
+       y="209.87012" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="stage_roof_shadow"
+     style="display:inline">
+    <rect
+       style="fill:#000000;fill-opacity:0.39215686;stroke:none;stroke-width:1.50611567;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect856"
+       width="68.421005"
+       height="27.796036"
+       x="9.8889723"
+       y="9.8439522" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="stage_roof">
+    <rect
+       style="fill:#969696;fill-opacity:1;stroke:#000000;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect853"
+       width="63.610146"
+       height="19.777945"
+       x="17.778795"
+       y="6.4923425" />
+  </g>
+</svg>
