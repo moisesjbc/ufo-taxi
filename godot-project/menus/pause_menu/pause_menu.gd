@@ -5,6 +5,7 @@ func start():
 	get_tree().paused = true
 	$pause_button.pressed = true
 	$center_container.visible = true
+	$center_container/panel/margin_container/vbox_container/level_label.text = 'Level ' + str(campaign_manager.current_campaign_index + 1) + ' - ' + str(campaign_manager.current_level_index + 1)
 
 
 func stop():
