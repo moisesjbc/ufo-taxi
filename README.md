@@ -2,4 +2,4 @@
 
 ## Instantiate images (Ubuntu)
 
-        (cd design/ && bash instantiate_images.sh)
+        bash scripts/instantiate_images.sh

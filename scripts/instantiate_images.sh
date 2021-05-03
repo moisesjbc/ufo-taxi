@@ -6,5 +6,6 @@
 
 DIVIDE_BY=20
 
-convert -resize "$DIVIDE_BY%" ufo/ufo_body.png ../godot-project/gameplay/player/ufo_body.png
-convert -resize "$DIVIDE_BY%" ufo/ufo_head.png ../godot-project/gameplay/player/ufo_head.png
+convert -resize "$DIVIDE_BY%" design/ufo/ufo_body.png godot-project/gameplay/player/ufo_body.png
+convert -resize "$DIVIDE_BY%" design/ufo/ufo_head.png godot-project/gameplay/player/ufo_head.png
+convert -resize "$DIVIDE_BY%" design/farm/farm.png godot-project/gameplay/pickup_area/farm.png
