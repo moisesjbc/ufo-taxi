@@ -15,6 +15,15 @@ The goal on each level is to modify the path followed by the UFO so it can pick 
 - Click on a vertex and confirm for removing it.
 - Drag and drop an edge for creating a new vertex.
 
+## Links
+
+- [Play "UFO taxi!" online](https://www.moisesjose.com/games/ufo-taxi/play)
+- [Download "UFO taxi!" v0.3.1 for Windows](https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_windows_v0.3.1.zip)
+- [Download "UFO taxi!" v0.3.1 for GNU/Linux](https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_linux_v0.3.1.zip)
+- ["UFO taxi!" page at Ludum Dare #47"](https://ldjam.com/events/ludum-dare/47/ufo-taxi)
+- ["UFO taxi!" page at itch.io](https://moisesjbc.itch.io/ufo-taxi)
+- ["UFO taxi!" Github repository](https://github.com/moisesjbc/ufo-taxi)
+
 ## Credits
 
 ### Idea, programming, graphics, sounds 
@@ -43,7 +52,7 @@ The goal on each level is to modify the path followed by the UFO so it can pick 
 
 ## Scripts
 
-Directory scripts/ includes the following utility scripts
+Directory scripts/ includes the following utility scripts:
 
 ### devel-html.sh
 
