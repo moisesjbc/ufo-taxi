@@ -11,7 +11,7 @@ func _ready():
 
 
 func set_level_info(level_index: int, level_id: int, enabled: bool):
-	$play_button.text = str(level_index)
+	$play_button.text = str(campaign_manager.current_campaign_index + 1) + ' - ' + str(level_index)
 	if enabled:
 		$play_button.disabled = false
 		$play_button.text = $play_button.text

@@ -5,8 +5,21 @@ var level_ids = []
 var current_level_index = 0
 var current_campaign_index = 0
 
-func load_level(campaign_index: int, level_index: int):
-	self.load_campaign_info(campaign_index)
+func _load_campaigns_dict():
+	var file = File.new()
+	file.open(levels_dirpath() + '/campaigns.json', file.READ)
+	var text = file.get_as_text()
+	return JSON.parse(text).result
+
+func get_number_of_campaigns():
+	var dict = _load_campaigns_dict()
+	return len(dict['campaigns'])
+
+func set_current_campaign_index(new_current_campaign_index):
+	current_campaign_index = new_current_campaign_index
+
+func load_level(level_index: int):
+	self.load_campaign_info(current_campaign_index)
 	self._load_level(level_index)
 
 
@@ -16,12 +29,7 @@ func _load_level(level_index: int):
 
 
 func load_campaign_info(campaign_index: int):
-	var file = File.new()
-	file.open(levels_dirpath() + '/campaigns.json', file.READ)
-	var text = file.get_as_text()
-	
-	var dict = JSON.parse(text).result
-
+	var dict = _load_campaigns_dict()
 	self.campaign_name = dict['campaigns'][campaign_index]['name']
 	self.level_ids = dict['campaigns'][campaign_index]['levels']
 

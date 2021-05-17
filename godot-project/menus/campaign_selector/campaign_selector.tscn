@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://menus/level_selector/level_selector.gd" type="Script" id=1]
+[ext_resource path="res://menus/campaign_selector/campaign_selector.gd" type="Script" id=1]
 [ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=2]
 
-[node name="level_selector" type="Control"]
+[node name="campaign_selector" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -32,10 +32,10 @@ custom_constants/separation = 50
 [node name="title" type="Label" parent="margin_container/vbox_container"]
 margin_right = 1260.0
 margin_bottom = 28.0
-text = "Level selector"
+text = "Campaign selector"
 align = 1
 
-[node name="levels_container" type="GridContainer" parent="margin_container/vbox_container"]
+[node name="campaigns_container" type="GridContainer" parent="margin_container/vbox_container"]
 margin_top = 78.0
 margin_right = 1260.0
 margin_bottom = 580.0
@@ -44,15 +44,9 @@ custom_constants/vseparation = 50
 custom_constants/hseparation = 50
 columns = 3
 
-[node name="add_level_button" parent="margin_container/vbox_container/levels_container" instance=ExtResource( 2 )]
-margin_right = 53.0
-margin_bottom = 70.0
-text = "Add"
-
 [node name="return_button" parent="margin_container/vbox_container" instance=ExtResource( 2 )]
 margin_top = 630.0
 margin_right = 1260.0
 margin_bottom = 700.0
-text = "Return to campaign selector"
-[connection signal="pressed" from="margin_container/vbox_container/levels_container/add_level_button" to="." method="_on_add_level_button_pressed"]
+text = "Return to main menu"
 [connection signal="pressed" from="margin_container/vbox_container/return_button" to="." method="_on_return_button_pressed"]

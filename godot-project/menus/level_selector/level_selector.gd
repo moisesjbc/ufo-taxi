@@ -23,7 +23,7 @@ func level_is_enabled(level_index: int):
 
 
 func _play_level(level_index):
-	campaign_manager.load_level(0, level_index)
+	campaign_manager.load_level(level_index)
 	get_tree().change_scene('res://gameplay/main/main.tscn')
 
 func _edit_level(level_index: int):
@@ -34,7 +34,7 @@ func _edit_level(level_index: int):
 
 
 func _on_return_button_pressed():
-	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
+	get_tree().change_scene("res://menus/campaign_selector/campaign_selector.tscn")
 
 
 func _on_add_level_button_pressed():

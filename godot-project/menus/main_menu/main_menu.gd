@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_start_game_button_pressed():
-	get_tree().change_scene("res://menus/level_selector/level_selector.tscn")
+	get_tree().change_scene("res://menus/campaign_selector/campaign_selector.tscn")
 
 
 func _on_options_menu_pressed():
