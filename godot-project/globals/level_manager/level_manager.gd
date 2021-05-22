@@ -13,6 +13,8 @@ var n_remaining_actions = null
 
 var area_51_positions = []
 
+var building_defs = []
+
 var campaign_index = null;
 var level_index = null;
 
@@ -48,6 +50,7 @@ func load_from_dict(dict):
 	railtrack_nodes = self._read_vector2_list_from_json(dict['railtrack_nodes'])
 	pickup_area_positions = self._read_vector2_list_from_json(dict['pickup_area_positions'])
 	area_51_positions = self._read_vector2_list_from_json(dict['area_51_positions'])
+	building_defs = self._read_building_defs_list_from_json(dict['buildings'] if 'buildings' in dict else [])
 	n_remaining_actions = dict['n_remaining_actions']
 	
 	for child in get_children():
@@ -67,6 +70,17 @@ func _read_vector2_list_from_json(json_list):
 		res.push_back(Vector2(json_railtrack_node[0], json_railtrack_node[1]))
 	
 	return res
+	
+func _read_building_defs_list_from_json(building_defs):
+	var res = []
+	
+	for building_def in building_defs:
+		res.push_back({
+			'type': building_def.type,
+			'position': Vector2(building_def.position[0], building_def.position[1])
+		})
+	
+	return res
 
 
 func reset(level_id):
@@ -78,7 +92,7 @@ func reset(level_id):
 	self.level_id = level_id
 
 
-func create_campaign_level(level_id: int, campaign_index: int = 0):
+func create_campaign_level(level_id: int):
 	reset(level_id)
 	save()
 
@@ -95,6 +109,7 @@ func save():
 		'railtrack_nodes': _vector2_array_to_json_dist(railtrack_nodes),
 		'pickup_area_positions': _vector2_array_to_json_dist(pickup_area_positions),
 		'area_51_positions': _vector2_array_to_json_dist(area_51_positions),
+		'buildings': _building_defs_to_json(building_defs),
 		'n_remaining_actions': n_remaining_actions,
 		'texts': texts
 	}, '\t'))
@@ -105,6 +120,17 @@ func _vector2_array_to_json_dist(vector2_array):
 	
 	for vector2 in vector2_array:
 		res.push_back([vector2.x, vector2.y])
+		
+	return res
+
+func _building_defs_to_json(building_defs):
+	var res = []
+	
+	for building_def in building_defs:
+		res.push_back({
+			'type': building_def['type'],
+			'position': [building_def['position'].x, building_def['position'].y]
+		})
 		
 	return res
 

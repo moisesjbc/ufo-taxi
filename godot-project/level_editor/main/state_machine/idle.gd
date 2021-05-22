@@ -32,6 +32,9 @@ func _on_add_pickup_area_button_pressed():
 
 func _on_add_area_51_area_pressed():
 	main.add_area_51(self, '_on_object_selected')
+	
+func _on_add_reverser_button_pressed():
+	main.add_building('reverser', self, '_on_object_selected')
 
 
 func _on_object_selected(object):
@@ -76,6 +79,11 @@ func _save_data_to_level_manager():
 	level_manager.area_51_positions = []
 	for area_51 in main.get_areas_51():
 		level_manager.area_51_positions.push_back(area_51.global_position)
+	for building in main.get_buildings():
+		level_manager.building_defs.push_back({
+			'type': building.type,
+			'position': building.global_position
+		})
 	level_manager.n_remaining_actions = null
 	if level_editor.get_node('tools_container').get_node('actions_limit_container').get_node('actions_limit_input').value > 0:
 		level_manager.n_remaining_actions = level_editor.get_node('tools_container').get_node('actions_limit_container').get_node('actions_limit_input').value
@@ -87,3 +95,4 @@ func _save_data_to_level_manager():
 			'text': text_label.text
 		}
 		level_manager.texts.push_back(text_dict)
+

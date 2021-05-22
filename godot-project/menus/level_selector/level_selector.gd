@@ -3,7 +3,7 @@ extends Control
 var level_options_scene = preload('res://menus/level_selector/level_options/level_options.tscn')
 
 func _ready():
-	campaign_manager.load_campaign_info(0)
+	campaign_manager.load_current_campaign_info()
 	for level_index in range(len(campaign_manager.level_ids)):
 		var level_option = level_options_scene.instance()
 		level_option.set_level_info(level_index + 1, campaign_manager.level_ids[level_index], level_is_enabled(level_index))
@@ -41,7 +41,7 @@ func _on_add_level_button_pressed():
 	# Right now we can rely on len(campaign_manager.level_ids) for calculating
 	# the next free ID.
 	# TODO: Change this calculation once we add new campaigns.
-	var level_id: int = len(campaign_manager.level_ids)
+	var level_id: int = campaign_manager.get_next_level_free_id()
 	level_manager.create_campaign_level(level_id)
 	campaign_manager.add_level(level_id)
 	

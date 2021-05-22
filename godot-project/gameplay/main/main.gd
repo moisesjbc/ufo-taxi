@@ -7,6 +7,7 @@ var fast_foward_activated: bool = false
 
 onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.tscn")
 onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
+onready var reverser_scene = preload("res://gameplay/buildings/reverser/reverser.tscn")
 
 
 func _ready():
@@ -40,6 +41,8 @@ func reset_current_level(on_object_selected_target = null, on_object_selected_ca
 
 	instantiate_areas($pickup_areas, level_manager.pickup_area_positions, pickup_area_scene, on_object_selected_target, on_object_selected_callback)
 	instantiate_areas($area_51_areas, level_manager.area_51_positions, area_51_scene, on_object_selected_target, on_object_selected_callback)
+	instantiate_buildings(level_manager.building_defs, on_object_selected_target, on_object_selected_callback)
+	
 	instantiate_texts($texts, level_manager.texts)
 	
 	fast_foward_activated = false
@@ -62,7 +65,18 @@ func instantiate_areas(parent_node, positions, scene, on_object_selected_target 
 		area.global_position = position
 		
 		connect_object_selected_signal(area, on_object_selected_target, on_object_selected_callback)
-			
+		
+func instantiate_buildings(building_defs, on_object_selected_target = null, on_object_selected_callback = null):
+	for building in $buildings.get_children():
+		building.queue_free()
+	
+	for building_def in building_defs:
+		var building_scene = get_building_scene(building_def.type)
+		var building = building_scene.instance()
+		$buildings.add_child(building)
+		building.global_position = building_def.position
+		
+		connect_object_selected_signal(building, on_object_selected_target, on_object_selected_callback)
 
 func connect_object_selected_signal(object, on_object_selected_target = null, on_object_selected_callback = null):
 	if on_object_selected_target:
@@ -131,6 +145,14 @@ func add_pickup_area(signal_target, on_object_selected):
 func add_area_51(signal_target, on_object_selected):
 	add_object(area_51_scene, $area_51_areas, signal_target, on_object_selected)
 
+func add_building(building_type, signal_target, on_object_selected):
+	var building_scene = get_building_scene(building_type)
+	add_object(reverser_scene, $buildings, signal_target, on_object_selected)
+
+func get_building_scene(building_type):
+	if building_type == 'reverser':
+		return reverser_scene
+
 
 func add_object(object_scene, objects_container, signal_target, on_object_selected):
 	var object = object_scene.instance()
@@ -149,10 +171,13 @@ func get_pickup_areas():
 
 func get_areas_51():
 	return $area_51_areas.get_children()
-	
+
+func get_buildings():
+	return $buildings.get_children()
 	
 func get_texts():
 	return $texts.get_children()
+
 
 
 func _on_fast_foward_button_toggled(button_pressed):

@@ -48,10 +48,16 @@ margin_right = 198.0
 margin_bottom = 186.0
 text = "Add area 51"
 
-[node name="actions_limit_container" type="VBoxContainer" parent="tools_container"]
+[node name="add_reverser_button" type="Button" parent="tools_container"]
 margin_top = 190.0
 margin_right = 198.0
-margin_bottom = 260.0
+margin_bottom = 224.0
+text = "Add reverser"
+
+[node name="actions_limit_container" type="VBoxContainer" parent="tools_container"]
+margin_top = 228.0
+margin_right = 198.0
+margin_bottom = 298.0
 
 [node name="actions_limit_label" type="Label" parent="tools_container/actions_limit_container"]
 margin_right = 198.0
@@ -64,9 +70,9 @@ margin_right = 198.0
 margin_bottom = 70.0
 
 [node name="object_properties" type="Panel" parent="tools_container"]
-margin_top = 264.0
+margin_top = 302.0
 margin_right = 198.0
-margin_bottom = 414.0
+margin_bottom = 452.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -117,15 +123,15 @@ margin_bottom = 104.0
 text = "Add node next"
 
 [node name="save_button" type="Button" parent="tools_container"]
-margin_top = 418.0
-margin_right = 198.0
-margin_bottom = 452.0
-text = "Save"
-
-[node name="play_button" type="Button" parent="tools_container"]
 margin_top = 456.0
 margin_right = 198.0
 margin_bottom = 490.0
+text = "Save"
+
+[node name="play_button" type="Button" parent="tools_container"]
+margin_top = 494.0
+margin_right = 198.0
+margin_bottom = 528.0
 text = "Play"
 
 [node name="state_machine" type="Node2D" parent="."]
@@ -156,6 +162,7 @@ edit_mode = true
 [connection signal="pressed" from="tools_container/clear_vertices_button" to="state_machine/idle" method="_on_clear_vertices_button_pressed"]
 [connection signal="pressed" from="tools_container/add_pickup_area_button" to="state_machine/idle" method="_on_add_pickup_area_button_pressed"]
 [connection signal="pressed" from="tools_container/add_area_51_area" to="state_machine/idle" method="_on_add_area_51_area_pressed"]
+[connection signal="pressed" from="tools_container/add_reverser_button" to="state_machine/idle" method="_on_add_reverser_button_pressed"]
 [connection signal="pressed" from="tools_container/object_properties/margin_container/vbox_container/delete_button" to="tools_container/object_properties" method="_on_delete_button_pressed"]
 [connection signal="pressed" from="tools_container/object_properties/margin_container/vbox_container/add_node_next_button" to="tools_container/object_properties" method="_on_add_node_next_button_pressed"]
 [connection signal="pressed" from="tools_container/save_button" to="state_machine/idle" method="_on_save_button_pressed"]

@@ -19,7 +19,7 @@ func set_current_campaign_index(new_current_campaign_index):
 	current_campaign_index = new_current_campaign_index
 
 func load_level(level_index: int):
-	self.load_campaign_info(current_campaign_index)
+	self.load_current_campaign_info()
 	self._load_level(level_index)
 
 
@@ -28,10 +28,10 @@ func _load_level(level_index: int):
 	level_manager.load_campaign_level_from_file(campaign_manager.level_ids[level_index])
 
 
-func load_campaign_info(campaign_index: int):
+func load_current_campaign_info():
 	var dict = _load_campaigns_dict()
-	self.campaign_name = dict['campaigns'][campaign_index]['name']
-	self.level_ids = dict['campaigns'][campaign_index]['levels']
+	self.campaign_name = dict['campaigns'][current_campaign_index]['name']
+	self.level_ids = dict['campaigns'][current_campaign_index]['levels']
 
 
 func load_next_level():
@@ -58,3 +58,12 @@ func add_level(level_id: int):
 		file.close()
 		file.open(levels_dirpath() + '/campaigns.json', file.WRITE)
 		file.store_string(JSON.print(dict, '\t'))
+
+
+func get_next_level_free_id():
+	var dict = _load_campaigns_dict()
+	var last_level_id = 0
+	for campaign_dict in dict['campaigns']:
+		for level_id in campaign_dict['levels']:
+			last_level_id = max(last_level_id, level_id)
+	return last_level_id + 1

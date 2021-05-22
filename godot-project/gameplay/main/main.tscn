@@ -29,6 +29,8 @@ position = Vector2( 383.882, -112.246 )
 
 [node name="area_51_areas" type="Node2D" parent="."]
 
+[node name="buildings" type="Node2D" parent="."]
+
 [node name="texts" type="Node2D" parent="."]
 
 [node name="railtrack" parent="." instance=ExtResource( 5 )]

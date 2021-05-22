@@ -1,0 +1,61 @@
+{
+	"version": "0.4",
+	"railtrack_nodes": [
+		[
+			283.943848,
+			317
+		],
+		[
+			681.943848,
+			154
+		],
+		[
+			1106.943848,
+			354
+		],
+		[
+			669.943848,
+			602
+		]
+	],
+	"pickup_area_positions": [
+
+	],
+	"area_51_positions": [
+
+	],
+	"buildings": [
+		{
+			"type": "reverser",
+			"position": [
+				693,
+				364
+			]
+		},
+		{
+			"type": "reverser",
+			"position": [
+				693,
+				364
+			]
+		},
+		{
+			"type": "reverser",
+			"position": [
+				693,
+				364
+			]
+		},
+		{
+			"type": "reverser",
+			"position": [
+				693,
+				364
+			]
+		}
+	],
+	"n_remaining_actions": null,
+	"texts": [
+
+	]
+}
