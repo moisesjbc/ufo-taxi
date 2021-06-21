@@ -68,8 +68,8 @@ func instantiate_areas(parent_node, positions, scene, on_object_selected_target 
 		
 func instantiate_buildings(building_defs, on_object_selected_target = null, on_object_selected_callback = null):
 	for building in $buildings.get_children():
-		building.queue_free()
-	
+		building.free()
+
 	for building_def in building_defs:
 		var building_scene = get_building_scene(building_def.type)
 		var building = building_scene.instance()

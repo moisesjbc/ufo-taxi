@@ -5,6 +5,7 @@ var current_node_index: int = 0
 var next_node_index: int = 1
 export var speed: int = 200
 var n_passengers: int = 0
+var going_forward: bool = true
 
 signal game_over
 
@@ -20,16 +21,31 @@ func reset(path):
 	position = path.get_nodes()[0].global_position
 	update_passengers_label()
 	
+func reverse():
+	going_forward = not going_forward
+	
+	var aux = current_node_index
+	current_node_index = next_node_index
+	next_node_index = aux
+
 func change_next_node():
 	# Update current node index
-	current_node_index = current_node_index + 1
-	if current_node_index >= len(path.get_nodes()):
-		current_node_index = 0
+	current_node_index = increase_node_index(current_node_index)
 	
 	# Update next node index
-	next_node_index = next_node_index + 1
-	if next_node_index >= len(path.get_nodes()):
-		next_node_index = 0
+	next_node_index = increase_node_index(next_node_index)
+		
+func increase_node_index(node_index):
+	if going_forward:
+		node_index = node_index + 1
+		if node_index >= len(path.get_nodes()):
+			node_index = 0
+	else:
+		node_index = node_index - 1
+		if node_index < 0:
+			node_index = len(path.get_nodes()) - 1
+
+	return node_index
 	
 func _physics_process(delta):
 	Sprite

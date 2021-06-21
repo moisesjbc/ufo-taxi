@@ -73,7 +73,7 @@ func _read_vector2_list_from_json(json_list):
 	
 func _read_building_defs_list_from_json(building_defs):
 	var res = []
-	
+
 	for building_def in building_defs:
 		res.push_back({
 			'type': building_def.type,
@@ -125,7 +125,7 @@ func _vector2_array_to_json_dist(vector2_array):
 
 func _building_defs_to_json(building_defs):
 	var res = []
-	
+
 	for building_def in building_defs:
 		res.push_back({
 			'type': building_def['type'],

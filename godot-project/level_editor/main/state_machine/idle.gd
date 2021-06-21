@@ -79,6 +79,7 @@ func _save_data_to_level_manager():
 	level_manager.area_51_positions = []
 	for area_51 in main.get_areas_51():
 		level_manager.area_51_positions.push_back(area_51.global_position)
+	level_manager.building_defs = []
 	for building in main.get_buildings():
 		level_manager.building_defs.push_back({
 			'type': building.type,
