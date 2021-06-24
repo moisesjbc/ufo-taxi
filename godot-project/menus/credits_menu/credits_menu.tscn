@@ -67,27 +67,42 @@ anchor_bottom = 1.0
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[center]
-[color=#FFB563]Idea, programming, graphics, sounds (*) [/color]
-
+[color=#FFB563]Idea and game design[/color]
 [color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
-[color=white](*) Sounds were created using [url=http://www.drpetter.se/project_sfxr.html]sfxr[/url][/color]
 
+[center]
+[color=#FFB563]Programming[/color]
+[color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
+[color=white]Licensed under [url=https://www.gnu.org/licenses/gpl-3.0.html]GPL v3[/url][/color]
+
+[center]
+[color=#FFB563]Graphics[/color]
+[color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
+[color=white]Licensed under [url=http://creativecommons.org/licenses/by-nc-sa/4.0/]Attribution-NonCommercial-ShareAlike 4.0 International[/url][/color]
+
+[center]
+[color=#FFB563]Music[/color]
+[color=white]Alejandro Sánchez Medina (alejandrosame) - [url=https://github.com/alejandrosame]https://github.com/alejandrosame[/url][/color]
+[color=white]Licensed under [url=http://creativecommons.org/licenses/by-nc-sa/4.0/]Attribution-NonCommercial-ShareAlike 4.0 International[/url][/color]
+
+[center]
+[color=#FFB563]SFX[/color]
+[color=white]Moisés J. Bonilla Caraballo (moisesjbc) - [url=https://moisesjose.com]https://moisesjose.com[/url][/color]
+[color=white]Licensed under [url=http://creativecommons.org/licenses/by-nc-sa/4.0/]Attribution-NonCommercial-ShareAlike 4.0 International[/url][/color]
 
 [color=#FFB563]Fonts[/color]
-
 [color=white]Ubuntu font - [url=https://design.ubuntu.com/font/]https://design.ubuntu.com/font/[/url][/color]
 
-
 [color=#FFB563]Software used[/color]
-
 [color=white]Godot engine - [url=https://godotengine.org/]https://godotengine.org/[/url]
 Gimp - [url=https://www.gimp.org/]https://www.gimp.org/[/url]
 sfxr - [url=http://www.drpetter.se/project_sfxr.html]http://www.drpetter.se/project_sfxr.html[/url]
 LMMS - [url=https://lmms.io]https://lmms.io[/url]
+FoxDot - [url=https://foxdot.org/]https://foxdot.org/[/url]
+REAPER - [url=https://www.reaper.fm/]https://www.reaper.fm/[/url]
 [/color]
 
 [color=#FFB563]Thanks[/color]
-
 The Ludum Dare organizers - [url=https://ldjam.com/]https://ldjam.com/[/url]
 The people who rated and comented [url=https://ldjam.com/events/ludum-dare/47/ufo-taxi]my game on Ludum Dare #47[/url] and encouraged me to extend it.
 LeninGamers (Adrián, Christian and Omar) - [url=https://www.twitch.tv/leningamers]https://www.twitch.tv/leningamers[/url]
@@ -97,27 +112,42 @@ Himar - [url=https://www.facebook.com/sobrelamarcharockbandcovers]https://www.fa
 (Theme: \"Stuck in a loop\")
 [/center]"
 text = "
-Idea, programming, graphics, sounds (*) 
-
+Idea and game design
 Moisés J. Bonilla Caraballo (moisesjbc) - https://moisesjose.com
-(*) Sounds were created using sfxr
 
+
+Programming
+Moisés J. Bonilla Caraballo (moisesjbc) - https://moisesjose.com
+Licensed under GPL v3
+
+
+Graphics
+Moisés J. Bonilla Caraballo (moisesjbc) - https://moisesjose.com
+Licensed under Attribution-NonCommercial-ShareAlike 4.0 International
+
+
+Music
+Alejandro Sánchez Medina (alejandrosame) - https://github.com/alejandrosame
+Licensed under Attribution-NonCommercial-ShareAlike 4.0 International
+
+
+SFX
+Moisés J. Bonilla Caraballo (moisesjbc) - https://moisesjose.com
+Licensed under Attribution-NonCommercial-ShareAlike 4.0 International
 
 Fonts
-
 Ubuntu font - https://design.ubuntu.com/font/
 
-
 Software used
-
 Godot engine - https://godotengine.org/
 Gimp - https://www.gimp.org/
 sfxr - http://www.drpetter.se/project_sfxr.html
 LMMS - https://lmms.io
+FoxDot - https://foxdot.org/
+REAPER - https://www.reaper.fm/
 
 
 Thanks
-
 The Ludum Dare organizers - https://ldjam.com/
 The people who rated and comented my game on Ludum Dare #47 and encouraged me to extend it.
 LeninGamers (Adrián, Christian and Omar) - https://www.twitch.tv/leningamers
