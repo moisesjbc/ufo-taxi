@@ -26,6 +26,7 @@ campaign_manager="*res://globals/campaign_manager/campaign_manager.tscn"
 level_manager="*res://globals/level_manager/level_manager.tscn"
 user_data="*res://globals/user_data/user_data.tscn"
 config="*res://globals/config/config.tscn"
+press_button_sound="*res://globals/sfx/press_button_sound/press_button_sound.tscn"
 
 [display]
 

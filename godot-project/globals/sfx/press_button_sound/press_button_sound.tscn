@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://globals/sfx/press_button_sound/press_button_sound.wav" type="AudioStream" id=1]
+
+[node name="press_button_sound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
