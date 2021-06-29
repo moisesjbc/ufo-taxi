@@ -5,7 +5,7 @@
 [ext_resource path="res://gameplay/buildings/reverser/reverser.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 66.4753, 67.1283 )
+extents = Vector2( 63.1604, 60.6206 )
 
 [node name="reverser" type="Area2D"]
 script = ExtResource( 3 )
@@ -14,11 +14,11 @@ script = ExtResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
-position = Vector2( 1.68369, -2.80616 )
+position = Vector2( -0.320842, 0.311989 )
 shape = SubResource( 1 )
 
 [node name="clicable" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0.280624, 0.561218 )
+position = Vector2( 0.0578915, 1.67484 )
 scale = Vector2( 6.5, 6.5 )
 
 [node name="cooldown_timer" type="Timer" parent="."]

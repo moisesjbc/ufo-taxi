@@ -44,7 +44,7 @@ func confirm_current_selection():
 
 func remove_current_node():
 	if $path.current_node != null:
-		if $path.current_node != player.current_node_index and $path.current_node != $path.get_next_index(player.current_node_index):
+		if $path.current_node != player.current_node_index and $path.current_node != player.next_node_index:
 			$path.remove_node($path.current_node)
 			emit_signal("node_removed", $path.current_node)
 			$path.current_node = null
@@ -54,7 +54,7 @@ func remove_current_node():
 			warning('Node in use!')
 
 func add_node(new_position, on_node_selected_target = null, on_node_selected_callback = null):
-	if $path.current_edge != player.current_node_index:
+	if $path.current_edge != player.current_edge_index():
 		#$path.nodes.insert($path.current_edge + 1, to_local(new_position))
 		$path.add_node(to_local(new_position), $path.current_edge + 1, on_node_selected_target, on_node_selected_callback)
 		emit_signal("node_added", $path.current_edge + 1)

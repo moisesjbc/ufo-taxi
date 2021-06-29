@@ -16,6 +16,7 @@ func reset(path):
 	current_node_index = 0
 	next_node_index = 1
 	n_passengers = 0
+	going_forward = true
 	set_physics_process(true)
 	self.path = path
 	position = path.get_nodes()[0].global_position
@@ -27,6 +28,12 @@ func reverse():
 	var aux = current_node_index
 	current_node_index = next_node_index
 	next_node_index = aux
+	
+func current_edge_index():
+	if going_forward:
+		return current_node_index
+	else:
+		return next_node_index
 
 func change_next_node():
 	# Update current node index
