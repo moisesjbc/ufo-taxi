@@ -1,36 +1,77 @@
 {
     "version": "0.4",
     "railtrack_nodes": [
-        [400, 150],
-	    [1000, 150],
-	    [1000, 600],
-	    [400, 600]
-    ],
-    "pickup_area_positions": [
-        [700, 375]
+        [
+            400,
+            150
+        ],
+        [
+            1000,
+            150
+        ],
+        [
+            1000,
+            600
+        ],
+        [
+            400,
+            600
+        ]
     ],
     "n_remaining_actions": null,
-    "area_51_positions": [],
     "texts": [
         {
-            "position": [60, 115],
-            "size": [310, 98],
+            "position": [
+                60,
+                115
+            ],
+            "size": [
+                310,
+                98
+            ],
             "text": "1. This is the \ndestination point: \nTHE COW FESTIVAL! ->"
         },
         {
-            "position": [490, 42],
-            "size": [535, 108],
+            "position": [
+                490,
+                42
+            ],
+            "size": [
+                535,
+                108
+            ],
             "text": "<- \n2. You have to take here as many passengers \nas indicated on the right number"
         },
         {
-            "position": [785, 348],
-            "size": [323, 132],
+            "position": [
+                785,
+                348
+            ],
+            "size": [
+                323,
+                132
+            ],
             "text": "<- \n3. Cows must be\npicked at these \nfarms"
         },
         {
-            "position": [395, 640],
-            "size": [718, 108],
+            "position": [
+                395,
+                640
+            ],
+            "size": [
+                718,
+                108
+            ],
             "text": "^ 4. Maybe if you click on this vertex and remove it...\n(It can't be removed if the UFO is traveling from / to it!)"
+        }
+    ],
+    "buildings": [
+        {
+            "type": "farm",
+            "position": [
+                700,
+                375
+            ]
         }
     ]
 }

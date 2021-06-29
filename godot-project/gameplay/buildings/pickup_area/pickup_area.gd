@@ -1,6 +1,7 @@
 extends Area2D
 
 onready var has_passengers: bool = true
+var type = 'farm'
 
 func _ready():
 	update_label()

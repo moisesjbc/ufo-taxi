@@ -6,12 +6,8 @@ Utility script for loading the level data from a JSON file.
 
 var railtrack_nodes = []
 
-var pickup_area_positions = []
-
 # null = Unlimited actions
 var n_remaining_actions = null
-
-var area_51_positions = []
 
 var building_defs = []
 
@@ -48,8 +44,6 @@ func load_campaign_level_from_file(level_id: int):
 
 func load_from_dict(dict):
 	railtrack_nodes = self._read_vector2_list_from_json(dict['railtrack_nodes'])
-	pickup_area_positions = self._read_vector2_list_from_json(dict['pickup_area_positions'])
-	area_51_positions = self._read_vector2_list_from_json(dict['area_51_positions'])
 	building_defs = self._read_building_defs_list_from_json(dict['buildings'] if 'buildings' in dict else [])
 	n_remaining_actions = dict['n_remaining_actions']
 	
@@ -85,9 +79,7 @@ func _read_building_defs_list_from_json(building_defs):
 
 func reset(level_id):
 	railtrack_nodes = []
-	pickup_area_positions = []
 	n_remaining_actions = null
-	area_51_positions = []
 	texts = [];
 	self.level_id = level_id
 
@@ -107,8 +99,6 @@ func save():
 	file.store_string(JSON.print({
 		'version': config.GAME_VERSION,
 		'railtrack_nodes': _vector2_array_to_json_dist(railtrack_nodes),
-		'pickup_area_positions': _vector2_array_to_json_dist(pickup_area_positions),
-		'area_51_positions': _vector2_array_to_json_dist(area_51_positions),
 		'buildings': _building_defs_to_json(building_defs),
 		'n_remaining_actions': n_remaining_actions,
 		'texts': texts

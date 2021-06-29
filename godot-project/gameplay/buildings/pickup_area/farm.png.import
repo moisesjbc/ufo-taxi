@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/area_51.png-b5981dfeedd965ac069798783c483605.stex"
+path="res://.import/farm.png-efaa76a4d6763a564bdefb121adf3aac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay/area_51/area_51.png"
-dest_files=[ "res://.import/area_51.png-b5981dfeedd965ac069798783c483605.stex" ]
+source_file="res://gameplay/buildings/pickup_area/farm.png"
+dest_files=[ "res://.import/farm.png-efaa76a4d6763a564bdefb121adf3aac.stex" ]
 
 [params]
 

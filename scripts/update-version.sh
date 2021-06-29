@@ -11,5 +11,4 @@ fi
 sed -i "s/^const GAME_VERSION = '[0-9\.]*'$/const GAME_VERSION = '$VERSION'/g" godot-project/globals/config/config.gd
 
 # Update version in levels.
-find godot-project/levels/campaign/ -name "*.json" -exec \
-    sed -i "s/\"version\": \"[0-9.]*\",/\"version\": \"$VERSION\",/g" {} +
+python3 scripts/update_levels.py

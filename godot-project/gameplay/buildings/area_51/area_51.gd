@@ -1,5 +1,6 @@
 extends Area2D
 
+var type = 'area_51'
 
 func _on_area_51_body_entered(body):
 	# On first iteration of level, area 51 is not on its final position and

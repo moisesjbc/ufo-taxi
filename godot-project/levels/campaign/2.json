@@ -1,60 +1,60 @@
 {
     "version": "0.4",
-	"railtrack_nodes": [
-		[
-			650.943848,
-			125
-		],
-		[
-			950.943848,
-			200
-		],
-		[
-			1019,
-			358
-		],
-		[
-			950,
-			496
-		],
-		[
-			635,
-			618
-		],
-		[
-			348,
-			508
-		],
-		[
-			269,
-			378
-		],
-		[
-			347,
-			201
-		]
-	],
-	"pickup_area_positions": [
-		[
-			641,
-			390
-		]
-	],
-	"area_51_positions": [
-
-	],
-	"n_remaining_actions": 2,
-	"texts": [
-		{
-			"position": [
-				190,
-				650
-			],
-			"size": [
-				659,
-				59
-			],
-			"text": "Some levels have a maximum number of actions (add / remove vertex) allowed"
-		}
-	]
+    "railtrack_nodes": [
+        [
+            650.943848,
+            125
+        ],
+        [
+            950.943848,
+            200
+        ],
+        [
+            1019,
+            358
+        ],
+        [
+            950,
+            496
+        ],
+        [
+            635,
+            618
+        ],
+        [
+            348,
+            508
+        ],
+        [
+            269,
+            378
+        ],
+        [
+            347,
+            201
+        ]
+    ],
+    "n_remaining_actions": 2,
+    "texts": [
+        {
+            "position": [
+                190,
+                650
+            ],
+            "size": [
+                659,
+                59
+            ],
+            "text": "Some levels have a maximum number of actions (add / remove vertex) allowed"
+        }
+    ],
+    "buildings": [
+        {
+            "type": "farm",
+            "position": [
+                641,
+                390
+            ]
+        }
+    ]
 }

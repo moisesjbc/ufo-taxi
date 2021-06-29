@@ -5,8 +5,8 @@ signal game_over
 export (bool) var edit_mode = false
 var fast_foward_activated: bool = false
 
-onready var pickup_area_scene = preload("res://gameplay/pickup_area/pickup_area.tscn")
-onready var area_51_scene = preload("res://gameplay/area_51/area_51.tscn")
+onready var pickup_area_scene = preload("res://gameplay/buildings/pickup_area/pickup_area.tscn")
+onready var area_51_scene = preload("res://gameplay/buildings/area_51/area_51.tscn")
 onready var reverser_scene = preload("res://gameplay/buildings/reverser/reverser.tscn")
 
 
@@ -34,13 +34,15 @@ func reset_current_level(on_object_selected_target = null, on_object_selected_ca
 	$gui/pause_menu.visible = not edit_mode
 	$railtrack.reset(level_manager.railtrack_nodes, level_manager.n_remaining_actions, edit_mode, on_object_selected_target, on_object_selected_callback)
 	if not edit_mode:
-		$destination_area.reset($railtrack.get_node('path'), len(level_manager.pickup_area_positions))
+		var n_farms = 0
+		for building in level_manager.building_defs:
+			if building.type == 'farm':
+				n_farms += 1
+		$destination_area.reset($railtrack.get_node('path'), n_farms)
 	else:
 		$destination_area.visible = false
 	$gui/remaining_actions_label.visible = not edit_mode and (level_manager.n_remaining_actions != null)
 
-	instantiate_areas($pickup_areas, level_manager.pickup_area_positions, pickup_area_scene, on_object_selected_target, on_object_selected_callback)
-	instantiate_areas($area_51_areas, level_manager.area_51_positions, area_51_scene, on_object_selected_target, on_object_selected_callback)
 	instantiate_buildings(level_manager.building_defs, on_object_selected_target, on_object_selected_callback)
 	
 	instantiate_texts($texts, level_manager.texts)
@@ -138,20 +140,17 @@ func get_path():
 	return $railtrack/path
 
 
-func add_pickup_area(signal_target, on_object_selected):
-	add_object(pickup_area_scene, $pickup_areas, signal_target, on_object_selected)
-
-
-func add_area_51(signal_target, on_object_selected):
-	add_object(area_51_scene, $area_51_areas, signal_target, on_object_selected)
-
 func add_building(building_type, signal_target, on_object_selected):
 	var building_scene = get_building_scene(building_type)
-	add_object(reverser_scene, $buildings, signal_target, on_object_selected)
+	add_object(building_scene, $buildings, signal_target, on_object_selected)
 
 func get_building_scene(building_type):
 	if building_type == 'reverser':
 		return reverser_scene
+	elif building_type == 'farm':
+		return pickup_area_scene
+	elif building_type == 'area_51':
+		return area_51_scene
 
 
 func add_object(object_scene, objects_container, signal_target, on_object_selected):
@@ -164,13 +163,6 @@ func add_object(object_scene, objects_container, signal_target, on_object_select
 
 	connect_object_selected_signal(object, signal_target, on_object_selected)
 
-
-func get_pickup_areas():
-	return $pickup_areas.get_children()
-	
-
-func get_areas_51():
-	return $area_51_areas.get_children()
 
 func get_buildings():
 	return $buildings.get_children()

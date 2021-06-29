@@ -27,11 +27,10 @@ func _on_clear_vertices_button_pressed():
 
 
 func _on_add_pickup_area_button_pressed():
-	main.add_pickup_area(self, '_on_object_selected')
-
+	main.add_building('farm', self, '_on_object_selected')
 
 func _on_add_area_51_area_pressed():
-	main.add_area_51(self, '_on_object_selected')
+	main.add_building('area_51', self, '_on_object_selected')
 	
 func _on_add_reverser_button_pressed():
 	main.add_building('reverser', self, '_on_object_selected')
@@ -73,12 +72,6 @@ func _save_data_to_level_manager():
 	level_manager.railtrack_nodes = []
 	for node in main.get_path().get_nodes():
 		level_manager.railtrack_nodes.push_back(node.global_position)
-	level_manager.pickup_area_positions = []
-	for pickup_area in main.get_pickup_areas():
-		level_manager.pickup_area_positions.push_back(pickup_area.global_position)
-	level_manager.area_51_positions = []
-	for area_51 in main.get_areas_51():
-		level_manager.area_51_positions.push_back(area_51.global_position)
 	level_manager.building_defs = []
 	for building in main.get_buildings():
 		level_manager.building_defs.push_back({

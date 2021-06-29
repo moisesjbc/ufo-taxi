@@ -1,30 +1,62 @@
 {
     "version": "0.4",
     "railtrack_nodes": [
-        [500, 200],
-	    [800, 600],
-	    [200, 600]
-    ],
-    "pickup_area_positions": [
-        [750, 300]
+        [
+            500,
+            200
+        ],
+        [
+            800,
+            600
+        ],
+        [
+            200,
+            600
+        ]
     ],
     "n_remaining_actions": null,
-    "area_51_positions": [],
     "texts": [
         {
-            "position": [430, 336],
-            "size": [172, 63],
+            "position": [
+                430,
+                336
+            ],
+            "size": [
+                172,
+                63
+            ],
             "text": "1. You can add \nnew vertices too"
         },
         {
-            "position": [400, 432.865],
-            "size": [248, 21],
+            "position": [
+                400,
+                432.865
+            ],
+            "size": [
+                248,
+                21
+            ],
             "text": "2. Drag this edge... ->"
         },
         {
-            "position": [840, 280],
-            "size": [173.001, 95],
+            "position": [
+                840,
+                280
+            ],
+            "size": [
+                173.001,
+                95
+            ],
             "text": "<- \n3. ...and drop it close to\nthis farm  to create \nthe new vertex"
+        }
+    ],
+    "buildings": [
+        {
+            "type": "farm",
+            "position": [
+                750,
+                300
+            ]
         }
     ]
 }

@@ -25,10 +25,6 @@ position = Vector2( 383.882, -112.246 )
 
 [node name="warning_label" parent="." instance=ExtResource( 2 )]
 
-[node name="pickup_areas" type="Node2D" parent="."]
-
-[node name="area_51_areas" type="Node2D" parent="."]
-
 [node name="buildings" type="Node2D" parent="."]
 
 [node name="texts" type="Node2D" parent="."]
