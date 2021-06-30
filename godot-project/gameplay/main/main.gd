@@ -96,6 +96,13 @@ func instantiate_texts(parent_node, texts):
 		label.text = text['text']
 		if 'color' in text:
 			label.add_color_override('font_color', Color(text['color']))
+		if 'horizontal_align' in text:
+			if text['horizontal_align'] == 'center':
+				label.align = HALIGN_CENTER
+			elif text['horizontal_align'] == 'right':
+				label.align = HALIGN_RIGHT
+			else:
+				label.align = HALIGN_LEFT
 		parent_node.add_child(label)
 
 func next_level():

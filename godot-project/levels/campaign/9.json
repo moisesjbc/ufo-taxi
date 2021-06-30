@@ -1,32 +1,59 @@
 {
-    "version": "0.4",
-    "railtrack_nodes": [
-        [
-            293.382324,
-            317
-        ],
-        [
-            691.382324,
-            154
-        ],
-        [
-            1116.382324,
-            354
-        ],
-        [
-            679.382324,
-            602
-        ]
-    ],
-    "buildings": [
+	"version": "0.4",
+	"railtrack_nodes": [
+		[
+			167.719238,
+			351
+		],
+		[
+			664.775391,
+			50
+		],
+		[
+			1242.887695,
+			355
+		],
+		[
+			686.663086,
+			660
+		]
+	],
+	"buildings": [
+		{
+			"type": "reverser",
+			"position": [
+				696,
+				371
+			]
+		},
+		{
+			"type": "area_51",
+			"position": [
+				522,
+				374
+			]
+		},
+		{
+			"type": "farm",
+			"position": [
+				860,
+				382
+			]
+		}
+	],
+	"n_remaining_actions": 1,
+	"texts": [
         {
-            "type": "reverser",
             "position": [
-                678,
-                377
-            ]
+                530,
+                450
+            ],
+            "size": [
+                173.001,
+                95
+            ],
+            "horizontal_align": "center",
+            "text": "^\n Ugh, those UFO-lovers...\nUFO will turn around instead\nof passing over here"
         }
-    ],
-    "n_remaining_actions": null,
-    "texts": []
+	]
 }
