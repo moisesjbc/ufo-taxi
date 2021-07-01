@@ -71,3 +71,9 @@ Updates version number in game (level files, main menu, etc)
 Sprites are created with a size N times bigger than the base resolution used in the game. This script reduces the sprites to the base resolution and place them in their corresponding directories in the Godot project directory:
 
         bash scripts/instantiate_images.sh
+
+### Add GPL legal notices
+
+Add the GPL legal notice to the begining of all source files (.gd)
+
+        bash scripts/apply_gpl_notice.sh

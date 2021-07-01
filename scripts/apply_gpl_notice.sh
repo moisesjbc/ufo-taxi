@@ -1,4 +1,14 @@
-"""
+#!/bin/bash
+
+read -r -d '' GPL_NOTICE << EOM
+
+EOM
+
+
+apply_gpl_to_file() {
+    FILEPATH=$1
+
+    GPL_NOTICE='"""
 Copyright 2020-2021 Moisés J. Bonilla Caraballo (moisesjbc)
 
 This file is part of "UFO taxi!".
@@ -16,24 +26,16 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with "UFO taxi!".  If not, see <https://www.gnu.org/licenses/>.
 """
+'
+    
+    CONTAINS_LICENSE=`head -n 1 $FILEPATH | grep '"""'`
+    if [ -z "$CONTAINS_LICENSE" ]; then
+        echo "$GPL_NOTICE" | cat - $FILEPATH > /tmp/gpl_tmp
+        mv /tmp/gpl_tmp "$FILEPATH"
+    else
+        perl -i -p0e "s|^\"\"\".*?\"\"\"\n|$GPL_NOTICE|sg" "$FILEPATH"
+    fi
+}
+export -f apply_gpl_to_file
 
-extends Node2D
-
-func set_warning(text):
-	$color_rect/label.text = text
-	$color_rect.rect_size.x = 15 * len(text)
-	visible = true
-	$display_timer.start(2)
-	set_physics_process(true)
-	
-func _physics_process(delta):
-	var mouse_global_position = get_global_mouse_position()
-	if mouse_global_position.x < 800:
-		set_global_position(get_global_mouse_position())
-	else:
-		set_global_position(get_global_mouse_position() - Vector2($color_rect.rect_size.x, 0))
-
-func _on_display_timer_timeout():
-	$color_rect/label.text = ""
-	visible = false
-	set_physics_process(false)
+ find . -name *.gd -exec bash -c "apply_gpl_to_file {}" \;
