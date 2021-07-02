@@ -1,0 +1,44 @@
+{
+	"version": "0.4",
+	"railtrack_nodes": [
+		[
+			646.887695,
+			131
+		],
+		[
+			135.887695,
+			583
+		],
+		[
+			1151.887695,
+			582
+		]
+	],
+	"buildings": [
+		{
+			"type": "reverser",
+			"position": [
+				401,
+				350
+			]
+		},
+		{
+			"type": "reverser",
+			"position": [
+				926,
+				352
+			]
+		},
+		{
+			"type": "farm",
+			"position": [
+				658,
+				585
+			]
+		}
+	],
+	"n_remaining_actions": 2,
+	"texts": [
+
+	]
+}
