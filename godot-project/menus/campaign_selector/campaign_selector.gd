@@ -31,7 +31,7 @@ func _ready():
 		$margin_container/vbox_container/campaigns_container.move_child(campaign_option, $margin_container/vbox_container/campaigns_container.get_child_count() - 1)
 
 
-func campaign_is_enabled(campaign_index: int):
+func campaign_is_enabled(_campaign_index: int):
 	# TODO: Implement
 	return true
 
@@ -39,8 +39,8 @@ func campaign_is_enabled(campaign_index: int):
 func _select_campaign(campaign_index):
 	campaign_manager.set_current_campaign_index(campaign_index)
 	campaign_manager.load_current_campaign_info()
-	get_tree().change_scene("res://menus/level_selector/level_selector.tscn")
+	scene_manager.change_scene("res://menus/level_selector/level_selector.tscn")
 
 
 func _on_return_button_pressed():
-	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
+	scene_manager.change_scene("res://menus/main_menu/main_menu.tscn")

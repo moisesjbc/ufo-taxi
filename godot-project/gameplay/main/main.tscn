@@ -97,7 +97,6 @@ margin_left = 1.41425
 margin_top = 1.41418
 margin_right = 1.41431
 margin_bottom = 1.41418
-[connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="all_passengers_left" from="destination_area" to="." method="_on_destination_area_all_passengers_left"]
 [connection signal="n_remaining_actions_updated" from="railtrack" to="." method="_on_railtrack_n_remaining_actions_updated"]
 [connection signal="node_added" from="railtrack" to="railtrack/player" method="_on_railtrack_node_added"]

@@ -19,8 +19,6 @@ along with "UFO taxi!".  If not, see <https://www.gnu.org/licenses/>.
 
 extends Node2D
 
-signal game_over
-
 export (bool) var edit_mode = false
 var fast_foward_activated: bool = false
 
@@ -40,13 +38,9 @@ func _on_railtrack_warning_added(text):
 	$warning_label.set_warning(text)
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_pause") and not $gui/level_win_menu.visible:
 		$gui/pause_menu.start()
-
-
-func set_current_level(level_index):
-	reset_current_level()
 
 
 func reset_current_level(on_object_selected_target = null, on_object_selected_callback = null):
@@ -130,7 +124,7 @@ func next_level():
 
 func restart_level():
 	if campaign_manager != null:
-		set_current_level(campaign_manager.current_level_index)
+		reset_current_level()
 
 func _on_destination_area_all_passengers_left():
 	level_manager.passed()
@@ -159,7 +153,7 @@ func _on_game_over_restart_level_requested():
 
 
 func _on_return_to_level_editor_button_pressed():
-	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
+	scene_manager.change_scene("res://level_editor/main/level_editor.tscn")
 
 
 func get_path():

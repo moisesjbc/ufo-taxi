@@ -29,7 +29,7 @@ func _ready():
 	$edit_button.visible = not OS.has_feature("standalone")
 
 
-func set_level_info(level_index: int, level_id: int, enabled: bool):
+func set_level_info(level_index: int, enabled: bool):
 	$play_button.text = str(campaign_manager.current_campaign_index + 1) + ' - ' + str(level_index)
 	if enabled:
 		$play_button.disabled = false

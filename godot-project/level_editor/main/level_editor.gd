@@ -48,4 +48,4 @@ func add_path_node(node_index):
 
 
 func _on_return_to_main_menu_button_pressed():
-	get_tree().change_scene("res://menus/level_selector/level_selector.tscn")
+	scene_manager.change_scene("res://menus/level_selector/level_selector.tscn")

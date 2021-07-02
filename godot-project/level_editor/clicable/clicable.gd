@@ -22,7 +22,7 @@ extends Area2D
 signal clicked
 signal double_clicked
 
-func _input_event(viewport, event, shape_idx):
+func _input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		if event.doubleclick:
 			emit_signal('double_clicked', get_parent())

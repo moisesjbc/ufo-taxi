@@ -36,11 +36,11 @@ func set_nodes(nodes_positions, on_object_selected_target = null, on_object_sele
 	
 func generate_edge_ref_points(edge_index, insert=false):
 	var next_node = get_nodes()[get_next_index(edge_index)].global_position
-	var current_node = get_nodes()[edge_index].global_position	
+	var current_node_position = get_nodes()[edge_index].global_position	
 
 	var edge_ref_points = []
 	for multiplier in [0.3, 0.5, 0.7]:
-		edge_ref_points.append(Vector2(current_node.x + (next_node.x - current_node.x) * multiplier, current_node.y + (next_node.y - current_node.y) * multiplier))
+		edge_ref_points.append(Vector2(current_node_position.x + (next_node.x - current_node_position.x) * multiplier, current_node_position.y + (next_node.y - current_node_position.y) * multiplier))
 	if edge_index < len(edges_ref_points):
 		if insert:
 			edges_ref_points.insert(edge_index, edge_ref_points)

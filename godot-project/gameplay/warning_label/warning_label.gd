@@ -26,7 +26,7 @@ func set_warning(text):
 	$display_timer.start(2)
 	set_physics_process(true)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	var mouse_global_position = get_global_mouse_position()
 	if mouse_global_position.x < 800:
 		set_global_position(get_global_mouse_position())

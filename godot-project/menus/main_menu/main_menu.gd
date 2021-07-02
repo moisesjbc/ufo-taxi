@@ -26,15 +26,15 @@ func _ready():
 
 
 func _on_start_game_button_pressed():
-	get_tree().change_scene("res://menus/campaign_selector/campaign_selector.tscn")
+	scene_manager.change_scene("res://menus/campaign_selector/campaign_selector.tscn")
 
 
 func _on_options_menu_pressed():
-	get_tree().change_scene("res://menus/options_menu/options_menu.tscn")
+	scene_manager.change_scene("res://menus/options_menu/options_menu.tscn")
 
 
 func _on_credits_button_pressed():
-	get_tree().change_scene("res://menus/credits_menu/credits_menu.tscn")
+	scene_manager.change_scene("res://menus/credits_menu/credits_menu.tscn")
 
 
 func _on_exit_button_pressed():

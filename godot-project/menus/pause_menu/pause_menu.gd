@@ -43,10 +43,10 @@ func _on_pause_button_pressed():
 
 func _on_return_button_pressed():
 	stop()
-	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
+	scene_manager.change_scene("res://menus/main_menu/main_menu.tscn")
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if get_tree().paused and Input.is_action_just_pressed("ui_accept"):
 		stop()
 

@@ -58,7 +58,7 @@ func load_next_level():
 	if current_level_index < len(level_ids):
 		self._load_level(current_level_index)
 	else:
-		get_tree().change_scene("res://menus/ending/ending.tscn")
+		scene_manager.change_scene("res://menus/ending/ending.tscn")
 
 
 func levels_dirpath():

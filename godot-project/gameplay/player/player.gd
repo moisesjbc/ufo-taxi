@@ -31,14 +31,14 @@ signal game_over
 func _ready():
 	set_physics_process(false)
 
-func reset(path):
+func reset(new_path):
 	current_node_index = 0
 	next_node_index = 1
 	n_passengers = 0
 	going_forward = true
 	set_physics_process(true)
-	self.path = path
-	position = path.get_nodes()[0].global_position
+	self.path = new_path
+	position = new_path.get_nodes()[0].global_position
 	update_passengers_label()
 	
 func reverse():
@@ -74,7 +74,6 @@ func increase_node_index(node_index):
 	return node_index
 	
 func _physics_process(delta):
-	Sprite
 	# Compute velocity
 	var velocity = path.get_nodes()[next_node_index].global_position - path.get_nodes()[current_node_index].global_position
 	$sprite_body.rotate(0.01)
@@ -83,10 +82,12 @@ func _physics_process(delta):
 
 	if position.distance_to(path.get_nodes()[next_node_index].global_position) > speed * delta * fast_foward_bonus:
 		# Train is still far to next node. Advance.
+		# warning-ignore:return_value_discarded
 		move_and_collide(velocity.normalized() * speed * delta * fast_foward_bonus)
 	else:
 		# Trail is very close to the next node. Advance to its position and
 		# change to next node.
+		# warning-ignore:return_value_discarded
 		move_and_collide(velocity.normalized() * position.distance_to(path.get_nodes()[next_node_index].global_position))
 		change_next_node()
 

@@ -22,8 +22,8 @@ extends Panel
 var current_object = null
 var level_editor = null
 
-func set_current_object(current_object):
-	self.current_object = current_object
+func set_current_object(new_current_object):
+	self.current_object = new_current_object
 	if current_object:
 		$margin_container/vbox_container/title.text = current_object.name
 		$margin_container/vbox_container/add_node_next_button.visible = current_object.is_in_group('nodes')

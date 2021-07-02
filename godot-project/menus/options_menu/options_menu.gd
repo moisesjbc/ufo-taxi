@@ -44,7 +44,7 @@ func _on_play_sample_sound_pressed():
 
 
 func _on_return_button_pressed():
-	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
+	scene_manager.change_scene("res://menus/main_menu/main_menu.tscn")
 
 
 func _on_change_fullscreen_button_toggled(button_pressed):

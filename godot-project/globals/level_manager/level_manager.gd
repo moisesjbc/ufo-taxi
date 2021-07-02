@@ -35,7 +35,7 @@ var level_index = null;
 
 var texts = [];
 
-var level_id = null
+var current_level_id = null
 
 var playing_from_level_editor: bool = false
 
@@ -49,7 +49,7 @@ func load_campaign_level_from_file(level_id: int):
 	# Source: https://godotengine.org/qa/8291/how-to-parse-a-json-file-i-wrote-myself
 	var file = File.new()
 	file.open(campaign_level_filepath(level_id), file.READ)
-	self.level_id = level_id
+	current_level_id = level_id
 	var text = file.get_as_text()
 	
 	var dict = JSON.parse(text).result
@@ -84,10 +84,10 @@ func _read_vector2_list_from_json(json_list):
 	
 	return res
 	
-func _read_building_defs_list_from_json(building_defs):
+func _read_building_defs_list_from_json(src_building_defs):
 	var res = []
 
-	for building_def in building_defs:
+	for building_def in src_building_defs:
 		res.push_back({
 			'type': building_def.type,
 			'position': Vector2(building_def.position[0], building_def.position[1])
@@ -100,7 +100,7 @@ func reset(level_id):
 	railtrack_nodes = []
 	n_remaining_actions = null
 	texts = [];
-	self.level_id = level_id
+	self.current_level_id = level_id
 
 
 func create_campaign_level(level_id: int):
@@ -114,7 +114,7 @@ func campaign_level_filepath(level_id: int):
 
 func save():
 	var file = File.new()
-	file.open(campaign_level_filepath(level_id), file.WRITE)
+	file.open(campaign_level_filepath(current_level_id), file.WRITE)
 	file.store_string(JSON.print({
 		'version': config.GAME_VERSION,
 		'railtrack_nodes': _vector2_array_to_json_dist(railtrack_nodes),
@@ -132,10 +132,10 @@ func _vector2_array_to_json_dist(vector2_array):
 		
 	return res
 
-func _building_defs_to_json(building_defs):
+func _building_defs_to_json(src_building_defs):
 	var res = []
 
-	for building_def in building_defs:
+	for building_def in src_building_defs:
 		res.push_back({
 			'type': building_def['type'],
 			'position': [building_def['position'].x, building_def['position'].y]
@@ -146,4 +146,4 @@ func _building_defs_to_json(building_defs):
 
 func passed():
 	if not playing_from_level_editor:
-		user_data.set_level_passed(level_id)
+		user_data.set_level_passed(current_level_id)

@@ -72,7 +72,7 @@ func _on_play_button_pressed():
 	_save_data_to_level_manager()
 	
 	level_manager.playing_from_level_editor = true
-	get_tree().change_scene("res://gameplay/main/main.tscn")
+	scene_manager.change_scene("res://gameplay/main/main.tscn")
 	
 	"""main.get_path().visible = false
 	var main_scene = load("res://gameplay/main/main.tscn")

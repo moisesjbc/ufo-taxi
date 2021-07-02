@@ -24,9 +24,9 @@ var main = null
 var level_editor = null
 var object = null
 
-func start(object):
+func start(new_object):
 	level_editor.get_node('tools_container').visible = true
-	self.object = object
+	self.object = new_object
 
 func input(event):
 	if event is InputEventMouseMotion:

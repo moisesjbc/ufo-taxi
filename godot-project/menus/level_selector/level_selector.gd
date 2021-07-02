@@ -25,7 +25,7 @@ func _ready():
 	campaign_manager.load_current_campaign_info()
 	for level_index in range(len(campaign_manager.level_ids)):
 		var level_option = level_options_scene.instance()
-		level_option.set_level_info(level_index + 1, campaign_manager.level_ids[level_index], level_is_enabled(level_index))
+		level_option.set_level_info(level_index + 1, level_is_enabled(level_index))
 		level_option.connect('play_button_pressed', self, '_play_level', [level_index])
 		level_option.connect('edit_button_pressed', self, '_edit_level', [level_index])
 		$margin_container/vbox_container/levels_container.add_child(level_option)
@@ -43,17 +43,17 @@ func level_is_enabled(level_index: int):
 
 func _play_level(level_index):
 	campaign_manager.load_level(level_index)
-	get_tree().change_scene('res://gameplay/main/main.tscn')
+	scene_manager.change_scene('res://gameplay/main/main.tscn')
 
 func _edit_level(level_index: int):
 	var level_id: int = campaign_manager.level_ids[level_index]
 	level_manager.load_campaign_level_from_file(level_id)
 	
-	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
+	scene_manager.change_scene("res://level_editor/main/level_editor.tscn")
 
 
 func _on_return_button_pressed():
-	get_tree().change_scene("res://menus/campaign_selector/campaign_selector.tscn")
+	scene_manager.change_scene("res://menus/campaign_selector/campaign_selector.tscn")
 
 
 func _on_add_level_button_pressed():
@@ -64,4 +64,4 @@ func _on_add_level_button_pressed():
 	level_manager.create_campaign_level(level_id)
 	campaign_manager.add_level(level_id)
 	
-	get_tree().change_scene("res://level_editor/main/level_editor.tscn")
+	scene_manager.change_scene("res://level_editor/main/level_editor.tscn")
