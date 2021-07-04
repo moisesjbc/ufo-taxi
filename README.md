@@ -24,29 +24,54 @@ The goal on each level is to modify the path followed by the UFO so it can pick 
 - ["UFO taxi!" page at itch.io](https://moisesjbc.itch.io/ufo-taxi)
 - ["UFO taxi!" Github repository](https://github.com/moisesjbc/ufo-taxi)
 
-## Credits
+## Credits and licensing
 
-### Idea, programming, graphics, sounds 
+### Idea and game design
 
-- [Moisés J. Bonilla Caraballo (moisesjbc)](https://moisesjose.com)
+Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+
+### Programming
+
+Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+Licensed under [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)
+
+### Graphics
+
+Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+### Music
+
+Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
+Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+### SFX
+
+Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
+Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Third-party
 
 ### Fonts
 
-- [Ubuntu font](https://design.ubuntu.com/font/)
+Ubuntu font - <https://design.ubuntu.com/font/>
 
 ### Software used
 
-- [Godot engine](https://godotengine.org/)
-- [Gimp](https://www.gimp.org/)
-- [sfxr](http://www.drpetter.se/project_sfxr.html)
-- [LMMS](https://lmms.io)
+- Godot engine - <https://godotengine.org/>
+- Gimp - <https://www.gimp.org/>
+- sfxr - <http://www.drpetter.se/project_sfxr.html>
+- LMMS - <https://lmms.io]https://lmms.io>
+- FoxDot - <https://foxdot.org/>
+- REAPER - <https://www.reaper.fm>
 
 ## Thanks
 
-- The [Ludum Dare](https://ldjam.com/) organizers
+- The Ludum Dare organizers - <https://ldjam.com/>
 - The people who rated and comented [my game on Ludum Dare #47](https://ldjam.com/events/ludum-dare/47/ufo-taxi) and encouraged me to extend it.
-- [LeninGamers (Adrián, Christian and Omar)](https://www.twitch.tv/leningamers) 
-- [Himar](https://www.facebook.com/sobrelamarcharockbandcovers)
+- LeninGamers (Adrián, Christian and Omar) - <https://www.twitch.tv/leningamers>
+- Himar - <https://www.facebook.com/sobrelamarcharockbandcovers>
 
 # Development info
 
