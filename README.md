@@ -28,34 +28,34 @@ The goal on each level is to modify the path followed by the UFO so it can pick 
 
 ### Idea and game design
 
-Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+- Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
 
 ### Programming
 
-Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
-Licensed under [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)
+- Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+- Licensed under [GPL v3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ### Graphics
 
-Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
-Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+- Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### Music
 
-Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
-Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
+- Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### SFX
 
-Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
-Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
-Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
+- Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
+- Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Third-party
 
 ### Fonts
 
-Ubuntu font - <https://design.ubuntu.com/font/>
+- Ubuntu font - <https://design.ubuntu.com/font/>
 
 ### Software used
 
