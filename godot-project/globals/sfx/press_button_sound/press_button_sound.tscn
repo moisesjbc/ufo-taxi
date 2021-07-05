@@ -4,3 +4,4 @@
 
 [node name="press_button_sound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+bus = "SFX"
