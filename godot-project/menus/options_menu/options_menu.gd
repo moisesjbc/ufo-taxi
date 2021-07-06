@@ -19,25 +19,29 @@ along with "UFO taxi!".  If not, see <https://www.gnu.org/licenses/>.
 
 extends Control
 
+const MIN_VOLUME = -30
+const MAX_VOLUME = 0
+
 
 func _ready():
 	update_fullscreen_button_label()
+	$margin_container/vbox_container/options_container/music_container/music_slider.set_value(get_volume_slider_value('Music'))
+	$margin_container/vbox_container/options_container/sfx_container/HBoxContainer/sfx_slider.set_value(get_volume_slider_value('SFX'))
 
 func set_volume(bus_name, value, min_volume, max_volume):
 	value = min_volume + ((max_volume - min_volume) * (value / 100))
-	if value != min_volume:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), false)
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), value)
-	else:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), true)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus_name), value == min_volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), value)
 
+func get_volume_slider_value(bus_name):
+	var volume = AudioServer.get_bus_volume_db((AudioServer.get_bus_index(bus_name)))
+	return ((volume - MIN_VOLUME) / float(MAX_VOLUME - MIN_VOLUME)) * 100
 
 func _on_music_slider_value_changed(value):
-	set_volume('Music', value, -30, 0)
+	set_volume('Music', value, MIN_VOLUME, MAX_VOLUME)
 
 func _on_sfx_slider_value_changed(value):
-	set_volume('SFX', value, -30, -10)
-
+	set_volume('SFX', value, MIN_VOLUME, MAX_VOLUME)
 
 func _on_play_sample_sound_pressed():
 	$sample_sound.play()
