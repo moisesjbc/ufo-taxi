@@ -147,3 +147,5 @@ func _building_defs_to_json(src_building_defs):
 func passed():
 	if not playing_from_level_editor:
 		user_data.set_level_passed(current_level_id)
+		if campaign_manager.level_ids[len(campaign_manager.level_ids) - 1]:
+			user_data.set_campaign_passed(campaign_manager.current_campaign_index)

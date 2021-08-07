@@ -32,8 +32,7 @@ func _ready():
 
 
 func campaign_is_enabled(_campaign_index: int):
-	# TODO: Implement
-	return true
+	return _campaign_index == 0 or user_data.campaign_passed(_campaign_index) or user_data.campaign_passed(_campaign_index - 1)
 
 
 func _select_campaign(campaign_index):

@@ -58,7 +58,12 @@ func load_next_level():
 	if current_level_index < len(level_ids):
 		self._load_level(current_level_index)
 	else:
-		scene_manager.change_scene("res://menus/ending/ending.tscn")
+		if current_campaign_index < get_number_of_campaigns() - 1:
+			set_current_campaign_index(current_campaign_index + 1)
+			campaign_manager.load_current_campaign_info()
+			self._load_level(0)
+		else:
+			scene_manager.change_scene("res://menus/ending/ending.tscn")
 
 
 func levels_dirpath():
