@@ -1,46 +1,48 @@
 {
-    "version": "0.4",
-    "railtrack_nodes": [
-        [
-            291.540039,
-            397
-        ],
-        [
-            1130.540039,
-            398
-        ],
-        [
-            648.427734,
-            57
-        ],
-        [
-            648.540039,
-            682
-        ]
-    ],
-    "n_remaining_actions": 2,
-    "texts": [],
-    "buildings": [
-        {
-            "type": "farm",
-            "position": [
-                809,
-                545
-            ]
-        },
-        {
-            "type": "farm",
-            "position": [
-                982,
-                130
-            ]
-        },
-        {
-            "type": "farm",
-            "position": [
-                485,
-                565
-            ]
-        }
-    ]
+	"version": "0.4",
+	"railtrack_nodes": [
+		[
+			292.483887,
+			397
+		],
+		[
+			1131.483887,
+			398
+		],
+		[
+			649.371582,
+			57
+		],
+		[
+			651,
+			650
+		]
+	],
+	"buildings": [
+		{
+			"type": "farm",
+			"position": [
+				809,
+				545
+			]
+		},
+		{
+			"type": "farm",
+			"position": [
+				982,
+				130
+			]
+		},
+		{
+			"type": "farm",
+			"position": [
+				485,
+				565
+			]
+		}
+	],
+	"n_remaining_actions": 2,
+	"texts": [
+
+	]
 }
