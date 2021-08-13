@@ -54,7 +54,7 @@ func reset_current_level(on_object_selected_target = null, on_object_selected_ca
 		$destination_area.reset($railtrack.get_node('path'), n_farms)
 	else:
 		$destination_area.visible = false
-	$gui/remaining_actions_label.visible = not edit_mode and (level_manager.n_remaining_actions != null)
+	$gui/remaining_actions.visible = not edit_mode and (level_manager.n_remaining_actions != null)
 
 	instantiate_buildings(level_manager.building_defs, on_object_selected_target, on_object_selected_callback)
 	
@@ -141,7 +141,7 @@ func _on_restart_level_button_button_down():
 
 
 func _on_railtrack_n_remaining_actions_updated(n_remaining_actions):
-	$gui/remaining_actions_label.text = "Remaining actions: " + str(n_remaining_actions)
+	$gui/remaining_actions/container/label.text = "Remaining actions: " + str(n_remaining_actions)
 
 
 func _on_player_train_game_over():
