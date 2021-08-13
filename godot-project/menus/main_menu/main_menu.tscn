@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://gameplay/player/ufo_head.png" type="Texture" id=2]
 [ext_resource path="res://cow.png" type="Texture" id=3]
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=4]
 [ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gameplay/player/ufo_body.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -64,8 +65,11 @@ margin_bottom = 100.0
 text = "v<version>"
 align = 1
 
-[node name="Sprite" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer"]
+[node name="ufo_body" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer"]
 position = Vector2( -64.2171, 33.2978 )
+texture = ExtResource( 6 )
+
+[node name="ufo_head" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer/ufo_body"]
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="margin_container/vbox_container/title_container/HBoxContainer"]
