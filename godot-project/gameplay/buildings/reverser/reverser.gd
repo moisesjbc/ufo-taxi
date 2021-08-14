@@ -30,3 +30,4 @@ func _on_reverser_body_entered(body):
 	if $cooldown_timer.time_left <= 0.0 and visible and body.name == 'player':
 		$cooldown_timer.start(1.0)
 		body.reverse()
+		$hit_sound.play()
