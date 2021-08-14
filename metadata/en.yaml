@@ -2,21 +2,19 @@ img: https://raw.githubusercontent.com/moisesjbc/ufo-taxi/main/multimedia/screen
 year: 2020
 title: "UFO taxi!"
 
-summary: >
+summary: |-
     Puzzle game where the player has to take cows to a festival by modifying a traveling path. Developed with
     [Godot](https://godotengine.org/) for the [Ludum Dare #47](https://ldjam.com/events/ludum-dare/47). - Theme: "Stuck in a loop"
 
-background: >
+background: |-
     It’s the great COW FESTIVAL and all the cows in the region want to go!
 
     As an employee of the “UFO taxi!” company, you must take them to the festival safely. However your vehicle is stuck in a polygonal loop which doesn’t cover the cow farms. Luckily for you, the route can be modified…
 
-mechanics: >
+mechanics: |-
     The goal on each level is to modify the path followed by the UFO so it can pick cows from the farms and leave them at the festival.
 
-
     - Click on a vertex and confirm for removing it.
-
     - Drag and drop an edge for creating a new vertex.
 
 controls:
