@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build for web.
-bash ./export.sh "ufo-taxi" "devel" "HTML5"
+godot-export.sh "ufo-taxi" "devel" "HTML5"
 
 # Get public IP.
 dig +short myip.opendns.com @resolver1.opendns.com

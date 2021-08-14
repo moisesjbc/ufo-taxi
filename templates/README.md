@@ -42,6 +42,11 @@ Directory scripts/ includes the following utility scripts:
 
 Mounts a simple webserver serving the game in localhost
 
+1. Clone repo <https://github.com/moisesjbc/godot-export>
+2. Follow instructions.
+3. Move godot-export.sh to /usr/bin and give it execution permission.
+4. Run the script
+
         bash scripts/devel-html.sh
 
 ### update-version.sh
