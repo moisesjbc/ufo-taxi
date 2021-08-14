@@ -1,12 +1,9 @@
 # UFO taxi!
 
-![](multimedia/screenshot.png)
+![](https://raw.githubusercontent.com/moisesjbc/ufo-taxi/main/multimedia/screenshot.png)
 
-It’s the great COW FESTIVAL and all the cows in the region want to go!
+Puzzle game where the player has to take cows to a festival by modifying a traveling path. Developed with [Godot](https://godotengine.org/) for the [Ludum Dare #47](https://ldjam.com/events/ludum-dare/47). - Theme: "Stuck in a loop"
 
-As an employee of the “UFO taxi!” company, you must take them to the festival safely. However your vehicle is stuck in a polygonal loop which doesn’t cover the cow farms. Luckily for you, the route can be modified…
-
-Made for [Ludum Dare #47](https://ldjam.com/events/ludum-dare/47/) - Theme: "Stuck in a loop"
 
 ## Mechanics
 
@@ -15,14 +12,15 @@ The goal on each level is to modify the path followed by the UFO so it can pick 
 - Click on a vertex and confirm for removing it.
 - Drag and drop an edge for creating a new vertex.
 
+
 ## Links
 
-- [Play "UFO taxi!" online](https://www.moisesjose.com/games/ufo-taxi/play)
-- [Download "UFO taxi!" v0.3.1 for Windows](https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_windows_v0.3.1.zip)
+- [Play "UFO Taxi!" online,](https://www.moisesjose.com/games/ufo-taxi/play)
+- [Download "UFO taxi!" v0.3.1 for Windows,](https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_windows_v0.3.1.zip)
 - [Download "UFO taxi!" v0.3.1 for GNU/Linux](https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_linux_v0.3.1.zip)
-- ["UFO taxi!" page at Ludum Dare #47"](https://ldjam.com/events/ludum-dare/47/ufo-taxi)
-- ["UFO taxi!" page at itch.io](https://moisesjbc.itch.io/ufo-taxi)
-- ["UFO taxi!" Github repository](https://github.com/moisesjbc/ufo-taxi)
+- ["UFO taxi!" page at Ludum Dare #47](https://ldjam.com/events/ludum-dare/47/ufo-taxi)
+- [\"UFO taxi!\" page at itch.io](https://moisesjbc.itch.io/ufo-taxi)
+- [\"UFO taxi!\" Github repository](https://github.com/moisesjbc/ufo-taxi)
 
 ## Credits and licensing
 
@@ -47,31 +45,34 @@ The goal on each level is to modify the path followed by the UFO so it can pick 
 
 ### SFX
 
-- Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
 - Alejandro Sánchez Medina (alejandrosame) - <https://github.com/alejandrosame>
+- Moisés J. Bonilla Caraballo (moisesjbc) - <https://moisesjose.com>
 - Licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
+
 ## Third-party
+
+### Software
+
+- Godot Engine - <https://godotengine.org/>
+- GIMP - <https://www.gimp.org/>
+- sfxr - <https://www.drpetter.se/project_sfxr.html>
+- LMMS - <https://lmms.io/>
+- FoxDot - <https://foxdot.org/>
+- REAPER - <https://www.reaper.fm>
 
 ### Fonts
 
 - Ubuntu font - <https://design.ubuntu.com/font/>
 
-### Software used
-
-- Godot engine - <https://godotengine.org/>
-- Gimp - <https://www.gimp.org/>
-- sfxr - <http://www.drpetter.se/project_sfxr.html>
-- LMMS - <https://lmms.io]https://lmms.io>
-- FoxDot - <https://foxdot.org/>
-- REAPER - <https://www.reaper.fm>
 
 ## Thanks
 
 - The Ludum Dare organizers - <https://ldjam.com/>
-- The people who rated and comented [my game on Ludum Dare #47](https://ldjam.com/events/ludum-dare/47/ufo-taxi) and encouraged me to extend it.
+- The people who rated and comented my game on Ludum Dare #47 and encouraged me to extend it - <https://ldjam.com/events/ludum-dare/47/ufo-taxi>
 - LeninGamers (Adrián, Christian and Omar) - <https://www.twitch.tv/leningamers>
 - Himar - <https://www.facebook.com/sobrelamarcharockbandcovers>
+
 
 # Development info
 
@@ -102,3 +103,13 @@ Sprites are created with a size N times bigger than the base resolution used in 
 Add the GPL legal notice to the begining of all source files (.gd)
 
         bash scripts/apply_gpl_notice.sh
+
+### Generate this README from template
+
+Requires Python3 and the following dependencies:
+
+        pip install pyyaml jinja2
+
+Generate this README from template:
+
+        python scripts/gen_templates.py templates/README.md > README.md

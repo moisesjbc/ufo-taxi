@@ -1,0 +1,136 @@
+img: https://raw.githubusercontent.com/moisesjbc/ufo-taxi/main/multimedia/screenshot.png
+year: 2020
+title: "UFO taxi!"
+
+summary: >
+    Puzzle game where the player has to take cows to a festival by modifying a traveling path. Developed with
+    [Godot](https://godotengine.org/) for the [Ludum Dare #47](https://ldjam.com/events/ludum-dare/47). - Theme: "Stuck in a loop"
+
+background: >
+    It’s the great COW FESTIVAL and all the cows in the region want to go!
+
+    As an employee of the “UFO taxi!” company, you must take them to the festival safely. However your vehicle is stuck in a polygonal loop which doesn’t cover the cow farms. Luckily for you, the route can be modified…
+
+mechanics: >
+    The goal on each level is to modify the path followed by the UFO so it can pick cows from the farms and leave them at the festival.
+
+
+    - Click on a vertex and confirm for removing it.
+
+    - Drag and drop an edge for creating a new vertex.
+
+controls:
+    - key: Mouse left button
+      meaning: Select vertex / edge. Confirm / cancel action
+
+credits:
+  - name: Idea and game design
+    people:
+      - moisesjbc
+
+  - name: Programming
+    people:
+      - moisesjbc
+    license: gpl_v3
+
+  - name: Graphics
+    people:
+      - moisesjbc
+    license: by-nc-sa-4.0
+
+  - name: Music
+    people:
+      - alejandrosame
+    license: by-nc-sa-4.0
+
+  - name: SFX
+    people:
+      - alejandrosame
+      - moisesjbc
+    license: by-nc-sa-4.0
+
+third_party:
+    - title: Software
+      resources:
+        - name: Godot Engine
+          href: https://godotengine.org/
+
+        - name: GIMP
+          href: https://www.gimp.org/
+
+        - name: sfxr
+          href: https://www.drpetter.se/project_sfxr.html
+
+        - name: LMMS
+          href: https://lmms.io/
+
+        - name: FoxDot
+          href: https://foxdot.org/
+
+        - name: REAPER
+          href: https://www.reaper.fm
+
+    - title: Fonts
+      resources:
+        - name: Ubuntu font
+          href: https://design.ubuntu.com/font/
+
+thanks:
+  - to: The Ludum Dare organizers
+    href: https://ldjam.com/
+
+  - to: "The people who rated and comented my game on Ludum Dare #47 and encouraged me to extend it"
+    href: https://ldjam.com/events/ludum-dare/47/ufo-taxi
+
+  - to: LeninGamers (Adrián, Christian and Omar)
+    href: https://www.twitch.tv/leningamers
+
+  - to: Himar
+    href: https://www.facebook.com/sobrelamarcharockbandcovers
+
+links:
+  - text: Play "UFO Taxi!" online,
+    href: https://www.moisesjose.com/games/ufo-taxi/play
+
+  - text: Download "UFO taxi!" v0.3.1 for Windows,
+    href: https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_windows_v0.3.1.zip
+
+  - text: Download "UFO taxi!" v0.3.1 for GNU/Linux
+    href: https://github.com/moisesjbc/ufo-taxi/releases/download/v0.3.1/ufo-taxi_linux_v0.3.1.zip
+
+  - text: "\"UFO taxi!\" page at Ludum Dare #47"
+    href: https://ldjam.com/events/ludum-dare/47/ufo-taxi
+
+  - text: \"UFO taxi!\" page at itch.io
+    href: https://moisesjbc.itch.io/ufo-taxi
+
+  - text: \"UFO taxi!\" Github repository
+    href: "https://github.com/moisesjbc/ufo-taxi"
+
+dimensions: 
+  - width: 1024
+    height: 768
+
+tags:
+  - godot
+  - jam
+  - alone
+  - browser
+  - windows
+  - linux
+
+people:
+    moisesjbc:
+        name: Moisés J. Bonilla Caraballo (moisesjbc)
+        web: https://moisesjose.com
+    alejandrosame:
+        name: Alejandro Sánchez Medina (alejandrosame)
+        web: https://github.com/alejandrosame
+
+licenses:
+    gpl_v3:
+        name: GPL v3
+        href: https://www.gnu.org/licenses/gpl-3.0.html
+    by-nc-sa-4.0:
+        name: Attribution-NonCommercial-ShareAlike 4.0 International
+        href: http://creativecommons.org/licenses/by-nc-sa/4.0/
