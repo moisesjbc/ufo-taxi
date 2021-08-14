@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Fixed multiple Godot warnings / errors.
 - Fixed audio sliders not initialized with current volume.
 
+
 ## [0.3.2] - 2020-12-20
 
 ### Added
