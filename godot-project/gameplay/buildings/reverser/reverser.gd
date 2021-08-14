@@ -28,6 +28,6 @@ func _on_reverser_body_entered(body):
 	# When playing level from level editor, buildings from editor are hiden
 	# and replaced by realtime copies. Disable collisions for the not visible.
 	if $cooldown_timer.time_left <= 0.0 and visible and body.name == 'player':
+		$hit_sound.play()
 		$cooldown_timer.start(1.0)
 		body.reverse()
-		$hit_sound.play()
