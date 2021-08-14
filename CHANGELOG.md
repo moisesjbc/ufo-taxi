@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.4] - 2020-08-15
+
+### Added
+
+- New info to README.
+- New campaign.
+- New building: the "reverser"!
+- Campaign selector.
+- Music and some SFX (thanks Alejandro!).
+
+### Changed
+
+- Updated almost all sprites in the game.
+- Export script moved to its own repository.
+- Updated screenshot.
+- Adjusted positions for vertices and levels in multiple levels.
+- Pause menu now includes current level index.
+
+### Fixed
+
+- Fixed multiple Godot warnings / errors.
+- Fixed audio sliders not initialized with current volume.
 
 ## [0.3.2] - 2020-12-20
 
@@ -78,6 +100,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - First version upload to [Ludum Dare #47](https://ldjam.com/events/ludum-dare/47)
 
 [Unreleased]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3.2...HEAD
+[0.4]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3.2...v0.4
 [0.3.2]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/moisesjbc/ufo-taxi/compare/v0.3...v0.3.1
 [0.3]: https://github.com/moisesjbc/ufo-taxi/compare/v0.2...v0.3
