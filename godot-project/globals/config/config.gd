@@ -19,4 +19,4 @@ along with "UFO taxi!".  If not, see <https://www.gnu.org/licenses/>.
 
 extends Node
 
-const GAME_VERSION = '0.4'
+const GAME_VERSION = '0.5'

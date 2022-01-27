@@ -1,37 +1,35 @@
 {
-	"version": "0.4",
-	"railtrack_nodes": [
-		[
-			616.775391,
-			136
-		],
-		[
-			1026.719238,
-			450
-		],
-		[
-			229.943848,
-			449
-		]
-	],
-	"buildings": [
-		{
-			"type": "farm",
-			"position": [
-				613,
-				340
-			]
-		},
-		{
-			"type": "farm",
-			"position": [
-				622,
-				591
-			]
-		}
-	],
-	"n_remaining_actions": 2,
-	"texts": [
-
-	]
+    "version": "0.5",
+    "railtrack_nodes": [
+        [
+            616.775391,
+            136
+        ],
+        [
+            1026.719238,
+            450
+        ],
+        [
+            229.943848,
+            449
+        ]
+    ],
+    "buildings": [
+        {
+            "type": "farm",
+            "position": [
+                613,
+                340
+            ]
+        },
+        {
+            "type": "farm",
+            "position": [
+                622,
+                591
+            ]
+        }
+    ],
+    "n_remaining_actions": 2,
+    "texts": []
 }

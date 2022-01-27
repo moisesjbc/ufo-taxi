@@ -1,49 +1,49 @@
 {
-	"version": "0.4",
-	"railtrack_nodes": [
-		[
-			169.606934,
-			351
-		],
-		[
-			666.943848,
-			71
-		],
-		[
-			1244.775391,
-			355
-		],
-		[
-			691.943848,
-			623
-		]
-	],
-	"buildings": [
-		{
-			"type": "reverser",
-			"position": [
-				695,
-				335
-			]
-		},
-		{
-			"type": "area_51",
-			"position": [
-				520,
-				333
-			]
-		},
-		{
-			"type": "farm",
-			"position": [
-				852,
-				338
-			]
-		}
-	],
-	"n_remaining_actions": 1,
-	"texts": [
-		{
+    "version": "0.5",
+    "railtrack_nodes": [
+        [
+            169.606934,
+            351
+        ],
+        [
+            666.943848,
+            71
+        ],
+        [
+            1244.775391,
+            355
+        ],
+        [
+            691.943848,
+            623
+        ]
+    ],
+    "buildings": [
+        {
+            "type": "reverser",
+            "position": [
+                695,
+                335
+            ]
+        },
+        {
+            "type": "area_51",
+            "position": [
+                520,
+                333
+            ]
+        },
+        {
+            "type": "farm",
+            "position": [
+                852,
+                338
+            ]
+        }
+    ],
+    "n_remaining_actions": 1,
+    "texts": [
+        {
             "position": [
                 530,
                 425
@@ -55,5 +55,5 @@
             "horizontal_align": "center",
             "text": "^\n \"Ugh, those UFO-lovers...\"\nUFO will turn around instead\nof passing over here"
         }
-	]
+    ]
 }

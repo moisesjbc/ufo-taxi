@@ -1,62 +1,60 @@
 {
-	"version": "0.4",
-	"railtrack_nodes": [
-		[
-			306.494629,
-			338
-		],
-		[
-			972.494629,
-			85
-		],
-		[
-			1169.213867,
-			372
-		],
-		[
-			996.494629,
-			645
-		]
-	],
-	"buildings": [
-		{
-			"type": "reverser",
-			"position": [
-				640,
-				190
-			]
-		},
-		{
-			"type": "area_51",
-			"position": [
-				1054,
-				498
-			]
-		},
-		{
-			"type": "farm",
-			"position": [
-				1042,
-				229
-			]
-		},
-		{
-			"type": "reverser",
-			"position": [
-				773,
-				559
-			]
-		},
-		{
-			"type": "area_51",
-			"position": [
-				830,
-				419
-			]
-		}
-	],
-	"n_remaining_actions": 3,
-	"texts": [
-
-	]
+    "version": "0.5",
+    "railtrack_nodes": [
+        [
+            306.494629,
+            338
+        ],
+        [
+            972.494629,
+            85
+        ],
+        [
+            1169.213867,
+            372
+        ],
+        [
+            996.494629,
+            645
+        ]
+    ],
+    "buildings": [
+        {
+            "type": "reverser",
+            "position": [
+                640,
+                190
+            ]
+        },
+        {
+            "type": "area_51",
+            "position": [
+                1054,
+                498
+            ]
+        },
+        {
+            "type": "farm",
+            "position": [
+                1042,
+                229
+            ]
+        },
+        {
+            "type": "reverser",
+            "position": [
+                773,
+                559
+            ]
+        },
+        {
+            "type": "area_51",
+            "position": [
+                830,
+                419
+            ]
+        }
+    ],
+    "n_remaining_actions": 3,
+    "texts": []
 }

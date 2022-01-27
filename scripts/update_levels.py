@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import json
 
 def gen_buildings(building_type, building_positions):
@@ -14,6 +15,8 @@ def gen_buildings(building_type, building_positions):
     
 
 if __name__ == '__main__':
+    new_game_version = sys.argv[1]
+
     dir_path = os.path.join('godot-project', 'levels', 'campaign')
     for level_filename in os.listdir(dir_path):
         level_file_path = os.path.join(dir_path, level_filename)
@@ -34,5 +37,7 @@ if __name__ == '__main__':
                         level_data['buildings'] += gen_buildings('area_51', level_data['area_51_positions'])
                         del level_data['area_51_positions']
 
-                    with open(level_file_path, 'w') as output_level_file:
-                        json.dump(level_data, output_level_file, indent=4)
+                level_data['version'] = new_game_version
+
+                with open(level_file_path, 'w') as output_level_file:
+                    json.dump(level_data, output_level_file, indent=4)

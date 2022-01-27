@@ -1,70 +1,68 @@
 {
-	"version": "0.4",
-	"railtrack_nodes": [
-		[
-			1079.371582,
-			152
-		],
-		[
-			303.371582,
-			619
-		],
-		[
-			748.371582,
-			619
-		],
-		[
-			741.371582,
-			426
-		],
-		[
-			1098.371582,
-			434
-		],
-		[
-			353.371582,
-			151
-		]
-	],
-	"buildings": [
-		{
-			"type": "farm",
-			"position": [
-				279,
-				615
-			]
-		},
-		{
-			"type": "reverser",
-			"position": [
-				710,
-				385
-			]
-		},
-		{
-			"type": "reverser",
-			"position": [
-				305,
-				151
-			]
-		},
-		{
-			"type": "reverser",
-			"position": [
-				717,
-				582
-			]
-		},
-		{
-			"type": "area_51",
-			"position": [
-				1058,
-				618
-			]
-		}
-	],
-	"n_remaining_actions": 4,
-	"texts": [
-
-	]
+    "version": "0.5",
+    "railtrack_nodes": [
+        [
+            1079.371582,
+            152
+        ],
+        [
+            303.371582,
+            619
+        ],
+        [
+            748.371582,
+            619
+        ],
+        [
+            741.371582,
+            426
+        ],
+        [
+            1098.371582,
+            434
+        ],
+        [
+            353.371582,
+            151
+        ]
+    ],
+    "buildings": [
+        {
+            "type": "farm",
+            "position": [
+                279,
+                615
+            ]
+        },
+        {
+            "type": "reverser",
+            "position": [
+                710,
+                385
+            ]
+        },
+        {
+            "type": "reverser",
+            "position": [
+                305,
+                151
+            ]
+        },
+        {
+            "type": "reverser",
+            "position": [
+                717,
+                582
+            ]
+        },
+        {
+            "type": "area_51",
+            "position": [
+                1058,
+                618
+            ]
+        }
+    ],
+    "n_remaining_actions": 4,
+    "texts": []
 }

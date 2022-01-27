@@ -92,6 +92,10 @@ Updates version number in game (level files, main menu, etc)
 
         bash scripts/update-version.sh <version>
 
+ie.
+
+        bash scripts/update-version.sh 0.5
+
 ### Instantiate images (Ubuntu)
 
 Sprites are created with a size N times bigger than the base resolution used in the game. This script reduces the sprites to the base resolution and place them in their corresponding directories in the Godot project directory:
