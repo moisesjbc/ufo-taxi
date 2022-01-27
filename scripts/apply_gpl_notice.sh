@@ -9,7 +9,7 @@ apply_gpl_to_file() {
     FILEPATH=$1
 
     GPL_NOTICE='"""
-Copyright 2020-2021 Moisés J. Bonilla Caraballo (moisesjbc)
+Copyright 2020-2022 Moisés J. Bonilla Caraballo (moisesjbc)
 
 This file is part of "UFO taxi!".
 
