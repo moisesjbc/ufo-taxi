@@ -43,6 +43,7 @@ func reset(nodes, new_n_remaining_actions, new_edit_mode, on_object_selected_tar
 	emit_signal("n_remaining_actions_updated", n_remaining_actions)
 	$state_machine.change_state("selection")
 	$path.update()
+	$path.reset_ufo_guides()
 
 func confirm_current_selection():
 	if $path.current_node != null:

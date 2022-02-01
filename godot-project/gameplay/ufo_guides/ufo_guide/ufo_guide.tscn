@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gameplay/ufo_guides/ufo_guide/ufo_guide.png" type="Texture" id=1]
+[ext_resource path="res://gameplay/ufo_guides/ufo_guide/ufo_guide.gd" type="Script" id=2]
+
+[node name="ufo_guide" type="PathFollow2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
