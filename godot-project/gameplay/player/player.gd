@@ -19,7 +19,7 @@ along with "UFO taxi!".  If not, see <https://www.gnu.org/licenses/>.
 
 extends KinematicBody2D
 
-var path = null
+var path: Node2D = null
 var current_node_index: int = 0
 var next_node_index: int = 1
 export var speed: int = 200
@@ -43,7 +43,6 @@ func reset(new_path):
 	
 func reverse():
 	going_forward = not going_forward
-	self.path.reverse_ufo_guides()
 	
 	var aux = current_node_index
 	current_node_index = next_node_index

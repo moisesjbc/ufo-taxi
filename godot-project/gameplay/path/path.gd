@@ -25,27 +25,13 @@ var current_edge = null
 onready var node_scene = preload('res://gameplay/path/node/node.tscn')
 var edges_ref_points = []
 
-func reset_ufo_guides():
-	$ufo_guides.reset()
-
-func udate_ufo_guides():
-	var vertex_positions = []
-	for vertex in get_nodes():
-		vertex_positions.append(vertex.position)
-	vertex_positions.append(get_nodes()[0].position)
-	$ufo_guides.set_path_vertices(vertex_positions)
-	
-func reverse_ufo_guides():
-	$ufo_guides.reverse()
-
 func set_nodes(nodes_positions, on_object_selected_target = null, on_object_selected_callback = null):
 	for node in get_nodes():
 		node.free()
 		
 	for node_position in nodes_positions:
 		add_node(node_position, null, on_object_selected_target, on_object_selected_callback)
-	
-	udate_ufo_guides()
+		
 	update()
 	
 func generate_edge_ref_points(edge_index, insert=false):
@@ -64,7 +50,7 @@ func generate_edge_ref_points(edge_index, insert=false):
 		edges_ref_points.push_back(edge_ref_points)
 		
 func get_nodes():
-	return $nodes.get_children()
+	return get_children()
 
 func _draw():
 	for i in range(len(get_nodes()) - 1):
@@ -141,8 +127,8 @@ func add_node(node_position, index = null, on_node_selected_target = null, on_no
 	if on_node_selected_target:
 		new_node.get_node('clicable').connect('clicked', on_node_selected_target, on_node_selected_callback)
 	
-	$nodes.add_child(new_node)
-	$nodes.move_child(new_node, index)
+	add_child(new_node)
+	move_child(new_node, index)
 	
 	if index == 0:
 		generate_edge_ref_points(len(get_nodes()) - 1)
@@ -151,7 +137,6 @@ func add_node(node_position, index = null, on_node_selected_target = null, on_no
 		generate_edge_ref_points(index - 1)
 		generate_edge_ref_points(index, true)
 	
-	udate_ufo_guides()
 	update()
 
 
@@ -173,7 +158,7 @@ func open():
 	update()
 	
 func remove_all_nodes():
-	for node in get_nodes():
+	for node in get_children():
 		node.queue_free()
 	current_edge = null
 	current_edge = null
@@ -181,7 +166,7 @@ func remove_all_nodes():
 
 
 func remove_node(node_index):
-	get_nodes()[node_index].free()
+	get_children()[node_index].free()
 	
 	edges_ref_points.remove(node_index)
 	if node_index == 0:
@@ -189,5 +174,4 @@ func remove_node(node_index):
 	else:
 		generate_edge_ref_points(node_index - 1)
 	
-	udate_ufo_guides()
 	update()
