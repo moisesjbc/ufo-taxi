@@ -24,7 +24,7 @@ func _ready():
 
 func set_selected(selected: bool):
 	if selected:
-		modulate = Color.blue
+		modulate = Color.royalblue
 	else:
 		modulate = Color.aquamarine
 
