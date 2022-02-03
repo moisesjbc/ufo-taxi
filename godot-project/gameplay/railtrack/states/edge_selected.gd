@@ -58,10 +58,13 @@ func input(event):
 
 
 func _draw():
+	$forbidden_vertex.hide()
 	if event_mouse_position != null:
 		var color = get_lines_color()
 		draw_line(src_position, event_mouse_position, color, 2)
 		draw_line(dst_position, event_mouse_position, color, 2)
+		if distance_to_middle_point > max_distance:
+			$forbidden_vertex.display(event_mouse_position, src_position, dst_position)
 
 
 func get_lines_color():
