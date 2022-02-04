@@ -15,7 +15,6 @@ func display(new_vertex, src_vertex, dst_vertex):
 
 
 func _generate_forbidden_signals(src_vertex, dst_vertex):
-	var src_vertex_offset = src_vertex
 	var distance = src_vertex.distance_to(dst_vertex)
 	var direction = (dst_vertex - src_vertex).normalized()
 	var distance_between_signals = 60
