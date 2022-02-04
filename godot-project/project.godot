@@ -28,6 +28,7 @@ user_data="*res://globals/user_data/user_data.tscn"
 config="*res://globals/config/config.tscn"
 press_button_sound="*res://globals/sfx/press_button_sound/press_button_sound.tscn"
 scene_manager="*res://globals/scene_manager/scene_manager.gd"
+background="*res://globals/background/background.tscn"
 
 [display]
 
