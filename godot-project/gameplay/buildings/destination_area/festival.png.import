@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/festival.png-76f4e8a62febe1cc7ae7738716678646.stex"
+path="res://.import/festival.png-0dcee1e03d72422c821dc64bf81ece30.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameplay/destination_area/festival.png"
-dest_files=[ "res://.import/festival.png-76f4e8a62febe1cc7ae7738716678646.stex" ]
+source_file="res://gameplay/buildings/destination_area/festival.png"
+dest_files=[ "res://.import/festival.png-0dcee1e03d72422c821dc64bf81ece30.stex" ]
 
 [params]
 

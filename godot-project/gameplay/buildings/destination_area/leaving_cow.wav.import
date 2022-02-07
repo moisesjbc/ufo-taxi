@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/leaving_cow.wav-8362d29da48ecef90ffb466a0303ab45.sample"
+
+[deps]
+
+source_file="res://gameplay/buildings/destination_area/leaving_cow.wav"
+dest_files=[ "res://.import/leaving_cow.wav-8362d29da48ecef90ffb466a0303ab45.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

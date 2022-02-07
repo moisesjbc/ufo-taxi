@@ -5,13 +5,14 @@
 [ext_resource path="res://gameplay/main/gui/fast_forward/off.png" type="Texture" id=3]
 [ext_resource path="res://gameplay/player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gameplay/railtrack/railtrack.tscn" type="PackedScene" id=5]
-[ext_resource path="res://gameplay/destination_area/destination_area.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gameplay/buildings/destination_area/destination_area.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/level_win_menu/level_win_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gameplay/main/gui/fast_forward/on.png" type="Texture" id=8]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://gameplay/main/gui/restart_level/restart_level.png" type="Texture" id=11]
 [ext_resource path="res://menus/game_over_menu/game_over.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0.968627, 0.705882, 1 )
