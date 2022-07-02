@@ -1,54 +1,289 @@
 {
-  "name": "ludum-dare-47",
+  "name": "ufo-taxi",
   "numberOfColumns": 3,
   "columns": [
     {
       "name": "ToDo",
       "cards": [
         {
-          "name": "Copia de seguridad de Kanban",
+          "name": "Planificar siguientes",
           "details": "",
-          "color": "C1F7C2"
+          "color": "FCE4D4"
         },
         {
-          "name": "Actualizar versión (título ventana y menú)",
+          "name": "¿Hacer que en móvil al ponerlo a pantalla completa se ponga automáticamente apaisado? (apuntar comprobar integración con itch.io)",
           "details": "",
-          "color": "C1F7C2"
+          "color": "FAFCD2"
         },
         {
-          "name": "[Split] Gameplay - añadir restricciones de número de acciones",
-          "details": "",
-          "color": "FCC7FC"
-        },
-        {
-          "name": "[Split] Gameplay",
-          "details": "",
-          "color": "FCC7FC"
-        },
-        {
-          "name": "[Split] Gráficos",
-          "details": "",
-          "color": "FCC7FC"
-        },
-        {
-          "name": "Entrevar v0.1",
+          "name": "Bug Edu seleccionando aristas (ver carpeta Imágenes)",
           "details": "",
           "color": "FFB5B5"
         },
         {
-          "name": "Revisar duda sobre base-code (marcadores)",
-          "details": "- https://ldjam.com/events/ludum-dare/47/$222627/$223265\n- https://twitter.com/moises_jbc/status/1312316584057286656",
+          "name": "[Juan] Al probarlo Juan en web, se puso en pantalla completa automáticamente, pero fullscreen mostraba \"off\"",
+          "details": "",
           "color": "FFB5B5"
         },
         {
-          "name": "[Split] Menús",
+          "name": "Al jugar un nivel (no hace falta pasarlo) y darle a añadir un nuevo nivel en el editor de niveles, se inicializa con los edificios del nivel anterior",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Añadir licencias / créditos en el README, itch.io, web, etc",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Actualizar enlaces de descarga en README",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Mejorar sprite de la vaca (menú)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Añadir instrucciones de building ¿y publicación? a README",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Añadir botones \"Continue / new game\" que salten el selector de niveles",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "[SPLIT] Buscar alternativa que no dependa del color para indicar una arista muy lejana",
           "details": "",
           "color": "FCC7FC"
         },
         {
-          "name": "[Split] Música y sonido",
+          "name": "[SPLIT] Nueva campaña",
           "details": "",
           "color": "FCC7FC"
+        },
+        {
+          "name": "[SPLIT] [Editor de niveles] Interfaz mínima",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[SPLIT] Mejorar parte gráfica",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Mario] Navegador - Le estaba saliendo el \"remaining actions\" hasta el nivel 2-7, donde le desapareció",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Editor de niveles] Abrir un nivel (¿editor o jugando?) y luego crear un nuevo nivel de campaña muestra los datos del anterior",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Editor de niveles] Al pasarse la fase actual que está siendo editada, pasa a la siguiente",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Editor de niveles] Al editar los vertices y guardar 2-1 el texto cambia de tamaño ¿y posición?",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Revisar README",
+          "details": "",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Mergear versión y publicar (DESC) - v0.5",
+          "details": "- Actualizar legal notice en ficheros (comprobar año)\n- Actualizar JSONs niveles (scripts/)\n- Actualizar enlaces en README.\n- Actualizar changelog (PONER FECHA BIEN)\n- Release mode (comprobar que no se puede acceder al editor de niveles).\n- Tag y release en Github.\n- Actualización en itch.io.\n- ¿Noticia en ldjam?\n- ¿Devlog en itch.io?\n- Enlaces en web personal\n- Estado WhatsApp\n- Duplicar esta tarea para la nueva versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Aumentar número de versión - v0.6 (DESC)",
+          "details": "- Script de actualización\n    - Menú principal\n    - Versión en ficheros de niveles (.json)\n    - Versión en globals/level::save\n- Duplicar esta tarea con nuevo número de versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "[Split] ¿Mejorar parte audio? (DESC)",
+          "details": "- ¡Música!\n- ¿Ovación al dejar una vaca?",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Mejorar parte gráfica (¿3D?)",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Idea - clasificar - añader un área de tierra alrededor de cada construcción y dinámicamente conectarlos con caminos del mismo color al generar el mapa (o no)",
+          "details": "",
+          "color": "CFFAFC"
+        },
+        {
+          "name": "[Rama aparte] Probar primera alternativa de rutas (¿caritas de vaca semi-transparentes siguiendo el camino?)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Añadir nueva campaña (ver \"Ideas a futuro\")",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Rama aparte] Probar segunda alternativa de rutas",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Ver cómo indicar visualmente que un vértice / arista está bloqueado (DESC)",
+          "details": "- Incluir el caso cuando estás haciendo drag y se ve la nueva arista (tentativa)",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Permitir editar textos en el level editor",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Editor de niveles] CRUD de vértices",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mirar https://www.bfxr.net/ para los efectos de sonido",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "[Editor de niveles] Añadir inputs de posición a panel del objeto",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Ideas a futuro (DESC)",
+          "details": "- Lugar que te añada acciones.\n- Lugar que te reste acciones.\n- Lugar que te haga ir hacia atrás en la ruta (esto altera todo el tema de controlar nodos en uso).\n- Commutador que una 2 de 3 ramas y puedas cambiar las 2 que conecta\n    - Cuando lo intenté diseñar no tenía claro que aportara mucho y que se pudiera deshacer una vez el jugador conecta rutas a él.\n- Otros animales que se maten entre sí.\n- Pájaros que cruzan la pantalla periódicamente y tienes que esquivar\n- Nodo que pulsando en un lado o en el otro aceleras o ralentizas las aristas.\n- Mapas donde no puedas permanecer en la oscuridad mucho tiempo y tengas que ir cerca de las luces (o mover las luces).\n- Cowstock: mapas psicodélicos con railes de varios colores que se cruzan y vas saltando de uno a otro según el color.\n- Aristas con número máximo de pasajeros permitidos.\n- Llevas celebridades y tienes escolta que puedes rotar alrededor del platillo (o poner en uno de los cuatro lados).\n- Se pasan a la energía solar por el coste del combustible, tienes una barra que se rellena al sol y se vacía a la sombre, pero hay ¿nubes? ¿otros bloqueantes?\n    - ¿Mover / rotar molinos de viento para mover las nubes?",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Diseño \"Context switcher\" (renombrar)",
+          "details": "- La nave pasa a tener un icono (¿+ contador?) con la cara del tipo de pasajero actual: vaca, ¿zorro?, etc\n- Hay un nuevo edificio (¿cómo es?) sobre el que se puede clicar y en un menú contextual se puede elegir el tipo de cliente. Cambiar el cliente actual consume una acción.\n- Cuando el UFO pasa sobre el edificio, automáticamente cambia al tipo de cliente que tiene el edificio.\n- Si el UFO ya tiene un pasajero del tipo anterior cuando pasa por el edificio...\n    - ¿Pierde? \n    - ¿El cliente anterior se tira en paracaidas / resta puntuación?\n    - Si no pierde ni el cliente anterior se tira debería haber alguna penalización si se pillan dos clientes de diferente tipo.\n- Dos edificios destino, uno para cada tipo de animal.\n- ¿Muy confuso tener dos tipos / objetivos a la vez?",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Level editor - Cuando se pasa la fase el botón de \"next level\" del panel \"Level passed\" redirige al level editor, no al siguiente nivel",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Al añadir un nodo se sale del estado de seguir añadiendo nodos",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "¿Añadir confirmación a botón de reiniciar nivel?",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "¿Usar porcentajes en las coordenadas de los niveles? (DESC)",
+          "details": "- (¿o no? ¿cómo trato la orientación, el keep_width, etc?)\n- Probar build web en móvil\n- Actualizar niveles actuales y editor de niveles",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Nueva música + controles sonido",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Si dos aristas atraviesan una tercera, la tercera arista no se puede seleccionar",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Split] Actualizar itch.io (devlog)",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Decidir tamaño texto y corregir (DESC)",
+          "details": "Que no se salga el texto:\n- de los tooltips.\n- de los paneles.\n- de los botones.\n- etc",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Probar build para Android",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] No permitir darle a play si no hay nodos definidos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] ¿Hacer que el menú en el estado de idle sea un desplegable?",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mostrar panel de eliminación de nodo por encima del OVNI",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Campañas",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Feedback] Añadir modo creativo (sin límite de acciones)",
+          "details": "https://ldjam.com/users/ale\n\"I like games like these where the player needs to come up with their own solutions using their own creativity, and I think this game concept has a lot of potential. If you were to keep working on it, my suggestions would be to remove the action limit since it restricts creativity\"",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "¿Añadir icono de candado a vértices y aristas en uso?",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Crear editor de niveles (DESC)",
+          "details": "Investigar cómo puedo añadir yo tutoriales ¿pero caparlos para los usuarios del editor?",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Internacionalización",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Mejorar gráficos",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] ¿Mapas comunidad?",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "¿Añadir guías al tener nodo seleccionado?",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "¿Añadir guía de arista eliminada?",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir menú de pausa",
+          "details": "",
+          "color": "FAFCD2"
         }
       ],
       "settings": {}
@@ -64,6 +299,826 @@
       "name": "Done",
       "cards": [
         {
+          "name": "No se puede crear edificios en el editor de niveles",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Refactor - mover todos los edificios a buildings/",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Cambiar fondo por efecto hierba",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mostrar nuevas aristas prohibidas con prohibidos pequeños",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mostrar vértices como ovnis pequeños",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Probar railtrack con ovnis pequeños",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Indicar vértica muy lejano - Alt. IV - Añadir warning \"Too far!\"",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Indicar vértice muy lejano - Alt. III - Añadir Xs en arista",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Indicar vértice muy lejano - Alt. II - Añadir bocadillo",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Indicar vértice muy lejano - Alt. I - Eliminar aristas aunque mantener lógica",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Aumentar número de versión (DESC) - v0.5",
+          "details": "- Script de actualización\n    - Menú principal\n    - Versión en ficheros de niveles (.json)\n    - Versión en globals/level::save\n- Duplicar esta tarea con nuevo número de versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Test: pasarme el juego entero en móvil",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Arreglar script devel-html (actualizar README si es necesario)",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Añadir sonido reverser",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Cambiar icono por nuevo",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Cambiar sprites del menú por los nuevos",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Añadir fondo a panel de límite de acciones (o resaltar de alguna otra manera)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Refinar sprite Reverser",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mover edificios para que no aparezcan cortados (pe. en última fase de la primera campaña)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Al terminar la primera campaña sale la pantalla de final en vez de permitir seleccionar la segunda",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Deshabilitar campañas no desbloqueadas",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear nivel 2-8",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Al recargar la fase cuando el UFO acaba de ser afectado por un reverser, el UFO pasa por encima de él sin darse la vuelta",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Crear nivel 2-7",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear nivel 2-6",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear nivel 2-5",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear nivel 2-4",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Nivel 1-6 la primera granja se recolecta sin ahcer nada",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Crear nivel 2-3",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Menú de opciones - Los selectores de volumen no se inicializan con el valor actual",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Volumen SFX no afecta al sonido de pulsar los botones",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Especificar licencia en gráficos, música y SFX (investigar)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Eliminar errores / warnings consola",
+          "details": "",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Crear nivel 2-2",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Especificar licencia en código (investigar)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Crear nivel 2-1",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Script] Refactorizar todos los niveles y edificios para que tiren de \"buildings\"",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Quitar añadir vértices con el reverser hace que la nave se salga de la ruta (DESC)",
+          "details": "Al parecer ocurre cuando añado un vértice en la arista que la nave está recorriendo mientras va hacia atrás (no salta el \"in use\").",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "¿Remplazar gráficos hechos por otros hechos en Gimp? (hacer en gran resolución y exportar en la final)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sprite reverser",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Meter efecto Ale (+ créditos)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Meter canción Ale (+ créditos)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir efecto reverser",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Reverser - Añadir nivel sin efecto",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Reverser - Añadir al editor de niveles",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Reverser - Crear escena placeholder",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear pantalla de selección de campaña",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Gráficos] Rehacer festival en Gimp (alta resolución)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[README] Añadir info de itch.io y captura de pantalla",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "[Gráficos] Rehacer granja en Gimp (alta resolución)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Gráficos] Rehacer UFO en Gimp (alta resolución)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mostrar número del nivel actual (pe. \"1.5\")",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Jugar y planificar v0.4",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir festival SVG",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir granja SVG",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir ovni SVG",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Aumentar número de versión (DESC) - v0.4",
+          "details": "- Script de actualización\n    - Menú principal\n    - Versión en ficheros de niveles (.json)\n    - Versión en globals/level::save\n- Duplicar esta tarea con nuevo número de versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Mostrar plantilla sencilla a partir de ficheros",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Iniciar repo ¿unu? con \"Hola mundo\"",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Rust - Completar \"4. Understanding Ownership\"",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Rust - Completar \"3. Common Programming Concepts\"",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Rust - Completar \"2. Programming a Guessing Game\"",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Rust - Completar \"1. Getting Started\"",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Mergear versión y publicar (DESC) - v0.3.2",
+          "details": "- Actualizar changelog (PONER FECHA BIEN)\n- Release mode (comprobar que no se puede acceder al editor de niveles).\n- Tag y release en Github.\n- Actualización en itch.io.\n- ¿Noticia en ldjam?\n- ¿Devlog en itch.io?\n- Enlaces en web personal\n- Duplicar esta tarea para la nueva versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Añadir agradecimientos a la gente de la ludum dare",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Corregir fecha de v0.3.1 en el changelog",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Aumentar número de versión (DESC) - v0.3.2",
+          "details": "- Script de actualización\n    - Menú principal\n    - Versión en ficheros de niveles (.json)\n    - Versión en globals/level::save\n- Duplicar esta tarea con nuevo número de versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Mergear versión y publicar (DESC) - v0.3.1",
+          "details": "- Actualizar changelog.\n- Release mode (comprobar que no se puede acceder al editor de niveles).\n- Tag y release en Github.\n- Actualización en itch.io.\n- ¿Noticia en ldjam?\n- ¿Devlog en itch.io?\n- Enlaces en web personal\n- Duplicar esta tarea para la nueva versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Añadir agradecimientos",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Si reinicio cuando el UFO tiene todas las vacas salta a la pantalla de nivel completado",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Himar] No deja seleccionar nada después de reiniciar (DESC)",
+          "details": "En el segundo nivel, al mover la arista de la izquierda y reiniciar el nivel, luego no deja seleccionar seleccionar nada, o deja seleccionar pero no deja hacer nada con la selección.\n\n- Parece que sólo ocurre en móvil",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Un toque simple sobre una arista la deja seleccionada, y seleccionar luego una arista la resalta pero no despliega el botón de borrado",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Al poner pantalla completa y volver al menú de opciones se muestra \"Fullscreen: OFF\"",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Aumentar número de versión (DESC) - v3.1",
+          "details": "- ¿Rama?\n- Menú principal\n- Versión en ficheros de niveles (.json)\n- Versión en globals/level::save\n- Duplicar esta tarea con nuevo número de versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Mergear versión y publicar (DESC) - v0.3",
+          "details": "- Actualizar changelog.\n- Release mode (comprobar que no se puede acceder al editor de niveles).\n- Tag y release en Github.\n- Actualización en itch.io.\n- ¿Noticia en ldjam?\n- ¿Devlog en itch.io?\n- Enlaces en web personal\n- Duplicar esta tarea para la nueva versión",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "[Feedback] Replantear niveles \"Think fast\"!",
+          "details": "https://ldjam.com/users/testuser\n\"I would ask for a pause button, since the last level seemed more like a race condition than a puzzle.\"\n\nhttps://ldjam.com/users/oneiromancer\n\"One bit of feedback, though: the killbox in later levels breaks the pacing a little bit. In all other levels you constantly keep track of where your ufo is and which verticies you can intertact with and how not to mess it up, but here you just flop into it and it’s game over. I think if you would just lost all your cows, but continued moving, it would be a little better.\"",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir nivel 9",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Optimizar selección de vértices / aristas (DESC)",
+          "details": "- Usar el propio clicked / hovered de los paths para marcarlos (DESCARTADO POR AHORA).\n- Mantener una lista de posiciones por cada arista y actualizarla al añadir / quitar vértices.",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Añadir nivel 8",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir versión actual a niveles guardados. Añadir recordatorio para acordarme de cambiarlo al cambiar versión",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Bloquear niveles que no te has pasado",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir opción de pantalla completa",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Repasar menú de créditos en móvil",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Ajustar textos en botones, tooltips y menús (incluido victoria)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Recuperar música y permitir mutearla",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Cambiar botón de pausa a icono",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "user:// está guardando en una carpeta que incluye la versión, evitando su persistencia entre versiones",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "\"Arreglar\" niveles que se pasó Cristian de otra manera -> Estaban mal diseñados desde el principio. Ajustados.",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Al eliminar nodos llega un punto en el que no deja seleccionar una de las aristas (¿la última?)",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Revisar todos los flujos posibles y añadir rutas que falten (DESC)",
+          "details": "- Volver desde el editor de niveles al menú principal.\n- Volver desde una fase hasta el selector de niveles / menú principal.\n- etc",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Planificar contenido para directo viernes 04/12",
+          "details": "",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Revisar textos tutorial a ver si se pueden reducir",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir nivel 7",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mostrar niveles pasados en el selector de niveles",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir nivel 6",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir nivel 5",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Al cargar un nivel permitir seleccionar objetos ya cargados (evitar que se puedan mover jugando)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir nivel 4",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Bug] Al resetear el nivel con el UFO teniendo vacas estas no se resetean",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "[Editor de niveles] Añadir \"Add node next\" button al panel (sólo cuando lo seleccionado es un nodo)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Reducir botones de borrar nodo a uno solo (sin botón de cancelar)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Guardar progreso del jugador (DESC)",
+          "details": "- Diccionario de IDs de niveles -> diccionario.\n- Incluir versión del juego en el JSON.\n\n- Comprobar que se salva en el browser (linux y móvil)",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mostrar ruta por encima de las granjas y areas 51 (gameplay y editor)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "[Editor de niveles] Añadir panel de objeto seleccionado (Incluir botón de borrado)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Convertir vértices en Sprite seleccionable (ligera transparencia, probar juego y editor)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Feedback] Añadir botón de Fast forward",
+          "details": "https://ldjam.com/users/ale\n\"[...] and add a fast-forward button so the player doesn’t have to sit around for too long while the UFO travels to the destination.\"",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir cargar fases creadas (DESC)",
+          "details": "- Comprobar que los textos no se borran al salvar",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir salvar fases creadas (campaña)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Selector de fase - Añadir fase y abrir editor de niveles (solo ¿debug?)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear selector de nivel",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Video / post progreso",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Implementar nueva organización de niveles de campaña (DESC)",
+          "details": "- Todos los niveles como ficheros separados en una única carpeta (ie. campaign_levels).\n- Fichero JSON que defina objetos \n{\n    campaign_name: <string>,\n    levels: [1, 2, 45, 3]\n}",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir establecer número máximo de acciones",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir Areas 51 - Play + reset",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir Areas 51 - Eliminar",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir Areas 51 - Mover",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir Areas 51 - Añadir",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir granjas - play (and reset)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir granjas - Eliminar",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir granjas - Mover",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir añadir granjas - Añadir",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Ocultar menú de herramientas al darle a play",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Añadir clear para limpiar nodos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Refactorizar editor de niveles para que no use el mismo railtrack para construir el camino",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Permitir reiniciar nivel en juego / sustituir botón por volver al editor",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Añadir play / stop button",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Añadir creación de nodos (doble click para finalizar)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Editor de niveles] Crear entrada menú y escena vacía",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Actualizar instrucciones para drag and drop",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "(Cuando no sea necesario) Eliminar niveles antiguos (DESC)",
+          "details": "- Árbol \"levels\" en \"main.tscn\".\n- Carpeta gameplay/levels\n- ¿Algo más?",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Leer textos desde JSON de niveles",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Idear cómo mostrar tutorial. PLANIFICAR",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Arreglar carga de niveles desde JSON en exportado HTML",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Leer nivel desde JSON",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Cancelar menú de eliminar nodo al clicar en cualquier lugar de la pantalla",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Ocultar líneas guías de creación de arista al superar / reiniciar nivel",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Ocultar el menú de borrar nodo al superar / reiniciar nivel",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear imágenes placeholder para confirmar y cancelar eliminación de vértice",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Servir página",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Canbiar creación arista de clic-mover-clic a arrastrar y soltar",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Actualizar versión a v0.3 (título ventana y menú)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Subir post de intenciones a itch.io y avisar en ludum dare",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Entregar v0.2",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Resaltar warning",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Ajustar colores camino (normal, seleccionado, etc)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Quitar botón de exit de HTML",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Actualizar versión (título ventana y menú)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sonido de explosión",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sonido de soltar vaca",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir sonido de recoger vaca",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir música",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Entrevar v0.1",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "¿Renombrar *train* a *ufo*?",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir enlace a Ludum Dare",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Añadir pantalla de final con vuelta a menú principal",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir instrucción sobre área 51",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Actualizar versión (título ventana y menú)",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Añadir game over por zona prohibida",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir zonas prohibidas (escena)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir fase 3 dummy",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir fase 2 con límite de acciones",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir menú de créditos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir menú principal con botón de jugar",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Copia de seguridad de Kanban",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
           "name": "Eliminar icono de Godot y poner el del UFO",
           "details": "",
           "color": "FAFCD2"
@@ -77,6 +1132,11 @@
           "name": "Añadir sprite de vaca (contadores)",
           "details": "",
           "color": "FAFCD2"
+        },
+        {
+          "name": "Revisar duda sobre base-code (marcadores)",
+          "details": "- https://ldjam.com/events/ludum-dare/47/$222627/$223265\n- https://twitter.com/moises_jbc/status/1312316584057286656",
+          "color": "FFB5B5"
         },
         {
           "name": "Añadir sprite festival",
